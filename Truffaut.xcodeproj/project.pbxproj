@@ -12,7 +12,23 @@
 		0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* Document.swift */; };
 		0B7C8BE41CBFD166000FE312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE31CBFD166000FE312 /* Assets.xcassets */; };
 		0B7C8BE71CBFD166000FE312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE51CBFD166000FE312 /* Main.storyboard */; };
+		0B7C8BF01CBFEA4A000FE312 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BEF1CBFEA4A000FE312 /* pop.framework */; };
+		0B7C8BF21CBFEA66000FE312 /* pop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BEF1CBFEA4A000FE312 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B7C8BF11CBFEA59000FE312 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B7C8BF21CBFEA66000FE312 /* pop.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		0B7C8BE31CBFD166000FE312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B7C8BE61CBFD166000FE312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B7C8BE81CBFD166000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B7C8BEF1CBFEA4A000FE312 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/Mac/pop.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7C8BF01CBFEA4A000FE312 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 		0B7C8BD11CBFD166000FE312 = {
 			isa = PBXGroup;
 			children = (
+				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
 			);
@@ -64,6 +83,14 @@
 			path = Truffaut;
 			sourceTree = "<group>";
 		};
+		0B7C8BEE1CBFEA2B000FE312 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				0B7C8BEF1CBFEA4A000FE312 /* pop.framework */,
+			);
+			name = Carthage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +101,7 @@
 				0B7C8BD61CBFD166000FE312 /* Sources */,
 				0B7C8BD71CBFD166000FE312 /* Frameworks */,
 				0B7C8BD81CBFD166000FE312 /* Resources */,
+				0B7C8BF11CBFEA59000FE312 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +269,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Truffaut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.Truffaut;
@@ -253,6 +285,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Truffaut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.Truffaut;
