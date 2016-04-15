@@ -12,20 +12,20 @@
 		0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* Document.swift */; };
 		0B7C8BE41CBFD166000FE312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE31CBFD166000FE312 /* Assets.xcassets */; };
 		0B7C8BE71CBFD166000FE312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE51CBFD166000FE312 /* Main.storyboard */; };
-		0B7C8BF01CBFEA4A000FE312 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BEF1CBFEA4A000FE312 /* pop.framework */; };
-		0B7C8BF21CBFEA66000FE312 /* pop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BEF1CBFEA4A000FE312 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BF31CC139EB000FE312 /* pop.framework */; };
+		0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BF31CC139EB000FE312 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0B7C8BF11CBFEA59000FE312 /* Copy Frameworks */ = {
+		0B7C8BF71CC139FD000FE312 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B7C8BF21CBFEA66000FE312 /* pop.framework in Copy Frameworks */,
+				0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */,
 			);
-			name = "Copy Frameworks";
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -38,7 +38,7 @@
 		0B7C8BE31CBFD166000FE312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B7C8BE61CBFD166000FE312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B7C8BE81CBFD166000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B7C8BEF1CBFEA4A000FE312 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/Mac/pop.framework; sourceTree = "<group>"; };
+		0B7C8BF31CC139EB000FE312 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/Mac/pop.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7C8BF01CBFEA4A000FE312 /* pop.framework in Frameworks */,
+				0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		0B7C8BEE1CBFEA2B000FE312 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
-				0B7C8BEF1CBFEA4A000FE312 /* pop.framework */,
+				0B7C8BF31CC139EB000FE312 /* pop.framework */,
 			);
 			name = Carthage;
 			sourceTree = "<group>";
@@ -101,7 +101,7 @@
 				0B7C8BD61CBFD166000FE312 /* Sources */,
 				0B7C8BD71CBFD166000FE312 /* Frameworks */,
 				0B7C8BD81CBFD166000FE312 /* Resources */,
-				0B7C8BF11CBFEA59000FE312 /* Copy Frameworks */,
+				0B7C8BF71CC139FD000FE312 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,6 +315,7 @@
 				0B7C8BED1CBFD166000FE312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
