@@ -17,6 +17,7 @@ class SlidesWindowController: NSWindowController {
     window?.titlebarAppearsTransparent = true
     window?.titleVisibility = .Hidden
     window?.movable = true
+    window?.movableByWindowBackground = true
   }
   
 }

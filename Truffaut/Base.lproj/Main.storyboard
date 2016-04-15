@@ -687,13 +687,13 @@
             <objects>
                 <viewController id="n2t-7Y-6M4" customClass="SlidesViewController" customModule="Truffaut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="GPM-Yq-aZi">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
                 <customObject id="Pe4-yx-JUh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="739"/>
+            <point key="canvasLocation" x="854" y="894"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
