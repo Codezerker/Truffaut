@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */; };
-		0B7C8BE01CBFD166000FE312 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* ViewController.swift */; };
+		0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */; };
 		0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* Document.swift */; };
 		0B7C8BE41CBFD166000FE312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE31CBFD166000FE312 /* Assets.xcassets */; };
 		0B7C8BE71CBFD166000FE312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE51CBFD166000FE312 /* Main.storyboard */; };
 		0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BF31CC139EB000FE312 /* pop.framework */; };
 		0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BF31CC139EB000FE312 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BF81CC13E14000FE312 /* MainWindowController.swift */; };
+		0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */; };
+		0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */; };
+		0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C011CC1422B000FE312 /* Definitions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,12 +37,16 @@
 /* Begin PBXFileReference section */
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B7C8BDF1CBFD166000FE312 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0B7C8BE11CBFD166000FE312 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		0B7C8BE31CBFD166000FE312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B7C8BE61CBFD166000FE312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B7C8BE81CBFD166000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7C8BF31CC139EB000FE312 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/Mac/pop.framework; sourceTree = "<group>"; };
+		0B7C8BF81CC13E14000FE312 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesWindowController.swift; sourceTree = "<group>"; };
+		0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
+		0B7C8C011CC1422B000FE312 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +64,8 @@
 		0B7C8BD11CBFD166000FE312 = {
 			isa = PBXGroup;
 			children = (
-				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
+				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,11 +81,13 @@
 		0B7C8BDC1CBFD166000FE312 /* Truffaut */ = {
 			isa = PBXGroup;
 			children = (
-				0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */,
-				0B7C8BDF1CBFD166000FE312 /* ViewController.swift */,
-				0B7C8BE11CBFD166000FE312 /* Document.swift */,
-				0B7C8BE31CBFD166000FE312 /* Assets.xcassets */,
 				0B7C8BE51CBFD166000FE312 /* Main.storyboard */,
+				0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */,
+				0B7C8C011CC1422B000FE312 /* Definitions.swift */,
+				0B7C8BFB1CC13F5D000FE312 /* Document */,
+				0B7C8BFA1CC13F4A000FE312 /* Main Window */,
+				0B7C8BFC1CC13F91000FE312 /* Slides Window */,
+				0B7C8BE31CBFD166000FE312 /* Assets.xcassets */,
 				0B7C8BE81CBFD166000FE312 /* Info.plist */,
 			);
 			path = Truffaut;
@@ -89,6 +99,32 @@
 				0B7C8BF31CC139EB000FE312 /* pop.framework */,
 			);
 			name = Carthage;
+			sourceTree = "<group>";
+		};
+		0B7C8BFA1CC13F4A000FE312 /* Main Window */ = {
+			isa = PBXGroup;
+			children = (
+				0B7C8BF81CC13E14000FE312 /* MainWindowController.swift */,
+				0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */,
+			);
+			name = "Main Window";
+			sourceTree = "<group>";
+		};
+		0B7C8BFB1CC13F5D000FE312 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				0B7C8BE11CBFD166000FE312 /* Document.swift */,
+			);
+			name = Document;
+			sourceTree = "<group>";
+		};
+		0B7C8BFC1CC13F91000FE312 /* Slides Window */ = {
+			isa = PBXGroup;
+			children = (
+				0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */,
+				0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */,
+			);
+			name = "Slides Window";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7C8BE01CBFD166000FE312 /* ViewController.swift in Sources */,
+				0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */,
+				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
+				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
+				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
+				0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */,
 				0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
