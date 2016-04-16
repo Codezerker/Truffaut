@@ -18,6 +18,10 @@ class SlidesWindowController: NSWindowController {
     window?.titleVisibility = .Hidden
     window?.movable = true
     window?.movableByWindowBackground = true
+    
+    if let contentViewController = contentViewController as? SlidesViewController {
+      contentViewController.windowController = self
+    }
   }
   
 }

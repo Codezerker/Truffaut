@@ -10,7 +10,7 @@
 
 @implementation TFPlugInLoader
 
-+ (NSDictionary<NSString *, id<TFSlidesTemplate>> *)loadSlidesTempatesWithSearchURL:(NSURL *)searchURL {
++ (NSDictionary<NSString *, id<TFTemplate>> *)loadSlidesTempatesWithSearchURL:(NSURL *)searchURL {
   NSDirectoryEnumerationOptions options = NSDirectoryEnumerationSkipsPackageDescendants |
                                           NSDirectoryEnumerationSkipsHiddenFiles |
                                           NSDirectoryEnumerationSkipsSubdirectoryDescendants;
@@ -20,13 +20,13 @@
                                                                               options:options
                                                                          errorHandler:nil];
   
-  NSMutableDictionary<NSString *, id<TFSlidesTemplate>> *results = [NSMutableDictionary dictionary];
+  NSMutableDictionary<NSString *, id<TFTemplate>> *results = [NSMutableDictionary dictionary];
   
   NSURL *bundleURL = nil;
   while ((bundleURL = enumerator.nextObject)) {
     NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
-    if ([bundle.principalClass conformsToProtocol:@protocol(TFSlidesTemplate)]) {
-      id<TFSlidesTemplate> template = [bundle.principalClass new];
+    if ([bundle.principalClass conformsToProtocol:@protocol(TFTemplate)]) {
+      id<TFTemplate> template = [bundle.principalClass new];
       results[template.typeIdentifier] = template;
     }
   }

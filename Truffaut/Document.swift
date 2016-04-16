@@ -14,7 +14,7 @@ class Document: NSDocument {
     case InvalidData
   }
   
-  private var slides: Slides?
+  var slides: Slides?
   
   override class func autosavesInPlace() -> Bool {
     return true

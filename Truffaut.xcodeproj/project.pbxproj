@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */; };
+		0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */; };
 		0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */; };
 		0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */; };
 		0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* Document.swift */; };
@@ -52,6 +54,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B6EED7F1CC25755001BC00B /* BasicCoverTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicCoverTemplate-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCoverViewController.swift; sourceTree = "<group>"; };
+		0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCoverViewController.xib; sourceTree = "<group>"; };
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +74,7 @@
 		0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Truffaut-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B7C8C0C1CC20865000FE312 /* TFPlugInLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFPlugInLoader.h; sourceTree = "<group>"; };
 		0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFPlugInLoader.m; sourceTree = "<group>"; };
-		0B7C8C0F1CC209F2000FE312 /* TFSlidesTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFSlidesTemplate.h; sourceTree = "<group>"; };
+		0B7C8C0F1CC209F2000FE312 /* TFTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFTemplate.h; sourceTree = "<group>"; };
 		0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicPageTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8C161CC22748000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicCoverTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,10 +183,10 @@
 		0B7C8C081CC2062B000FE312 /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
-				0B7C8C091CC20642000FE312 /* Plugin.swift */,
-				0B7C8C0F1CC209F2000FE312 /* TFSlidesTemplate.h */,
+				0B7C8C0F1CC209F2000FE312 /* TFTemplate.h */,
 				0B7C8C0C1CC20865000FE312 /* TFPlugInLoader.h */,
 				0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */,
+				0B7C8C091CC20642000FE312 /* Plugin.swift */,
 			);
 			name = Plugin;
 			sourceTree = "<group>";
@@ -197,6 +202,9 @@
 		0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0B6EED7F1CC25755001BC00B /* BasicCoverTemplate-Bridging-Header.h */,
+				0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */,
+				0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */,
 				0B7C8C221CC227E7000FE312 /* Info.plist */,
 			);
 			path = BasicCoverTemplate;
@@ -320,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -478,6 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -519,12 +531,16 @@
 		0B7C8C241CC227E7000FE312 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BasicCoverTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicCoverTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BasicCoverTemplate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Debug;
@@ -532,12 +548,15 @@
 		0B7C8C251CC227E7000FE312 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BasicCoverTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicCoverTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BasicCoverTemplate-Bridging-Header.h";
 				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Release;
@@ -570,6 +589,7 @@
 				0B7C8C191CC22748000FE312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B7C8C231CC227E7000FE312 /* Build configuration list for PBXNativeTarget "BasicCoverTemplate" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +598,7 @@
 				0B7C8C251CC227E7000FE312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

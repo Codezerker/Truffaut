@@ -12,7 +12,7 @@ class Plugin {
   
   static let sharedPlugin = Plugin()
   
-  var templates = [String : TFSlidesTemplate]()
+  var templates = [String : TFTemplate]()
   
   func loadPlugIns() {
     if let builtInPlugInURL = NSBundle.mainBundle().builtInPlugInsURL {

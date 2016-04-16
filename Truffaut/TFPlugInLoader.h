@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TFSlidesTemplate.h"
+#import "TFTemplate.h"
 
 @interface TFPlugInLoader : NSObject
 
-+ (nonnull NSDictionary<NSString *, id<TFSlidesTemplate>> *)loadSlidesTempatesWithSearchURL:(nonnull NSURL *)searchURL;
++ (nonnull NSDictionary<NSString *, id<TFTemplate>> *)loadSlidesTempatesWithSearchURL:(nonnull NSURL *)searchURL;
 
 @end

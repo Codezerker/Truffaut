@@ -9,13 +9,15 @@
 struct Slides {
   
   struct JSONKeys {
+    static let typeIdentifier = "type"
     static let title = "title"
     static let bulletPoints = "bullet_points"
   }
   
   struct Page {
+    let typeIdentifier: String
     let title: String
-    let bulletPoints: [String]
+    let bulletPoints: [String]?
   }
   
   var pages: [Page]
@@ -24,11 +26,14 @@ struct Slides {
   
   init(json: [PageJSON]) throws {
     pages = try json.map { pageJSON -> Page in
-      guard let title = pageJSON[JSONKeys.title] as? String,
-            let bulletPoints = pageJSON[JSONKeys.bulletPoints] as? [String] else {
+      guard let typeIdentifier = pageJSON[JSONKeys.typeIdentifier] as? String,
+            let title = pageJSON[JSONKeys.title] as? String else {
         throw Document.Error.InvalidData
       }
-      return Page(title: title, bulletPoints: bulletPoints)
+      
+      let bulletPoints = pageJSON[JSONKeys.bulletPoints] as? [String]
+      
+      return Page(typeIdentifier: typeIdentifier, title: title, bulletPoints: bulletPoints)
     }
   }
   
