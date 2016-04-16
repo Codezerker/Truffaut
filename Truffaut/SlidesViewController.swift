@@ -19,9 +19,17 @@ class SlidesViewController: NSViewController {
       return
     }
     
+    show(document)
+  }
+  
+}
+
+extension SlidesViewController {
+  
+  private func show(document: Document) {
     guard let page = document.slides?.pages.first,
-          let template = Plugin.sharedPlugin.templates[page.typeIdentifier] else {
-      return
+      let template = Plugin.sharedPlugin.templates[page.typeIdentifier] else {
+        return
     }
     
     let pageViewController = template.createPageViewControllerWithPageTitle(page.title, bulletPoints: page.bulletPoints)
@@ -32,7 +40,7 @@ class SlidesViewController: NSViewController {
     let visualFormatStrings: [String] = [
       "V:|-0-[slide]-0-|",
       "H:|-0-[slide]-0-|",
-      ]
+    ]
     
     for visualFormatString: String in visualFormatStrings {
       let constraints = NSLayoutConstraint.constraintsWithVisualFormat(

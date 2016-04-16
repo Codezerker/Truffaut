@@ -25,6 +25,10 @@ struct Slides {
   typealias PageJSON = [String : AnyObject]
   
   init(json: [PageJSON]) throws {
+    guard json.count > 0 else {
+      throw Document.Error.InvalidData
+    }
+    
     pages = try json.map { pageJSON -> Page in
       guard let typeIdentifier = pageJSON[JSONKeys.typeIdentifier] as? String,
             let title = pageJSON[JSONKeys.title] as? String else {

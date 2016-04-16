@@ -715,12 +715,12 @@
                                     <action selector="showSlides:" target="5gI-5U-AMq" id="tev-Pk-ZUe"/>
                                 </connections>
                             </button>
-                            <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aju-RI-36a">
+                            <pathControl focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aju-RI-36a">
                                 <rect key="frame" x="20" y="58" width="440" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="eWv-GV-KH3"/>
                                 </constraints>
-                                <pathCell key="cell" selectable="YES" alignment="left" id="gVK-Jj-Jao">
+                                <pathCell key="cell" selectable="YES" focusRingType="none" alignment="left" id="gVK-Jj-Jao">
                                     <font key="font" metaFont="system"/>
                                     <url key="url" string="file://localhost/Applications/"/>
                                 </pathCell>
