@@ -25,6 +25,7 @@ class SlidesViewController: NSViewController {
     }
     
     let pageViewController = template.createPageViewControllerWithPageTitle(page.title, bulletPoints: page.bulletPoints)
+    pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(pageViewController.view)
     
     let views = ["slide" : pageViewController.view]
