@@ -8,16 +8,16 @@
 
 import Foundation
 
-class Plugin {
+class PlugIn {
   
-  static let sharedPlugin = Plugin()
+  static let sharedPlugIn = PlugIn()
   
   var templates = [String : TFTemplate]()
   
   func loadPlugIns() {
     // Load built-in plugins
     if let builtInPlugInURL = NSBundle.mainBundle().builtInPlugInsURL {
-      loadPluginFromURL(builtInPlugInURL)
+      loadPlugInFromURL(builtInPlugInURL)
     }
     
     // Create external plugin directory if needed
@@ -25,13 +25,13 @@ class Plugin {
     
     // Load external plugins
     if let externalPlugInURL = plugInSearchURL {
-      loadPluginFromURL(externalPlugInURL)
+      loadPlugInFromURL(externalPlugInURL)
     }
   }
   
 }
 
-extension Plugin {
+extension PlugIn {
   
   private var plugInSearchURL: NSURL? {
     guard let URL = try? NSFileManager.defaultManager().URLForDirectory(
@@ -56,7 +56,7 @@ extension Plugin {
       attributes: nil);
   }
   
-  private func loadPluginFromURL(URL: NSURL) {
+  private func loadPlugInFromURL(URL: NSURL) {
     let templateMap = TFPlugInLoader.loadSlidesTempatesWithSearchURL(URL)
     templateMap.forEach { key, value in
       self.templates[key] = value

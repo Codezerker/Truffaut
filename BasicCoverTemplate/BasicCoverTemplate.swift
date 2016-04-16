@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Template: NSObject, TFTemplate {
+class BasicCoverTemplate: NSObject, TFTemplate {
   
   func typeIdentifier() -> String {
     return "basic_cover"

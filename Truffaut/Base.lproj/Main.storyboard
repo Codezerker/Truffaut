@@ -338,6 +338,25 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Slides" id="ZSx-b2-kdP">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Slides" id="Ihj-Yd-Qoc">
+                                    <items>
+                                        <menuItem title="Previous" tag="10001" keyEquivalent="" id="qpl-Qd-Vcy">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="menuAction:" target="Voe-Tx-rLC" id="REL-m7-TRu"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Next" tag="10002" keyEquivalent="" id="tox-mi-YWa">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="menuAction:" target="Voe-Tx-rLC" id="Igr-9k-xvB"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Format" id="jxT-CU-nIS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Format" id="GEO-Iw-cKr">

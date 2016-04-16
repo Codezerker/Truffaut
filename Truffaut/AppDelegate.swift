@@ -12,11 +12,23 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
-    Plugin.sharedPlugin.loadPlugIns()
+    PlugIn.sharedPlugIn.loadPlugIns()
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {
     // Insert code here to tear down your application
   }
+  
+}
 
+extension AppDelegate {
+  
+  @IBAction func menuAction(sender: AnyObject) {
+    guard let menuItem = sender as? NSMenuItem else {
+      return
+    }
+    
+    MenuActionDispatcher.dispatchAction(menuItem)
+  }
+  
 }

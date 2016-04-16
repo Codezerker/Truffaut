@@ -23,6 +23,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 Codezerker. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string>Template</string>
+	<string>BasicCoverTemplate</string>
 </dict>
 </plist>

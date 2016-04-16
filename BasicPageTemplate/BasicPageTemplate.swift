@@ -6,9 +6,9 @@
 //  Copyright © 2016 Codezerker. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
-class Template: NSObject, TFTemplate {
+class BasicPageTemplate: NSObject, TFTemplate {
   
   func typeIdentifier() -> String {
     return "basic_page"

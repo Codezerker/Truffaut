@@ -12,6 +12,19 @@ class SlidesViewController: NSViewController {
   
   weak var windowController: NSWindowController?
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    MenuActionDispatcher.ActionType.registerNotifications(observer: self) { [weak self] action in
+      switch action {
+      case .Previous:
+        self?.showPrevious()
+      case .Next:
+        self?.showNext()
+      }
+    }
+  }
+  
   override func viewWillAppear() {
     super.viewWillAppear()
     
@@ -26,9 +39,17 @@ class SlidesViewController: NSViewController {
 
 extension SlidesViewController {
   
+  private func showNext() {
+    print(#function)
+  }
+  
+  private func showPrevious() {
+    print(#function)
+  }
+  
   private func show(document: Document) {
     guard let page = document.slides?.pages.first,
-      let template = Plugin.sharedPlugin.templates[page.typeIdentifier] else {
+          let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
         return
     }
     
