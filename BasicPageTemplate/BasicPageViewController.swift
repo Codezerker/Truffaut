@@ -11,7 +11,7 @@ import Cocoa
 class BasicPageViewController: NSViewController {
   
   @IBOutlet weak var titleLabel: NSTextField!
-  @IBOutlet weak var contentTextView: NSTextView!
+  @IBOutlet var contentTextView: NSTextView!
   
   private var titleString = ""
   private var contentString = ""

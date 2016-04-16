@@ -12,6 +12,13 @@ class SlidesViewController: NSViewController {
   
   weak var windowController: NSWindowController?
   
+  private var currentPage = 0
+  private weak var currentPageViewController: NSViewController?
+  
+  private var pages: [Slides.Page]? {
+    return (windowController?.document as? Document)?.slides?.pages
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -21,11 +28,7 @@ class SlidesViewController: NSViewController {
   override func viewWillAppear() {
     super.viewWillAppear()
     
-    guard let document = windowController?.document as? Document else {
-      return
-    }
-    
-    show(document)
+    show(pageAtIndex: currentPage)
   }
   
 }
@@ -47,24 +50,38 @@ extension SlidesViewController {
   }
   
   @objc private func showPrevious() {
-    print(#function)
+    show(pageAtIndex: currentPage - 1)
   }
   
   @objc private func showNext() {
-    print(#function)
+    show(pageAtIndex: currentPage + 1)
   }
   
 }
 
 extension SlidesViewController {
   
-  private func show(document: Document) {
-    guard let page = document.slides?.pages.first,
-          let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
+  private func show(pageAtIndex index: Int) {
+    guard let pages = pages else {
+      return
+    }
+    
+    guard index >= 0 && index < pages.count else {
+      return
+    }
+    
+    let page = pages[index]
+    
+    guard let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
         return
     }
     
-    let pageViewController = template.createPageViewControllerWithPageTitle(page.title, bulletPoints: page.bulletPoints)
+    currentPageViewController?.removeFromParentViewController()
+    currentPageViewController?.view.removeFromSuperview()
+    
+    let pageViewController = template.createPageViewControllerWithPageTitle(
+      page.title,
+      bulletPoints: page.bulletPoints)
     pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(pageViewController.view)
     
@@ -82,6 +99,11 @@ extension SlidesViewController {
         views: views)
       view.addConstraints(constraints)
     }
+    
+    addChildViewController(pageViewController)
+    
+    currentPage = index
+    currentPageViewController = pageViewController
   }
   
 }
