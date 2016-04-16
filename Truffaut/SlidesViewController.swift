@@ -15,14 +15,7 @@ class SlidesViewController: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    MenuActionDispatcher.ActionType.registerNotifications(observer: self) { [weak self] action in
-      switch action {
-      case .Previous:
-        self?.showPrevious()
-      case .Next:
-        self?.showNext()
-      }
-    }
+    registerNotifications()
   }
   
   override func viewWillAppear() {
@@ -39,13 +32,31 @@ class SlidesViewController: NSViewController {
 
 extension SlidesViewController {
   
-  private func showNext() {
+  private func registerNotifications() {
+    NSNotificationCenter.defaultCenter().addObserver(
+      self,
+      selector: #selector(showPrevious),
+      name: MenuActionDispatcher.ActionType.Previous.notificationName,
+      object: nil)
+    
+    NSNotificationCenter.defaultCenter().addObserver(
+      self,
+      selector: #selector(showNext),
+      name: MenuActionDispatcher.ActionType.Next.notificationName,
+      object: nil)
+  }
+  
+  @objc private func showPrevious() {
     print(#function)
   }
   
-  private func showPrevious() {
+  @objc private func showNext() {
     print(#function)
   }
+  
+}
+
+extension SlidesViewController {
   
   private func show(document: Document) {
     guard let page = document.slides?.pages.first,

@@ -24,24 +24,6 @@ struct MenuActionDispatcher {
     func sendNotification() {
       NSNotificationCenter.defaultCenter().postNotificationName(notificationName, object: nil)
     }
-    
-    typealias NotificationHandler = (action: ActionType) -> Void
-    
-    static func registerNotifications(observer observer: AnyObject, handler: NotificationHandler) {
-      [ self.Previous,
-        self.Next,
-      ].map { action in
-        return (action.notificationName, action)
-      }.forEach { [weak observer] (notificationName, action) in
-        NSNotificationCenter.defaultCenter().addObserverForName(
-          notificationName,
-          object: observer,
-          queue: NSOperationQueue.mainQueue(),
-          usingBlock: { notification in
-            handler(action: action)
-          })
-      }
-    }
   }
   
   static func dispatchAction(menuItem: NSMenuItem) {
