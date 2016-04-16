@@ -653,8 +653,10 @@
                 <windowController storyboardIdentifier="MainWindowController" id="jGA-0Y-lOj" customClass="MainWindowController" customModule="Truffaut" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="120"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="120"/>
+                        <value key="maxSize" type="size" width="480" height="120"/>
                     </window>
                     <connections>
                         <segue destination="5gI-5U-AMq" kind="relationship" relationship="window.shadowedContentViewController" id="nsd-lR-9xd"/>
@@ -670,7 +672,7 @@
                 <windowController storyboardIdentifier="SlidesWindowController" id="dJ6-f1-YHA" customClass="SlidesWindowController" customModule="Truffaut" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="N50-JA-EB5">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <rect key="contentRect" x="763" y="-660" width="800" height="600"/>
+                        <rect key="contentRect" x="0.0" y="0.0" width="800" height="600"/>
                         <rect key="screenRect" x="567" y="-900" width="1440" height="877"/>
                         <value key="minSize" type="size" width="800" height="600"/>
                     </window>
@@ -700,17 +702,9 @@
             <objects>
                 <viewController id="5gI-5U-AMq" customClass="MainViewController" customModule="Truffaut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="ERx-hH-rdd">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="120"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="TyV-c9-G0C">
-                                <rect key="frame" x="116" y="124" width="248" height="22"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Your document contents here" id="Cc7-nU-5Mv">
-                                    <font key="font" metaFont="system" size="18"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QQU-9x-dEG">
                                 <rect key="frame" x="183" y="13" width="114" height="32"/>
                                 <buttonCell key="cell" type="push" title="Show Slides" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Els-7A-LLp">
@@ -721,18 +715,32 @@
                                     <action selector="showSlides:" target="5gI-5U-AMq" id="tev-Pk-ZUe"/>
                                 </connections>
                             </button>
+                            <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aju-RI-36a">
+                                <rect key="frame" x="20" y="58" width="440" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="eWv-GV-KH3"/>
+                                </constraints>
+                                <pathCell key="cell" selectable="YES" alignment="left" id="gVK-Jj-Jao">
+                                    <font key="font" metaFont="system"/>
+                                    <url key="url" string="file://localhost/Applications/"/>
+                                </pathCell>
+                            </pathControl>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="QQU-9x-dEG" secondAttribute="bottom" constant="20" id="4BT-0O-IdN"/>
+                            <constraint firstAttribute="trailing" secondItem="Aju-RI-36a" secondAttribute="trailing" constant="20" id="5gq-ru-9uZ"/>
+                            <constraint firstItem="Aju-RI-36a" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" constant="20" id="F4e-dj-Ydc"/>
                             <constraint firstItem="QQU-9x-dEG" firstAttribute="centerX" secondItem="ERx-hH-rdd" secondAttribute="centerX" id="J6t-pk-hr2"/>
-                            <constraint firstAttribute="centerY" secondItem="TyV-c9-G0C" secondAttribute="centerY" id="Rxv-Yd-F43"/>
-                            <constraint firstAttribute="centerX" secondItem="TyV-c9-G0C" secondAttribute="centerX" id="Zn4-Y4-lbg"/>
+                            <constraint firstItem="Aju-RI-36a" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" constant="40" id="bEd-K7-YFp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pathControl" destination="Aju-RI-36a" id="JVy-PS-ZkL"/>
+                    </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="547"/>
         </scene>
     </scenes>
 </document>

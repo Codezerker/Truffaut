@@ -9,13 +9,19 @@
 import Cocoa
 
 class MainWindowController: NSWindowController {
-  
+    
   override func awakeFromNib() {
     super.awakeFromNib()
     
     window?.styleMask |= NSFullSizeContentViewWindowMask
     window?.titlebarAppearsTransparent = true
+    window?.titleVisibility = .Hidden
     window?.movable = true
+    window?.movableByWindowBackground = true
+    
+    if let contentViewController = contentViewController as? MainViewController {
+      contentViewController.windowController = self
+    }
   }
 
 }

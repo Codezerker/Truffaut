@@ -24,7 +24,7 @@ class Document: NSDocument {
     print("Slides Loaded: \(slides)")
     
     let windowController = MainWindowController.loadFromStoryboard()
-    self.addWindowController(windowController)
+    addWindowController(windowController)
   }
 
   override func dataOfType(typeName: String) throws -> NSData {

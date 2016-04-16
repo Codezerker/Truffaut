@@ -9,10 +9,20 @@
 import Cocoa
 
 class MainViewController: NSViewController {
-
+  
+  @IBOutlet weak var pathControl: NSPathControl!
+  
+  weak var windowController: MainWindowController?
+  
   lazy var slidesWindowController: SlidesWindowController = {
     return SlidesWindowController.loadFromStoryboard()
   }()
+  
+  override func viewWillAppear() {
+    super.viewWillAppear()
+    
+    pathControl.URL = windowController?.document?.fileURL
+  }
   
   @IBAction func showSlides(sender: AnyObject?) {
     slidesWindowController.window?.makeKeyAndOrderFront(nil)
