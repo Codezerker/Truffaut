@@ -11,8 +11,6 @@
 
 #import <AppKit/AppKit.h>
 
-@protocol TFPageViewController;
-
 @protocol TFTemplate <NSObject>
 
 - (nonnull NSString *)typeIdentifier;
