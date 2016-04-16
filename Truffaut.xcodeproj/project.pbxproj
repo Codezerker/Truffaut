@@ -18,6 +18,7 @@
 		0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */; };
 		0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */; };
 		0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C011CC1422B000FE312 /* Definitions.swift */; };
+		0B7C8C071CC1DC33000FE312 /* Slides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C061CC1DC33000FE312 /* Slides.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesWindowController.swift; sourceTree = "<group>"; };
 		0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
 		0B7C8C011CC1422B000FE312 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		0B7C8C061CC1DC33000FE312 /* Slides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slides.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7C8BE11CBFD166000FE312 /* Document.swift */,
+				0B7C8C061CC1DC33000FE312 /* Slides.swift */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */,
 				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
 				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
+				0B7C8C071CC1DC33000FE312 /* Slides.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
 				0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */,

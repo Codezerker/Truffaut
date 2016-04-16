@@ -7,6 +7,8 @@
 //
 
 
+// MARK: - Storyboard
+
 struct Storyboard {
   
   struct Names {
@@ -19,7 +21,6 @@ struct Storyboard {
   }
   
 }
-
 
 protocol StoryboardInstantiatable {
   associatedtype ControllerType
