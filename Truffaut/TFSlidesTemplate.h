@@ -15,16 +15,19 @@
 
 @protocol TFSlidesTemplate <NSObject>
 
-+ (nonnull NSViewController<TFSlidesPageViewController> *)pageViewControllerFromTemplateWithTitle:(nonnull NSString *)title
-                                                                                     bulletPoints:(nonnull NSArray<NSString *> *)bulletPoints;
+@property (nonatomic, nonnull, readonly) NSString *typeIdentifier;
+
+- (nonnull NSViewController<TFSlidesPageViewController> *)createPageViewControllerWithTitle:(nonnull NSString *)title
+                                                                               bulletPoints:(nonnull NSArray<NSString *> *)bulletPoints;
 
 @end
 
 
 @protocol TFSlidesPageViewController <NSObject>
 
-@property (nonatomic, nonnull, copy, readonly) NSString *title;
-@property (nonatomic, nonnull, copy, readonly) NSArray<NSString *> *bulletPoints;
+@property (nonatomic, nonnull, readonly) NSString *typeIdentifier;
+@property (nonatomic, nonnull, readonly) NSString *title;
+@property (nonatomic, nonnull, readonly) NSArray<NSString *> *bulletPoints;
 
 @end
 

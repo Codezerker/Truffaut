@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
-    Plugin.createPluginDirectoryIfNeeded()
+    Plugin.sharedPlugin.loadPlugIns()
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {

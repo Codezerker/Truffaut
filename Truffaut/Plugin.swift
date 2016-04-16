@@ -8,9 +8,28 @@
 
 import Foundation
 
-struct Plugin {
+class Plugin {
   
-  static var pluginSearchURL: NSURL? {
+  static let sharedPlugin = Plugin()
+  
+  var templates = [String : TFSlidesTemplate]()
+  
+  func loadPlugIns() {
+    if let builtInPlugInURL = NSBundle.mainBundle().builtInPlugInsURL {
+      loadPluginFromURL(builtInPlugInURL)
+    }
+    
+    createPlugInDirectoryInApplicationSupportIfNeeded()
+    if let externalPlugInURL = plugInSearchURL {
+      loadPluginFromURL(externalPlugInURL)
+    }
+  }
+  
+}
+
+extension Plugin {
+  
+  private var plugInSearchURL: NSURL? {
     guard let URL = try? NSFileManager.defaultManager().URLForDirectory(
       .ApplicationSupportDirectory,
       inDomain: .UserDomainMask,
@@ -19,18 +38,25 @@ struct Plugin {
         return nil
     }
     
-    return URL.URLByAppendingPathComponent("Truffaut/Plugins")
+    return URL.URLByAppendingPathComponent("Truffaut/PlugIns")
   }
   
-  static func createPluginDirectoryIfNeeded() {
-    guard let pluginSearchURL = pluginSearchURL else {
+  private func createPlugInDirectoryInApplicationSupportIfNeeded() {
+    guard let plugInSearchURL = plugInSearchURL else {
       return
     }
     
     _ = try? NSFileManager.defaultManager().createDirectoryAtURL(
-      pluginSearchURL,
+      plugInSearchURL,
       withIntermediateDirectories: true,
       attributes: nil);
+  }
+  
+  private func loadPluginFromURL(URL: NSURL) {
+    let templateMap = TFPlugInLoader.loadSlidesTempatesWithSearchURL(URL)
+    templateMap.forEach { key, value in
+      self.templates[key] = value
+    }
   }
   
 }
