@@ -21,8 +21,6 @@ class Document: NSDocument {
   }
 
   override func makeWindowControllers() {
-    print("Slides Loaded: \(slides)")
-    
     let windowController = MainWindowController.loadFromStoryboard()
     addWindowController(windowController)
   }

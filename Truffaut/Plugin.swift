@@ -15,11 +15,15 @@ class Plugin {
   var templates = [String : TFTemplate]()
   
   func loadPlugIns() {
+    // Load built-in plugins
     if let builtInPlugInURL = NSBundle.mainBundle().builtInPlugInsURL {
       loadPluginFromURL(builtInPlugInURL)
     }
     
+    // Create external plugin directory if needed
     createPlugInDirectoryInApplicationSupportIfNeeded()
+    
+    // Load external plugins
     if let externalPlugInURL = plugInSearchURL {
       loadPluginFromURL(externalPlugInURL)
     }
