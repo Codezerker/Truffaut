@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class BasicPageTemplate: NSObject, TFTemplate {
+class Template: NSObject, TFTemplate {
   
   func typeIdentifier() -> String {
     return "basic_page"

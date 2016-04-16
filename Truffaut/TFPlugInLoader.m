@@ -25,8 +25,12 @@
   NSURL *bundleURL = nil;
   while ((bundleURL = enumerator.nextObject)) {
     NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
-    if ([bundle.principalClass conformsToProtocol:@protocol(TFTemplate)]) {
-      id<TFTemplate> template = [bundle.principalClass new];
+    Class principalClass = [bundle principalClass];
+    
+    NSLog(@"Plug-in Loaded: %@", NSStringFromClass(principalClass));
+    
+    if ([principalClass conformsToProtocol:@protocol(TFTemplate)]) {
+      id<TFTemplate> template = [principalClass new];
       results[template.typeIdentifier] = template;
     }
   }
