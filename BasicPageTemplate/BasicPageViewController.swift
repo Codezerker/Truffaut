@@ -19,7 +19,7 @@ class BasicPageViewController: NSViewController {
   func setContents(title title: String, contents: [String]?) {
     titleString = title
     contentString = contents?.reduce("") { result, element in
-      result?.stringByAppendingString(element + "\n\n")
+      result?.stringByAppendingString("・ " + element + "\n\n")
     } ?? ""
   }
   
