@@ -46,7 +46,7 @@ class FileMonitor {
                   kFSEventStreamCreateFlagNoDefer
       
       eventStream = FSEventStreamCreate(
-        nil,
+        kCFAllocatorDefault,
         { _, info, _, _, _, _ in
           let this = unsafeBitCast(info.memory, FileMonitor.self)
           this.eventHandler()
