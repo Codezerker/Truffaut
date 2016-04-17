@@ -101,14 +101,17 @@ extension SlidesViewController {
       self.animating = false
     }
     
-    let isMovingForward = (index > currentPage)
-    
-    if let currentView = currentPageViewController?.view {
-      view.addSubview(pageViewController.view, positioned: isMovingForward ? .Below : .Above, relativeTo: currentView)
-    } else {
+    guard let currentView = currentPageViewController?.view else {
       view.addSubview(pageViewController.view)
+      view.addConstraints(pageViewController.view.fullEdgeLayoutConstrains)
+      addChildViewController(pageViewController)
+      animationCompletion()
+      
+      return
     }
     
+    let isMovingForward = (index > currentPage)
+    view.addSubview(pageViewController.view, positioned: isMovingForward ? .Below : .Above, relativeTo: currentView)
     view.addConstraints(pageViewController.view.fullEdgeLayoutConstrains)
     addChildViewController(pageViewController)
     
@@ -133,15 +136,16 @@ extension SlidesViewController {
     zoomOutAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     zoomOutAnimation.toValue = NSValue(CGPoint: CGPoint(x: zoomOutFactor, y: zoomOutFactor))
 
-    if let currentLayer = currentPageViewController?.view.layer,
-      insertingLayer = pageViewController.view.layer {
-      currentLayer.pop_addAnimation(fadeOutAnimation, forKey: "fade_out")
-      currentLayer.pop_addAnimation(zoomOutAnimation, forKey: "zoom_in")
-      insertingLayer.pop_addAnimation(fadeInAnimation, forKey: "fade_in")
-      insertingLayer.pop_addAnimation(zoomInAnimation, forKey: "zoom_out")
-    } else {
+    guard let currentLayer = currentPageViewController?.view.layer,
+              insertingLayer = pageViewController.view.layer else {
       animationCompletion()
+      return
     }
+    
+    currentLayer.pop_addAnimation(fadeOutAnimation, forKey: "fade_out")
+    currentLayer.pop_addAnimation(zoomOutAnimation, forKey: "zoom_in")
+    insertingLayer.pop_addAnimation(fadeInAnimation, forKey: "fade_in")
+    insertingLayer.pop_addAnimation(zoomInAnimation, forKey: "zoom_out")
   }
   
 }
