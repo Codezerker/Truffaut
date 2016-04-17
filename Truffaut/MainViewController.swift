@@ -47,6 +47,7 @@ class MainViewController: NSViewController {
   }
   
   private func handleFileEvent() {
+    // TODO: Handle Event
     print(#function)
   }
   
