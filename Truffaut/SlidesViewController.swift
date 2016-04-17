@@ -65,6 +65,15 @@ extension SlidesViewController {
 
 extension SlidesViewController {
   
+  struct AnimationConstants {
+    static let scaleFactorZoomIn  = 1.2
+    static let scaleFactorZoomOut = 0.8
+    
+    static let scaleZoomIn  = CGPoint(x: scaleFactorZoomIn, y: scaleFactorZoomIn)
+    static let scaleZoomOut = CGPoint(x: scaleFactorZoomOut, y: scaleFactorZoomOut)
+    static let scaleNormal  = CGPoint(x: 1, y: 1)
+  }
+  
   private func show(pageAtIndex index: Int) {
     guard let pages = pages else {
       return
@@ -125,16 +134,14 @@ extension SlidesViewController {
     let fadeOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
     fadeOutAnimation.toValue = 0
 
-    let zoomInFactor = isMovingForward ? 0.8 : 1.2
     let zoomInAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
     zoomInAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    zoomInAnimation.fromValue = NSValue(CGPoint: CGPoint(x: zoomInFactor, y: zoomInFactor))
-    zoomInAnimation.toValue = NSValue(CGPoint: CGPoint(x: 1.0, y: 1.0))
+    zoomInAnimation.fromValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomOut : AnimationConstants.scaleZoomIn)
+    zoomInAnimation.toValue = NSValue(CGPoint: AnimationConstants.scaleNormal)
     
-    let zoomOutFactor = isMovingForward ? 1.2 : 0.8
     let zoomOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
     zoomOutAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    zoomOutAnimation.toValue = NSValue(CGPoint: CGPoint(x: zoomOutFactor, y: zoomOutFactor))
+    zoomOutAnimation.toValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomIn : AnimationConstants.scaleZoomOut)
 
     guard let currentLayer = currentPageViewController?.view.layer,
               insertingLayer = pageViewController.view.layer else {
