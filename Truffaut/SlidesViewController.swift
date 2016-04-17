@@ -15,12 +15,16 @@ class SlidesViewController: NSViewController {
   private var currentPage = 0
   private weak var currentPageViewController: NSViewController?
   
+  private var animating = false
+  
   private var pages: [Slides.Page]? {
     return (windowController?.document as? Document)?.slides?.pages
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    view.wantsLayer = true
     
     registerNotifications()
   }
@@ -70,25 +74,74 @@ extension SlidesViewController {
       return
     }
     
+    guard !animating else {
+      return
+    }
+    animating = true
+    
     let page = pages[index]
     
     guard let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
       return
     }
     
-    currentPageViewController?.removeFromParentViewController()
-    currentPageViewController?.view.removeFromSuperview()
-    
     let pageViewController = template.createPageViewControllerWithPageTitle(
       page.title,
       bulletPoints: page.bulletPoints)
+    pageViewController.view.wantsLayer = true
     pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(pageViewController.view)
+
+    let animationCompletion: dispatch_block_t = {
+      self.currentPageViewController?.removeFromParentViewController()
+      self.currentPageViewController?.view.removeFromSuperview()
+      
+      self.currentPage = index
+      self.currentPageViewController = pageViewController
+      
+      self.animating = false
+    }
+    
+    let isMovingForward = (index > currentPage)
+    
+    if let currentView = currentPageViewController?.view {
+      view.addSubview(pageViewController.view, positioned: isMovingForward ? .Below : .Above, relativeTo: currentView)
+    } else {
+      view.addSubview(pageViewController.view)
+    }
+    
     view.addConstraints(pageViewController.view.fullEdgeLayoutConstrains)
     addChildViewController(pageViewController)
     
-    currentPage = index
-    currentPageViewController = pageViewController
+    let fadeInAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
+    fadeInAnimation.fromValue = 0
+    fadeInAnimation.toValue = 1
+    fadeInAnimation.completionBlock = { _ in
+      animationCompletion()
+    }
+
+    let fadeOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
+    fadeOutAnimation.toValue = 0
+
+    let zoomInFactor = isMovingForward ? 0.8 : 1.2
+    let zoomInAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
+    zoomInAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    zoomInAnimation.fromValue = NSValue(CGPoint: CGPoint(x: zoomInFactor, y: zoomInFactor))
+    zoomInAnimation.toValue = NSValue(CGPoint: CGPoint(x: 1.0, y: 1.0))
+    
+    let zoomOutFactor = isMovingForward ? 1.2 : 0.8
+    let zoomOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
+    zoomOutAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    zoomOutAnimation.toValue = NSValue(CGPoint: CGPoint(x: zoomOutFactor, y: zoomOutFactor))
+
+    if let currentLayer = currentPageViewController?.view.layer,
+      insertingLayer = pageViewController.view.layer {
+      currentLayer.pop_addAnimation(fadeOutAnimation, forKey: "fade_out")
+      currentLayer.pop_addAnimation(zoomOutAnimation, forKey: "zoom_in")
+      insertingLayer.pop_addAnimation(fadeInAnimation, forKey: "fade_in")
+      insertingLayer.pop_addAnimation(zoomInAnimation, forKey: "zoom_out")
+    } else {
+      animationCompletion()
+    }
   }
   
 }
