@@ -134,14 +134,14 @@ extension SlidesViewController {
     let fadeOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
     fadeOutAnimation.toValue = 0
 
-    let zoomInAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
-    zoomInAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    zoomInAnimation.fromValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomOut : AnimationConstants.scaleZoomIn)
-    zoomInAnimation.toValue = NSValue(CGPoint: AnimationConstants.scaleNormal)
+    let moveInAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
+    moveInAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    moveInAnimation.fromValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomOut : AnimationConstants.scaleZoomIn)
+    moveInAnimation.toValue = NSValue(CGPoint: AnimationConstants.scaleNormal)
     
-    let zoomOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
-    zoomOutAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    zoomOutAnimation.toValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomIn : AnimationConstants.scaleZoomOut)
+    let moveOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
+    moveOutAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    moveOutAnimation.toValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomIn : AnimationConstants.scaleZoomOut)
 
     guard let currentLayer = currentPageViewController?.view.layer,
               insertingLayer = pageViewController.view.layer else {
@@ -150,9 +150,9 @@ extension SlidesViewController {
     }
     
     currentLayer.pop_addAnimation(fadeOutAnimation, forKey: "fade_out")
-    currentLayer.pop_addAnimation(zoomOutAnimation, forKey: "zoom_in")
+    currentLayer.pop_addAnimation(moveOutAnimation, forKey: "zoom_in")
     insertingLayer.pop_addAnimation(fadeInAnimation, forKey: "fade_in")
-    insertingLayer.pop_addAnimation(zoomInAnimation, forKey: "zoom_out")
+    insertingLayer.pop_addAnimation(moveInAnimation, forKey: "zoom_out")
   }
   
 }
