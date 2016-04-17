@@ -14,7 +14,7 @@ class MainViewController: NSViewController {
   
   weak var windowController: MainWindowController?
   
-  lazy var slidesWindowController: SlidesWindowController = {
+  private lazy var slidesWindowController: SlidesWindowController = {
     return SlidesWindowController.loadFromStoryboard()
   }()
   
