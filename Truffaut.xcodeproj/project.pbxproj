@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */; };
 		0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */; };
-		0B6EED861CC26CAA001BC00B /* Catagories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Catagories.swift */; };
+		0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Extensions.swift */; };
 		0B6EED891CC26E4B001BC00B /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED881CC26E4B001BC00B /* Template.swift */; };
 		0B6EED8C1CC26E6A001BC00B /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED8B1CC26E6A001BC00B /* Template.swift */; };
 		0B6EED8F1CC26EB0001BC00B /* BasicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */; };
@@ -62,7 +62,7 @@
 /* Begin PBXFileReference section */
 		0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCoverViewController.swift; sourceTree = "<group>"; };
 		0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCoverViewController.xib; sourceTree = "<group>"; };
-		0B6EED851CC26CAA001BC00B /* Catagories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catagories.swift; sourceTree = "<group>"; };
+		0B6EED851CC26CAA001BC00B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0B6EED871CC26CC5001BC00B /* BasicCoverTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicCoverTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B6EED881CC26E4B001BC00B /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		0B6EED8A1CC26E6A001BC00B /* BasicPageTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicPageTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				0B7C8BE51CBFD166000FE312 /* Main.storyboard */,
 				0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */,
 				0B7C8C011CC1422B000FE312 /* Definitions.swift */,
-				0B6EED851CC26CAA001BC00B /* Catagories.swift */,
+				0B6EED851CC26CAA001BC00B /* Extensions.swift */,
 				0B6EED911CC27568001BC00B /* Menu */,
 				0B7C8BFB1CC13F5D000FE312 /* Document */,
 				0B7C8C081CC2062B000FE312 /* Plugin */,
@@ -380,7 +380,7 @@
 				0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */,
 				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
 				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
-				0B6EED861CC26CAA001BC00B /* Catagories.swift in Sources */,
+				0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */,
 				0B7C8C071CC1DC33000FE312 /* Slides.swift in Sources */,
 				0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */,
 				0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */,

@@ -84,22 +84,7 @@ extension SlidesViewController {
       bulletPoints: page.bulletPoints)
     pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(pageViewController.view)
-    
-    let views = ["slide" : pageViewController.view]
-    let visualFormatStrings: [String] = [
-      "V:|-0-[slide]-0-|",
-      "H:|-0-[slide]-0-|",
-    ]
-    
-    for visualFormatString: String in visualFormatStrings {
-      let constraints = NSLayoutConstraint.constraintsWithVisualFormat(
-        visualFormatString,
-        options: [],
-        metrics: nil,
-        views: views)
-      view.addConstraints(constraints)
-    }
-    
+    view.addConstraints(pageViewController.view.fullEdgeLayoutConstrains)
     addChildViewController(pageViewController)
     
     currentPage = index
