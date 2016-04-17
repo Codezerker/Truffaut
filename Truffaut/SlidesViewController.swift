@@ -73,7 +73,7 @@ extension SlidesViewController {
     let page = pages[index]
     
     guard let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
-        return
+      return
     }
     
     currentPageViewController?.removeFromParentViewController()
