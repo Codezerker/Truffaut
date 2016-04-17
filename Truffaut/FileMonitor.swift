@@ -27,47 +27,44 @@ class FileMonitor {
   }
   
   private func createEventStream() {
-    var this = self
-    withUnsafeMutablePointer(&this) { pointerToThis in
-      var context = FSEventStreamContext(
-        version: 0,
-        info: pointerToThis,
-        retain: nil,
-        release: nil,
-        copyDescription: nil)
-
-      guard let watchPath = fileURL.path else {
-        return
-      }
-      
-      let pathsToWatch = [watchPath]
-      let flags = kFSEventStreamCreateFlagUseCFTypes |
-                  kFSEventStreamCreateFlagFileEvents |
-                  kFSEventStreamCreateFlagNoDefer
-      
-      eventStream = FSEventStreamCreate(
-        kCFAllocatorDefault,
-        { _, info, _, _, _, _ in
-          let this = unsafeBitCast(info.memory, FileMonitor.self)
-          this.eventHandler()
-        },
-        &context,
-        pathsToWatch,
-        UInt64(kFSEventStreamEventIdSinceNow),
-        0,
-        UInt32(flags))
-      
-      guard let eventStream = eventStream else {
-        return
-      }
-      
-      FSEventStreamScheduleWithRunLoop(
-        eventStream,
-        CFRunLoopGetCurrent(),
-        kCFRunLoopDefaultMode)
-      
-      FSEventStreamStart(eventStream)
+    var context = FSEventStreamContext(
+      version: 0,
+      info: UnsafeMutablePointer<Void>(Unmanaged.passUnretained(self).toOpaque()),
+      retain: nil,
+      release: nil,
+      copyDescription: nil)
+    
+    guard let watchPath = fileURL.path else {
+      return
     }
+    
+    let pathsToWatch = [watchPath]
+    let flags = kFSEventStreamCreateFlagUseCFTypes |
+                kFSEventStreamCreateFlagFileEvents |
+                kFSEventStreamCreateFlagNoDefer
+    
+    eventStream = FSEventStreamCreate(
+      kCFAllocatorDefault,
+      { _, info, _, _, _, _ in
+        let this = Unmanaged<FileMonitor>.fromOpaque(COpaquePointer(info)).takeUnretainedValue()
+        this.eventHandler()
+      },
+      &context,
+      pathsToWatch,
+      UInt64(kFSEventStreamEventIdSinceNow),
+      0,
+      UInt32(flags))
+    
+    guard let eventStream = eventStream else {
+      return
+    }
+    
+    FSEventStreamScheduleWithRunLoop(
+      eventStream,
+      CFRunLoopGetCurrent(),
+      kCFRunLoopDefaultMode)
+    
+    FSEventStreamStart(eventStream)
   }
   
   private func destroyEventStream() {
