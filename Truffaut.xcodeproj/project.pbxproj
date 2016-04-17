@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2FB9DC1CC3D66F005A3FEA /* FileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FB9DB1CC3D66F005A3FEA /* FileMonitor.swift */; };
+		0B2FB9DE1CC3D684005A3FEA /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2FB9DD1CC3D684005A3FEA /* CoreServices.framework */; };
 		0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */; };
 		0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */; };
 		0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Extensions.swift */; };
@@ -60,6 +62,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B2FB9DB1CC3D66F005A3FEA /* FileMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMonitor.swift; sourceTree = "<group>"; };
+		0B2FB9DD1CC3D684005A3FEA /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCoverViewController.swift; sourceTree = "<group>"; };
 		0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCoverViewController.xib; sourceTree = "<group>"; };
 		0B6EED851CC26CAA001BC00B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2FB9DE1CC3D684005A3FEA /* CoreServices.framework in Frameworks */,
 				0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +125,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2FB9DA1CC3D634005A3FEA /* FileMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				0B2FB9DB1CC3D66F005A3FEA /* FileMonitor.swift */,
+			);
+			name = FileMonitor;
+			sourceTree = "<group>";
+		};
+		0B2FB9DF1CC3D68B005A3FEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B2FB9DD1CC3D684005A3FEA /* CoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0B6EED841CC26C83001BC00B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
+				0B2FB9DF1CC3D68B005A3FEA /* Frameworks */,
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
 				0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C151CC22748000FE312 /* BasicPageTemplate */,
@@ -168,6 +190,7 @@
 				0B6EED851CC26CAA001BC00B /* Extensions.swift */,
 				0B6EED911CC27568001BC00B /* Menu */,
 				0B7C8BFB1CC13F5D000FE312 /* Document */,
+				0B2FB9DA1CC3D634005A3FEA /* FileMonitor */,
 				0B7C8C081CC2062B000FE312 /* Plugin */,
 				0B7C8BFA1CC13F4A000FE312 /* Main Window */,
 				0B7C8BFC1CC13F91000FE312 /* Slides Window */,
@@ -380,6 +403,7 @@
 				0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */,
 				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
 				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
+				0B2FB9DC1CC3D66F005A3FEA /* FileMonitor.swift in Sources */,
 				0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */,
 				0B7C8C071CC1DC33000FE312 /* Slides.swift in Sources */,
 				0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */,
