@@ -11,12 +11,16 @@
 
 #import <AppKit/AppKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol TFTemplate <NSObject>
 
-- (nonnull NSString *)typeIdentifier;
-- (nonnull NSViewController *)createPageViewControllerWithPageTitle:(nonnull NSString *)title
-                                                       bulletPoints:(nullable NSArray<NSString *> *)bulletPoints;
+- (NSString *)typeIdentifier;
+- (NSViewController *)createPageViewControllerWithPageTitle:(NSString *)title
+                                               bulletPoints:(nullable NSArray<NSString *> *)bulletPoints;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif /* TFSlidesTemplate_h */

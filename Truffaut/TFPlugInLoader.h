@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "TFTemplate.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface TFPlugInLoader : NSObject
 
-+ (nonnull NSDictionary<NSString *, id<TFTemplate>> *)loadSlidesTempatesWithSearchURL:(nonnull NSURL *)searchURL;
++ (NSDictionary<NSString *, id<TFTemplate>> *)loadSlidesTempatesWithSearchURL:(NSURL *)searchURL;
 
 @end
+
+NS_ASSUME_NONNULL_END
