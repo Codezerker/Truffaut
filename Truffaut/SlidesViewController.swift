@@ -27,7 +27,7 @@ class SlidesViewController: NSViewController {
     super.viewDidLoad()
     
     view.wantsLayer = true
-    visualEffectView.material = .Light
+    visualEffectView.material = .UltraDark
     
     registerNotifications()
   }

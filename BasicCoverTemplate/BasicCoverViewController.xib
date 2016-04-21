@@ -30,7 +30,7 @@
                     <rect key="frame" x="18" y="105" width="583" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" alignment="center" title="Lorem ipsum" id="yRW-Ev-PVB">
                         <font key="font" metaFont="systemThin" size="20"/>
-                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
