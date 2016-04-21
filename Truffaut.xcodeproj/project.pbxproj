@@ -276,11 +276,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B7C8BEB1CBFD166000FE312 /* Build configuration list for PBXNativeTarget "Truffaut" */;
 			buildPhases = (
+				0B2FB9E01CC874DC005A3FEA /* Update CFBundleVersion */,
 				0B7C8BD61CBFD166000FE312 /* Sources */,
 				0B7C8BD71CBFD166000FE312 /* Frameworks */,
 				0B7C8BD81CBFD166000FE312 /* Resources */,
 				0B7C8BF71CC139FD000FE312 /* Embed Frameworks */,
 				0B7C8C1A1CC227A7000FE312 /* Embed Slide Templates */,
+				0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */,
 			);
 			buildRules = (
 			);
@@ -393,6 +395,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B2FB9E01CC874DC005A3FEA /* Update CFBundleVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update CFBundleVersion";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "GIT=/usr/bin/git\n\nBUILD_SUFIX=\"\"\n\nif [ $CONFIGURATION == Debug ]\nthen\nBUILD_SUFIX=\"D\"\nfi\n\nbuildNumber=\"`$GIT rev-list HEAD --count`$BUILD_SUFIX\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Recover CFBundleVersion";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=\"auto\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B7C8BD61CBFD166000FE312 /* Sources */ = {
