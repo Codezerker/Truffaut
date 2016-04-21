@@ -32,6 +32,8 @@ class MainViewController: NSViewController {
   @IBAction func showSlides(sender: AnyObject?) {
     windowController?.document?.addWindowController(slidesWindowController)
     slidesWindowController.showWindow(nil)
+    
+    windowController?.window?.orderOut(nil)
   }
   
   private func createFileMonitor(fileURL: NSURL) {

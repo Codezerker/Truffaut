@@ -710,7 +710,21 @@
                     <view key="view" id="GPM-Yq-aZi">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="c6v-fi-bhC">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="c6v-fi-bhC" secondAttribute="trailing" id="P9j-hd-mET"/>
+                            <constraint firstItem="c6v-fi-bhC" firstAttribute="top" secondItem="GPM-Yq-aZi" secondAttribute="top" id="QC0-pI-9pf"/>
+                            <constraint firstItem="c6v-fi-bhC" firstAttribute="leading" secondItem="GPM-Yq-aZi" secondAttribute="leading" id="ogL-6C-e1X"/>
+                            <constraint firstAttribute="bottom" secondItem="c6v-fi-bhC" secondAttribute="bottom" id="pPe-v1-wvd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="visualEffectView" destination="c6v-fi-bhC" id="5vt-Am-IZS"/>
+                    </connections>
                 </viewController>
                 <customObject id="Pe4-yx-JUh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@ import Cocoa
 
 class SlidesViewController: NSViewController {
   
+  @IBOutlet weak var visualEffectView: NSVisualEffectView!
+  
   weak var windowController: NSWindowController?
   
   private var currentPage = 0
@@ -25,6 +27,7 @@ class SlidesViewController: NSViewController {
     super.viewDidLoad()
     
     view.wantsLayer = true
+    visualEffectView.material = .Light
     
     registerNotifications()
   }
