@@ -12,11 +12,11 @@ class BasicCoverViewController: NSViewController {
   
   @IBOutlet weak var titleLabel: NSTextField!
   private var titleString = ""
-  
+    
   func setContents(title: String) {
     titleString = title
   }
-  
+    
   override func viewWillAppear() {
     super.viewWillAppear()
     

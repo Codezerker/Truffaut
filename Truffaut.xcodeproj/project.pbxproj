@@ -35,6 +35,23 @@
 		0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		29F4791E1CC8B49A001CBB63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B7C8C1F1CC227E7000FE312;
+			remoteInfo = BasicCoverTemplate;
+		};
+		29F479201CC8B49A001CBB63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B7C8C131CC22748000FE312;
+			remoteInfo = BasicPageTemplate;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		0B7C8BF71CC139FD000FE312 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -287,6 +304,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				29F4791F1CC8B49A001CBB63 /* PBXTargetDependency */,
+				29F479211CC8B49A001CBB63 /* PBXTargetDependency */,
 			);
 			name = Truffaut;
 			productName = Truffaut;
@@ -467,6 +486,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29F4791F1CC8B49A001CBB63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B7C8C1F1CC227E7000FE312 /* BasicCoverTemplate */;
+			targetProxy = 29F4791E1CC8B49A001CBB63 /* PBXContainerItemProxy */;
+		};
+		29F479211CC8B49A001CBB63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B7C8C131CC22748000FE312 /* BasicPageTemplate */;
+			targetProxy = 29F479201CC8B49A001CBB63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0B7C8BE51CBFD166000FE312 /* Main.storyboard */ = {

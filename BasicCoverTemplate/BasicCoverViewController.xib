@@ -17,18 +17,18 @@
             <rect key="frame" x="0.0" y="0.0" width="619" height="475"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3HG-Jw-c73">
-                    <rect key="frame" x="18" y="212" width="583" height="51"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="r3M-zo-io3">
-                        <font key="font" metaFont="systemUltraLight" size="42"/>
-                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="3HG-Jw-c73">
+                    <rect key="frame" x="18" y="145" width="583" height="186"/>
+                    <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="center" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit." id="r3M-zo-io3">
+                        <font key="font" metaFont="systemThin" size="52"/>
+                        <color key="textColor" red="0.98039215686274506" green="0.21176470588235294" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="3HG-Jw-c73" secondAttribute="trailing" constant="20" id="6Tm-Lp-xOU"/>
-                <constraint firstItem="3HG-Jw-c73" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="bIr-C7-qhe"/>
+                <constraint firstItem="3HG-Jw-c73" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="LRx-lg-V91"/>
                 <constraint firstItem="3HG-Jw-c73" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="glA-Ke-Y36"/>
             </constraints>
             <point key="canvasLocation" x="515.5" y="518.5"/>
