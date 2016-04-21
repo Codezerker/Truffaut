@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BasicCoverViewController" customModule="BasicCoverTemplate" customModuleProvider="target">
             <connections>
+                <outlet property="subtitleLabel" destination="Hw9-S3-jVi" id="vZW-Mk-uZR"/>
                 <outlet property="titleLabel" destination="3HG-Jw-c73" id="nog-Xb-GPF"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -25,11 +26,24 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hw9-S3-jVi">
+                    <rect key="frame" x="18" y="105" width="583" height="24"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Lorem ipsum" id="yRW-Ev-PVB">
+                        <font key="font" metaFont="systemThin" size="20"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="3HG-Jw-c73" secondAttribute="trailing" constant="20" id="6Tm-Lp-xOU"/>
+                <constraint firstItem="Hw9-S3-jVi" firstAttribute="trailing" secondItem="3HG-Jw-c73" secondAttribute="trailing" id="LIO-ep-90e"/>
                 <constraint firstItem="3HG-Jw-c73" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="LRx-lg-V91"/>
+                <constraint firstItem="Hw9-S3-jVi" firstAttribute="leading" secondItem="3HG-Jw-c73" secondAttribute="leading" id="PUo-Jd-t1f"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Hw9-S3-jVi" secondAttribute="bottom" constant="20" id="PuJ-yf-6s4"/>
+                <constraint firstItem="Hw9-S3-jVi" firstAttribute="top" secondItem="3HG-Jw-c73" secondAttribute="bottom" constant="16" id="RqT-SE-a03"/>
                 <constraint firstItem="3HG-Jw-c73" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="glA-Ke-Y36"/>
+                <constraint firstItem="Hw9-S3-jVi" firstAttribute="centerX" secondItem="3HG-Jw-c73" secondAttribute="centerX" id="mfM-So-IU9"/>
             </constraints>
             <point key="canvasLocation" x="515.5" y="518.5"/>
         </customView>

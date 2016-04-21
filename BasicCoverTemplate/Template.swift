@@ -19,7 +19,7 @@ class Template: NSObject, TFTemplate {
       nibName: BasicCoverViewController().className,
       bundle: NSBundle(forClass: BasicCoverViewController.classForCoder()))!
     
-    viewController.setContents(title)
+    viewController.setContents(title: title, subtitle: bulletPoints?.joinWithSeparator(" | "))
     
     return viewController
   }
