@@ -33,6 +33,14 @@
 		0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */; };
 		0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; };
+		29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29A7E86B1CC9FFB1005E40D8 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8651CC9FEAA005E40D8 /* Commandant.framework */; };
+		29A7E86C1CC9FFB1005E40D8 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8651CC9FEAA005E40D8 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29A7E86D1CC9FFB1005E40D8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8661CC9FEAA005E40D8 /* Result.framework */; };
+		29A7E86E1CC9FFB1005E40D8 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8661CC9FEAA005E40D8 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */; };
+		29A7E8701CC9FFB1005E40D8 /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +67,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				29A7E86C1CC9FFB1005E40D8 /* Commandant.framework in Embed Frameworks */,
+				29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */,
 				0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */,
+				29A7E86E1CC9FFB1005E40D8 /* Result.framework in Embed Frameworks */,
+				29A7E8701CC9FFB1005E40D8 /* SWXMLHash.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +125,10 @@
 		0B7C8C161CC22748000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicCoverTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8C221CC227E7000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Carthage/Build/Mac/SourceKittenFramework.framework; sourceTree = "<group>"; };
+		29A7E8651CC9FEAA005E40D8 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
+		29A7E8661CC9FEAA005E40D8 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +137,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2FB9DE1CC3D684005A3FEA /* CoreServices.framework in Frameworks */,
+				29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */,
+				29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */,
+				29A7E86D1CC9FFB1005E40D8 /* Result.framework in Frameworks */,
+				29A7E86B1CC9FFB1005E40D8 /* Commandant.framework in Frameworks */,
 				0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +239,11 @@
 		0B7C8BEE1CBFEA2B000FE312 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				29A7E8651CC9FEAA005E40D8 /* Commandant.framework */,
+				29A7E8661CC9FEAA005E40D8 /* Result.framework */,
+				29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */,
 				0B7C8BF31CC139EB000FE312 /* pop.framework */,
+				29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */,
 			);
 			name = Carthage;
 			sourceTree = "<group>";
@@ -358,6 +382,7 @@
 				TargetAttributes = {
 					0B7C8BD91CBFD166000FE312 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 37G4TUHERL;
 					};
 					0B7C8C131CC22748000FE312 = {
 						CreatedOnToolsVersion = 7.3;
@@ -599,6 +624,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Yan Li (37G4TUHERL)";
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -619,6 +645,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Yan Li (37G4TUHERL)";
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
