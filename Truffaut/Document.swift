@@ -8,6 +8,10 @@
 
 import Cocoa
 
+protocol DocumentDataParsing {
+  func parse(data: NSData) -> [Slides.PageJSON]?
+}
+
 class Document: NSDocument {
   
   enum Error: ErrorType {
@@ -30,14 +34,13 @@ class Document: NSDocument {
   }
 
   override func readFromData(data: NSData, ofType typeName: String) throws {
-    let json = try NSJSONSerialization.JSONObjectWithData(data, options: [])
-    
-    guard let slidesJSON = json as? [Slides.PageJSON] else {
+    if let slidesJSON = JSONParser().parse(data) {
+      slides = try Slides(json: slidesJSON)
+    } else if let slidesJSON = SwiftParser().parse(data) {
+      slides = try Slides(json: slidesJSON)
+    } else {
       throw Error.InvalidData
     }
-    
-    self.slides = try Slides(json: slidesJSON)
   }
 
 }
-
