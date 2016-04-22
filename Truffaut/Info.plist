@@ -9,7 +9,7 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>tfft</string>
+				<string>json</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string></string>
