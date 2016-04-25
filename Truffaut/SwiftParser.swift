@@ -32,8 +32,6 @@ struct SwiftParser: DocumentDataParsing {
   private struct Names {
     static let slides       = "Slides"
     static let pages        = "pages"
-    static let cover        = "Cover"
-    static let page         = "Page"
     static let title        = "title"
     static let bulletPoints = "bulletPoints"
   }
@@ -93,16 +91,6 @@ private extension SwiftParser {
       return nil
     }
     
-    let type: String
-    switch name {
-    case Names.cover:
-      type = "basic_cover" // FIXME: Use predefined string constants
-    case Names.page:
-      type = "basic_page" // FIXME: Use predefined string constants
-    default: // TODO: Handle types in plugins
-      return nil
-    }
-    
     guard let subexpressions = token[Keys.substructure] as? [SourceKitRepresentable] where subexpressions.count == 2,
           let titleToken = subexpressions.first as? [String : SourceKitRepresentable],
           let title = parseElementTitle(titleToken, contentString: contentString) else {
@@ -112,7 +100,7 @@ private extension SwiftParser {
     let bulletPoints = parseElementBulletPoints(subexpressions.last as? [String : SourceKitRepresentable], contentString: contentString)
     
     return [
-      Slides.JSONKeys.typeIdentifier : type,
+      Slides.JSONKeys.typeIdentifier : name,
       Slides.JSONKeys.title : title,
       Slides.JSONKeys.bulletPoints : bulletPoints,
     ]

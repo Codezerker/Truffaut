@@ -1,10 +1,10 @@
 [
 	{
-		"type" : "basic_cover",
+		"type" : "Cover",
 		"title" : "Welcome!"
 	},
 	{
-		"type" : "basic_page",
+		"type" : "Page",
 		"title" : "Hello World",
 		"bullet_points" : [
 			"Bullet Point 1",
@@ -15,7 +15,7 @@
 		]
 	},
 	{
-		"type" : "basic_page",
+		"type" : "Page",
 		"title" : "Blablabla",
 		"bullet_points" : [
 			"Bullet Point 1",

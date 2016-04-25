@@ -11,7 +11,7 @@ import Cocoa
 class Template: NSObject, TFTemplate {
   
   func typeIdentifier() -> String {
-    return "basic_page"
+    return "Page"
   }
   
   func createPageViewControllerWithPageTitle(title: String, bulletPoints: [String]?) -> NSViewController {

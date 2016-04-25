@@ -11,7 +11,7 @@ struct Slides {
   struct JSONKeys {
     static let typeIdentifier = "type"
     static let title = "title"
-    static let bulletPoints = "bullet_points"
+    static let bulletPoints = "bulletPoints"
   }
   
   struct Page {
