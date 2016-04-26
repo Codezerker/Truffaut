@@ -19,4 +19,11 @@ let slides = Slides(pages: [
 			"Point 2.4",
 			"Point 2.5",
 			]),
+
+  // Tests
+  Page(title: "中文内容测试", bulletPoints: [
+    "Unicode is great",
+    "String is hard",
+    "中文处理很难",
+  ]),
 ])

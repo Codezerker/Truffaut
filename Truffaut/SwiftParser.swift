@@ -44,8 +44,6 @@ struct SwiftParser: DocumentDataParsing {
     let file = File(contents: contentString)
     let structure = Structure(file: file).dictionary
     
-    print(structure.description)
-    
     guard let rootExpressions = structure[Keys.substructure] as? [SourceKitRepresentable] where rootExpressions.count == 2,
           let slideInitializeToken = rootExpressions.last as? [String : SourceKitRepresentable],
           let initializeTokenKind = slideInitializeToken[Keys.kind] as? String where initializeTokenKind == Kinds.functionCall,
@@ -161,10 +159,10 @@ private extension String {
   
   func extractTokenValueAtRange(range: NSRange) -> String {
     // FIXME: Find a more generic way to remove '"' and '"' characters
-    let bodyRange = NSRange(location: range.location, length: range.length)
+    let bodyRange = NSRange(location: range.location + 1, length: range.length - 2)
     let result = (self as NSString).substringWithRange(bodyRange)
 
-    print("Extracting: \(range) -> \(result)")
+    print("Extract token with range: \(range) -> \(result)")
     
     return result
   }
