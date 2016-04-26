@@ -159,8 +159,9 @@ private extension String {
   
   func extractTokenValueAtRange(range: NSRange) -> String {
     // FIXME: Find a more generic way to remove '"' and '"' characters
-    let bodyRange = NSRange(location: range.location + 1, length: range.length - 2)
-    let result = (self as NSString).substringWithRange(bodyRange)
+    guard let result = (self as NSString).substringWithByteRange(start: range.location + 1, length: range.length - 2) else {
+      return ""
+    }
 
     print("Extract token with range: \(range) -> \(result)")
     
