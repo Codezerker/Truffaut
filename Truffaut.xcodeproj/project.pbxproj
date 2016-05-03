@@ -34,10 +34,11 @@
 		0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9D1CD8B46A001A992B /* AppDelegate.swift */; };
-		29653BA01CD8B46A001A992B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9F1CD8B46A001A992B /* ViewController.swift */; };
+		29653BA01CD8B46A001A992B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9F1CD8B46A001A992B /* WelcomeViewController.swift */; };
 		29653BA31CD8B46A001A992B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA11CD8B46A001A992B /* Main.storyboard */; };
 		29653BA51CD8B46A001A992B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA41CD8B46A001A992B /* Assets.xcassets */; };
 		29653BA81CD8B46A001A992B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */; };
+		29653BAE1CD8B72C001A992B /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */; };
 		29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; };
 		29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29A7E86B1CC9FFB1005E40D8 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8651CC9FEAA005E40D8 /* Commandant.framework */; };
@@ -134,11 +135,12 @@
 		0B7C8C221CC227E7000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29653B9B1CD8B46A001A992B /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29653B9D1CD8B46A001A992B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29653B9F1CD8B46A001A992B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29653B9F1CD8B46A001A992B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		29653BA21CD8B46A001A992B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29653BA41CD8B46A001A992B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29653BA71CD8B46A001A992B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29653BA91CD8B46A001A992B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Carthage/Build/Mac/SourceKittenFramework.framework; sourceTree = "<group>"; };
 		29A7E8651CC9FEAA005E40D8 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		29A7E8661CC9FEAA005E40D8 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29653BAE1CD8B72C001A992B /* MultipeerConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +202,7 @@
 				0B2FB9DD1CC3D684005A3FEA /* CoreServices.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0B6EED841CC26C83001BC00B /* Supporting Files */ = {
@@ -221,8 +225,6 @@
 		0B7C8BD11CBFD166000FE312 = {
 			isa = PBXGroup;
 			children = (
-				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
-				0B2FB9DF1CC3D68B005A3FEA /* Frameworks */,
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
 				0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C151CC22748000FE312 /* BasicPageTemplate */,
@@ -245,6 +247,8 @@
 		0B7C8BDC1CBFD166000FE312 /* Truffaut */ = {
 			isa = PBXGroup;
 			children = (
+				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
+				0B2FB9DF1CC3D68B005A3FEA /* Frameworks */,
 				0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */,
 				0B7C8BE51CBFD166000FE312 /* Main.storyboard */,
 				0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */,
@@ -271,6 +275,7 @@
 				29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */,
 			);
 			name = Carthage;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0B7C8BFA1CC13F4A000FE312 /* Main Window */ = {
@@ -341,11 +346,12 @@
 			isa = PBXGroup;
 			children = (
 				29653B9D1CD8B46A001A992B /* AppDelegate.swift */,
-				29653B9F1CD8B46A001A992B /* ViewController.swift */,
+				29653B9F1CD8B46A001A992B /* WelcomeViewController.swift */,
 				29653BA11CD8B46A001A992B /* Main.storyboard */,
 				29653BA41CD8B46A001A992B /* Assets.xcassets */,
 				29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */,
 				29653BA91CD8B46A001A992B /* Info.plist */,
+				29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -587,7 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29653BA01CD8B46A001A992B /* ViewController.swift in Sources */,
+				29653BA01CD8B46A001A992B /* WelcomeViewController.swift in Sources */,
 				29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
