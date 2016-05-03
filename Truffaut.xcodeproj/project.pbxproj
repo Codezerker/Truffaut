@@ -33,6 +33,11 @@
 		0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */; };
 		0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9D1CD8B46A001A992B /* AppDelegate.swift */; };
+		29653BA01CD8B46A001A992B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9F1CD8B46A001A992B /* ViewController.swift */; };
+		29653BA31CD8B46A001A992B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA11CD8B46A001A992B /* Main.storyboard */; };
+		29653BA51CD8B46A001A992B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA41CD8B46A001A992B /* Assets.xcassets */; };
+		29653BA81CD8B46A001A992B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */; };
 		29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; };
 		29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29A7E86B1CC9FFB1005E40D8 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8651CC9FEAA005E40D8 /* Commandant.framework */; };
@@ -127,6 +132,13 @@
 		0B7C8C161CC22748000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicCoverTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8C221CC227E7000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29653B9B1CD8B46A001A992B /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29653B9D1CD8B46A001A992B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29653B9F1CD8B46A001A992B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29653BA21CD8B46A001A992B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29653BA41CD8B46A001A992B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29653BA71CD8B46A001A992B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		29653BA91CD8B46A001A992B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Carthage/Build/Mac/SourceKittenFramework.framework; sourceTree = "<group>"; };
 		29A7E8651CC9FEAA005E40D8 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		29A7E8661CC9FEAA005E40D8 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
@@ -157,6 +169,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B7C8C1D1CC227E7000FE312 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29653B981CD8B46A001A992B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
+				29653B9C1CD8B46A001A992B /* Remote */,
 				0B2FB9DF1CC3D68B005A3FEA /* Frameworks */,
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
 				0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */,
@@ -217,6 +237,7 @@
 				0B7C8BDA1CBFD166000FE312 /* Truffaut.app */,
 				0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */,
 				0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */,
+				29653B9B1CD8B46A001A992B /* Remote.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +337,19 @@
 			path = BasicCoverTemplate;
 			sourceTree = "<group>";
 		};
+		29653B9C1CD8B46A001A992B /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				29653B9D1CD8B46A001A992B /* AppDelegate.swift */,
+				29653B9F1CD8B46A001A992B /* ViewController.swift */,
+				29653BA11CD8B46A001A992B /* Main.storyboard */,
+				29653BA41CD8B46A001A992B /* Assets.xcassets */,
+				29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */,
+				29653BA91CD8B46A001A992B /* Info.plist */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,6 +410,23 @@
 			productReference = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
+		29653B9A1CD8B46A001A992B /* Remote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29653BAC1CD8B46A001A992B /* Build configuration list for PBXNativeTarget "Remote" */;
+			buildPhases = (
+				29653B971CD8B46A001A992B /* Sources */,
+				29653B981CD8B46A001A992B /* Frameworks */,
+				29653B991CD8B46A001A992B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Remote;
+			productName = Remote;
+			productReference = 29653B9B1CD8B46A001A992B /* Remote.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -396,6 +447,9 @@
 					0B7C8C1F1CC227E7000FE312 = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					29653B9A1CD8B46A001A992B = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = 0B7C8BD51CBFD166000FE312 /* Build configuration list for PBXProject "Truffaut" */;
@@ -414,6 +468,7 @@
 				0B7C8BD91CBFD166000FE312 /* Truffaut */,
 				0B7C8C1F1CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C131CC22748000FE312 /* BasicPageTemplate */,
+				29653B9A1CD8B46A001A992B /* Remote */,
 			);
 		};
 /* End PBXProject section */
@@ -441,6 +496,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29653B991CD8B46A001A992B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29653BA81CD8B46A001A992B /* LaunchScreen.storyboard in Resources */,
+				29653BA51CD8B46A001A992B /* Assets.xcassets in Resources */,
+				29653BA31CD8B46A001A992B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +583,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29653B971CD8B46A001A992B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29653BA01CD8B46A001A992B /* ViewController.swift in Sources */,
+				29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -540,6 +614,22 @@
 				0B7C8BE61CBFD166000FE312 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		29653BA11CD8B46A001A992B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29653BA21CD8B46A001A992B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29653BA71CD8B46A001A992B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -734,6 +824,41 @@
 			};
 			name = Release;
 		};
+		29653BAA1CD8B46A001A992B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yan Li (D6D98RMPZC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yan Li (D6D98RMPZC)";
+				INFOPLIST_FILE = Remote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.Truffaut.Remote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "468bb8c9-fdd7-4f4c-b977-1f23149a364e";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29653BAB1CD8B46A001A992B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yan Li (37G4TUHERL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yan Li (37G4TUHERL)";
+				INFOPLIST_FILE = Remote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.Truffaut.Remote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "54a84958-91a5-4c1d-9b49-6a03b8c98d7f";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -772,6 +897,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		29653BAC1CD8B46A001A992B /* Build configuration list for PBXNativeTarget "Remote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29653BAA1CD8B46A001A992B /* Debug */,
+				29653BAB1CD8B46A001A992B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
