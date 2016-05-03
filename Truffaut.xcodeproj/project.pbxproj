@@ -222,11 +222,11 @@
 			isa = PBXGroup;
 			children = (
 				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
-				29653B9C1CD8B46A001A992B /* Remote */,
 				0B2FB9DF1CC3D68B005A3FEA /* Frameworks */,
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
 				0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C151CC22748000FE312 /* BasicPageTemplate */,
+				29653B9C1CD8B46A001A992B /* Remote */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
 			);
 			sourceTree = "<group>";
