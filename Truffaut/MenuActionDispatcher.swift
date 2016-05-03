@@ -34,4 +34,21 @@ struct MenuActionDispatcher {
     actionType.sendNotification()
   }
   
+  static func dispatchAction(command: RemoteProtocol.Command) {
+    command.actionType.sendNotification()
+  }
+  
+}
+
+private extension RemoteProtocol.Command {
+  
+  var actionType: MenuActionDispatcher.ActionType {
+    switch self {
+    case Next:
+      return .Next
+    case Previous:
+      return .Previous
+    }
+  }
+  
 }

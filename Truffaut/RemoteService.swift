@@ -47,6 +47,12 @@ extension RemoteServer: MCSessionDelegate {
   
   func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
     print("\(#function) \(data.length) - \(peerID)")
+    
+    guard let command = RemoteProtocol.Command(data: data) else {
+      return
+    }
+    
+    MenuActionDispatcher.dispatchAction(command)
   }
   
   func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
