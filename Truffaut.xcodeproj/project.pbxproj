@@ -17,6 +17,10 @@
 		0B6EED8F1CC26EB0001BC00B /* BasicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */; };
 		0B6EED901CC26EB0001BC00B /* BasicPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */; };
 		0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */; };
+		0B73AAA21CD8E06700ADEBD4 /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA11CD8E06700ADEBD4 /* RemoteService.swift */; };
+		0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */; };
+		0B73AAA71CD8E3FD00ADEBD4 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA61CD8E3FD00ADEBD4 /* RemoteProtocol.swift */; };
+		0B73AAA81CD8E3FD00ADEBD4 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA61CD8E3FD00ADEBD4 /* RemoteProtocol.swift */; };
 		0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */; };
 		0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */; };
 		0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* Document.swift */; };
@@ -111,6 +115,9 @@
 		0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPageViewController.swift; sourceTree = "<group>"; };
 		0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPageViewController.xib; sourceTree = "<group>"; };
 		0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionDispatcher.swift; sourceTree = "<group>"; };
+		0B73AAA11CD8E06700ADEBD4 /* RemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
+		0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		0B73AAA61CD8E3FD00ADEBD4 /* RemoteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteProtocol.swift; sourceTree = "<group>"; };
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
 				0B2FB9DE1CC3D684005A3FEA /* CoreServices.framework in Frameworks */,
 				29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */,
 				29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */,
@@ -188,17 +196,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B2FB9DA1CC3D634005A3FEA /* FileMonitor */ = {
+		0B2FB9DA1CC3D634005A3FEA /* File Monitor */ = {
 			isa = PBXGroup;
 			children = (
 				0B2FB9DB1CC3D66F005A3FEA /* FileMonitor.swift */,
 			);
-			name = FileMonitor;
+			name = "File Monitor";
 			sourceTree = "<group>";
 		};
 		0B2FB9DF1CC3D68B005A3FEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */,
 				0B2FB9DD1CC3D684005A3FEA /* CoreServices.framework */,
 			);
 			name = Frameworks;
@@ -222,9 +231,26 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		0B73AAA01CD8E04C00ADEBD4 /* Remote Service */ = {
+			isa = PBXGroup;
+			children = (
+				0B73AAA11CD8E06700ADEBD4 /* RemoteService.swift */,
+			);
+			name = "Remote Service";
+			sourceTree = "<group>";
+		};
+		0B73AAA51CD8E3E500ADEBD4 /* Remote Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0B73AAA61CD8E3FD00ADEBD4 /* RemoteProtocol.swift */,
+			);
+			name = "Remote Protocol";
+			sourceTree = "<group>";
+		};
 		0B7C8BD11CBFD166000FE312 = {
 			isa = PBXGroup;
 			children = (
+				0B73AAA51CD8E3E500ADEBD4 /* Remote Protocol */,
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
 				0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C151CC22748000FE312 /* BasicPageTemplate */,
@@ -256,8 +282,9 @@
 				0B6EED851CC26CAA001BC00B /* Extensions.swift */,
 				0B6EED911CC27568001BC00B /* Menu */,
 				0B7C8BFB1CC13F5D000FE312 /* Document */,
-				0B2FB9DA1CC3D634005A3FEA /* FileMonitor */,
+				0B2FB9DA1CC3D634005A3FEA /* File Monitor */,
 				0B7C8C081CC2062B000FE312 /* Plugin */,
+				0B73AAA01CD8E04C00ADEBD4 /* Remote Service */,
 				0B7C8BFA1CC13F4A000FE312 /* Main Window */,
 				0B7C8BFC1CC13F91000FE312 /* Slides Window */,
 				0B6EED841CC26C83001BC00B /* Supporting Files */,
@@ -564,6 +591,8 @@
 				0B7C8C071CC1DC33000FE312 /* Slides.swift in Sources */,
 				0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */,
 				0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */,
+				0B73AAA21CD8E06700ADEBD4 /* RemoteService.swift in Sources */,
+				0B73AAA71CD8E3FD00ADEBD4 /* RemoteProtocol.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
 				0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */,
@@ -593,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B73AAA81CD8E3FD00ADEBD4 /* RemoteProtocol.swift in Sources */,
 				29653BA01CD8B46A001A992B /* WelcomeViewController.swift in Sources */,
 				29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */,
 			);
@@ -911,6 +941,7 @@
 				29653BAB1CD8B46A001A992B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

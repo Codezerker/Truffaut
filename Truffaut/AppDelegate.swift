@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     PlugIn.sharedPlugIn.loadPlugIns()
+    RemoteServer.sharedServer.start()
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {

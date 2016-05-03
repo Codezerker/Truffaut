@@ -9,15 +9,15 @@
 import UIKit
 import MultipeerConnectivity
 
-struct Service {
-  static let session = MCSession(peer: MCPeerID(displayName: "Remote: \(UIDevice.currentDevice().name)"))
-  static let type = "truffaut-remote"
-}
-
 class WelcomeViewController: UIViewController {
   
+  let remoteSession: MCSession = {
+    let peerID = MCPeerID(displayName: "Remote: \(UIDevice.currentDevice().name)")
+    return MCSession(peer: peerID)
+  }()
+  
   @IBAction func searchTapped() {
-    let browserViewController = MCBrowserViewController(serviceType: Service.type, session: Service.session)
+    let browserViewController = MCBrowserViewController(serviceType: RemoteProtocol.serviceType, session: remoteSession)
     browserViewController.delegate = self
     presentViewController(browserViewController, animated: true, completion: nil)
   }
