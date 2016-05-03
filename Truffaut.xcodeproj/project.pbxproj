@@ -17,7 +17,7 @@
 		0B6EED8F1CC26EB0001BC00B /* BasicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */; };
 		0B6EED901CC26EB0001BC00B /* BasicPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */; };
 		0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */; };
-		0B73AAA21CD8E06700ADEBD4 /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA11CD8E06700ADEBD4 /* RemoteService.swift */; };
+		0B73AAA21CD8E06700ADEBD4 /* RemoteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA11CD8E06700ADEBD4 /* RemoteServer.swift */; };
 		0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */; };
 		0B73AAA71CD8E3FD00ADEBD4 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA61CD8E3FD00ADEBD4 /* RemoteProtocol.swift */; };
 		0B73AAA81CD8E3FD00ADEBD4 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA61CD8E3FD00ADEBD4 /* RemoteProtocol.swift */; };
@@ -115,7 +115,7 @@
 		0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPageViewController.swift; sourceTree = "<group>"; };
 		0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPageViewController.xib; sourceTree = "<group>"; };
 		0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionDispatcher.swift; sourceTree = "<group>"; };
-		0B73AAA11CD8E06700ADEBD4 /* RemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
+		0B73AAA11CD8E06700ADEBD4 /* RemoteServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteServer.swift; sourceTree = "<group>"; };
 		0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		0B73AAA61CD8E3FD00ADEBD4 /* RemoteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteProtocol.swift; sourceTree = "<group>"; };
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,7 +234,7 @@
 		0B73AAA01CD8E04C00ADEBD4 /* Remote Service */ = {
 			isa = PBXGroup;
 			children = (
-				0B73AAA11CD8E06700ADEBD4 /* RemoteService.swift */,
+				0B73AAA11CD8E06700ADEBD4 /* RemoteServer.swift */,
 			);
 			name = "Remote Service";
 			sourceTree = "<group>";
@@ -591,7 +591,7 @@
 				0B7C8C071CC1DC33000FE312 /* Slides.swift in Sources */,
 				0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */,
 				0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */,
-				0B73AAA21CD8E06700ADEBD4 /* RemoteService.swift in Sources */,
+				0B73AAA21CD8E06700ADEBD4 /* RemoteServer.swift in Sources */,
 				0B73AAA71CD8E3FD00ADEBD4 /* RemoteProtocol.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,

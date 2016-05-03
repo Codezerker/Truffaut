@@ -52,7 +52,9 @@ extension RemoteServer: MCSessionDelegate {
       return
     }
     
-    MenuActionDispatcher.dispatchAction(command)
+    dispatch_async(dispatch_get_main_queue()) {
+      MenuActionDispatcher.dispatchAction(command)
+    }
   }
   
   func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
