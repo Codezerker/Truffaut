@@ -447,9 +447,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29653BAC1CD8B46A001A992B /* Build configuration list for PBXNativeTarget "Remote" */;
 			buildPhases = (
+				0B73AAA91CD8FCFE00ADEBD4 /* Update CFBundleVersion */,
 				29653B971CD8B46A001A992B /* Sources */,
 				29653B981CD8B46A001A992B /* Frameworks */,
 				29653B991CD8B46A001A992B /* Resources */,
+				0B73AAAA1CD8FD0F00ADEBD4 /* Recover CFBundleVersion */,
 			);
 			buildRules = (
 			);
@@ -560,6 +562,34 @@
 			shellScript = "GIT=/usr/bin/git\n\nBUILD_SUFIX=\"\"\n\nif [ $CONFIGURATION == Debug ]\nthen\nBUILD_SUFIX=\"D\"\nfi\n\nbuildNumber=\"`$GIT rev-list HEAD --count`$BUILD_SUFIX\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
 		0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Recover CFBundleVersion";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=\"auto\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		0B73AAA91CD8FCFE00ADEBD4 /* Update CFBundleVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update CFBundleVersion";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "GIT=/usr/bin/git\n\nBUILD_SUFIX=\"\"\n\nif [ $CONFIGURATION == Debug ]\nthen\nBUILD_SUFIX=\"D\"\nfi\n\nbuildNumber=\"`$GIT rev-list HEAD --count`$BUILD_SUFIX\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		0B73AAAA1CD8FD0F00ADEBD4 /* Recover CFBundleVersion */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
