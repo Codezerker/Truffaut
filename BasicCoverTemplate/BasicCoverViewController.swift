@@ -10,8 +10,8 @@ import Cocoa
 
 class BasicCoverViewController: NSViewController {
   
-  @IBOutlet weak var titleLabel: NSTextField!
-  @IBOutlet weak var subtitleLabel: NSTextField!
+  @IBOutlet weak var titleLabel: NSTextField?
+  @IBOutlet weak var subtitleLabel: NSTextField?
   
   private var titleString = ""
   private var subtitleString: String?
@@ -19,16 +19,17 @@ class BasicCoverViewController: NSViewController {
   func setContents(title title: String, subtitle: String?) {
     titleString = title
     subtitleString = subtitle
+    updateContents()
   }
     
   override func viewWillAppear() {
     super.viewWillAppear()
-    
-    titleLabel.stringValue = titleString
-    
-    if let subtitleString = subtitleString {
-      subtitleLabel.stringValue = subtitleString
-    }
+    updateContents()
+  }
+  
+  private func updateContents() {
+    titleLabel?.stringValue = titleString
+    subtitleLabel?.stringValue = subtitleString ?? ""
   }
   
 }

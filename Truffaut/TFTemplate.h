@@ -16,8 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol TFTemplate <NSObject>
 
 - (NSString *)typeIdentifier;
-- (NSViewController *)createPageViewControllerWithPageTitle:(NSString *)title
-                                               bulletPoints:(nullable NSArray<NSString *> *)bulletPoints;
+- (NSViewController *)createPageViewController;
+
+- (void)setPageTitleForViewController:(NSViewController *)viewController
+                            withTitle:(NSString *)title
+                         bulletPoints:(nullable NSArray<NSString *> *)bulletPoints;
 
 @end
 

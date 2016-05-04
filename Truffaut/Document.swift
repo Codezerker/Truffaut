@@ -14,6 +14,10 @@ protocol DocumentDataParsing {
 
 class Document: NSDocument {
   
+  struct Notifications {
+    static let update = "update"
+  }
+  
   enum Error: ErrorType {
     case InvalidData
   }
@@ -41,6 +45,8 @@ class Document: NSDocument {
     } else {
       throw Error.InvalidData
     }
+    
+    NSNotificationCenter.defaultCenter().postNotificationName(Notifications.update, object: self)
   }
 
 }

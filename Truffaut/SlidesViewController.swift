@@ -54,6 +54,12 @@ extension SlidesViewController {
       selector: #selector(showNext),
       name: MenuActionDispatcher.ActionType.Next.notificationName,
       object: nil)
+    
+    NSNotificationCenter.defaultCenter().addObserver(
+      self,
+      selector: #selector(updateVisiblePage),
+      name: Document.Notifications.update,
+      object: nil)
   }
   
   @objc private func showPrevious() {
@@ -62,6 +68,21 @@ extension SlidesViewController {
   
   @objc private func showNext() {
     show(pageAtIndex: currentPage + 1)
+  }
+  
+  @objc private func updateVisiblePage() {
+    print(#function)
+    
+    guard let page = pages?[currentPage],
+          let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier],
+          let currentPageViewController = currentPageViewController else {
+      return
+    }
+    
+    template.setPageTitleForViewController(
+      currentPageViewController,
+      withTitle: page.title,
+      bulletPoints: page.bulletPoints)
   }
   
 }
@@ -97,9 +118,13 @@ extension SlidesViewController {
       return
     }
     
-    let pageViewController = template.createPageViewControllerWithPageTitle(
-      page.title,
+    let pageViewController = template.createPageViewController()
+    
+    template.setPageTitleForViewController(
+      pageViewController,
+      withTitle: page.title,
       bulletPoints: page.bulletPoints)
+    
     pageViewController.view.wantsLayer = true
     pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
