@@ -14,8 +14,6 @@ class MainViewController: NSViewController {
   
   weak var windowController: MainWindowController?
   
-  private var fileMonitor: FileMonitor?
-  
   private lazy var slidesWindowController: SlidesWindowController = {
     return SlidesWindowController.loadFromStoryboard()
   }()
@@ -25,7 +23,6 @@ class MainViewController: NSViewController {
     
     if let fileURL = (windowController?.document as? Document)?.fileURL {
       pathControl.URL = fileURL
-      createFileMonitor(fileURL)
     }
   }
   
@@ -34,23 +31,6 @@ class MainViewController: NSViewController {
     slidesWindowController.showWindow(nil)
     
     windowController?.window?.orderOut(nil)
-  }
-  
-  private func createFileMonitor(fileURL: NSURL) {
-    guard fileMonitor == nil else {
-      return
-    }
-    
-    fileMonitor = FileMonitor(fileURL: fileURL) { [weak self] in
-      dispatch_async(dispatch_get_main_queue()) {
-        self?.handleFileEvent()
-      }
-    }
-  }
-  
-  private func handleFileEvent() {
-    // TODO: Handle Event
-    print(#function)
   }
   
 }
