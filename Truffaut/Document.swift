@@ -19,6 +19,19 @@ class Document: NSDocument {
   }
   
   var slides: Slides?
+    
+  private var fileMonitor: FileMonitor?
+  
+  override init() {
+    super.init()
+    
+    guard let fileURL = fileURL else {
+      return
+    }
+    fileMonitor = FileMonitor(fileURL: fileURL) { [weak self] in
+      self?.handleFileEvent()
+    }
+  }
   
   override class func autosavesInPlace() -> Bool {
     return true
@@ -43,4 +56,19 @@ class Document: NSDocument {
     }
   }
 
+}
+
+private extension Document {
+  
+  func handleFileEvent() {
+    guard let fileURL = fileURL,
+          let fileType = fileType else {
+      return
+    }
+
+    print("File changed, reload content.")
+    
+    _ = try? revertToContentsOfURL(fileURL, ofType: fileType)
+  }
+  
 }
