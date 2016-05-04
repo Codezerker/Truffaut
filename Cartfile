@@ -1,3 +1,4 @@
 github "facebook/pop" "master"
-github "jpsim/SourceKitten"
+github "eyeplum/SourceKitten" "master"
+github "eyeplum/TSMarkdownParser" "master"
 

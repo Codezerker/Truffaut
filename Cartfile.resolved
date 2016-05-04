@@ -1,3 +1,4 @@
 github "drmohundro/SWXMLHash" "2.3.1"
-github "facebook/pop" "5fff11a68a9c5327f153d7d1e39a87a8e42f76a6"
-github "jpsim/SourceKitten" "0.12.1"
+github "eyeplum/TSMarkdownParser" "1444c05df626d5d735b23e3aebcbb2828e2d482e"
+github "facebook/pop" "234aeb8645dc3c3ecdd20b3cc04b7c7f9150fb28"
+github "eyeplum/SourceKitten" "add5743cc17999026098c9d1a5c11f3178ff466b"

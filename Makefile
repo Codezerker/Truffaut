@@ -1,5 +1,5 @@
 .PHONY: carthage
 carthage:
 	rm -r ./Carthage/Build
-	carthage build --platform osx
+	carthage update --no-use-binaries --platform osx
 

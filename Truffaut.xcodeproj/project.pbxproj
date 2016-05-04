@@ -17,6 +17,8 @@
 		0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */; };
 		0B73AAA21CD8E06700ADEBD4 /* RemoteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA11CD8E06700ADEBD4 /* RemoteServer.swift */; };
 		0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */; };
+		0B73AAB31CDA3B3A00ADEBD4 /* TSMarkdownParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B73AAB11CDA3B2800ADEBD4 /* TSMarkdownParser.framework */; };
+		0B73AAB41CDA3B3A00ADEBD4 /* TSMarkdownParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B73AAB11CDA3B2800ADEBD4 /* TSMarkdownParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */; };
 		0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */; };
 		0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* Document.swift */; };
@@ -43,10 +45,6 @@
 		29653BAE1CD8B72C001A992B /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */; };
 		29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; };
 		29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		29A7E86B1CC9FFB1005E40D8 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8651CC9FEAA005E40D8 /* Commandant.framework */; };
-		29A7E86C1CC9FFB1005E40D8 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8651CC9FEAA005E40D8 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		29A7E86D1CC9FFB1005E40D8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8661CC9FEAA005E40D8 /* Result.framework */; };
-		29A7E86E1CC9FFB1005E40D8 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8661CC9FEAA005E40D8 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */; };
 		29A7E8701CC9FFB1005E40D8 /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29A7E8721CCA1DD1005E40D8 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A7E8711CCA1DD1005E40D8 /* JSONParser.swift */; };
@@ -77,10 +75,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				29A7E86C1CC9FFB1005E40D8 /* Commandant.framework in Embed Frameworks */,
 				29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */,
+				0B73AAB41CDA3B3A00ADEBD4 /* TSMarkdownParser.framework in Embed Frameworks */,
 				0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */,
-				29A7E86E1CC9FFB1005E40D8 /* Result.framework in Embed Frameworks */,
 				29A7E8701CC9FFB1005E40D8 /* SWXMLHash.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -113,6 +110,7 @@
 		0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionDispatcher.swift; sourceTree = "<group>"; };
 		0B73AAA11CD8E06700ADEBD4 /* RemoteServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteServer.swift; sourceTree = "<group>"; };
 		0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		0B73AAB11CDA3B2800ADEBD4 /* TSMarkdownParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSMarkdownParser.framework; path = Carthage/Build/Mac/TSMarkdownParser.framework; sourceTree = "<group>"; };
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -145,8 +143,6 @@
 		29653BA91CD8B46A001A992B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Carthage/Build/Mac/SourceKittenFramework.framework; sourceTree = "<group>"; };
-		29A7E8651CC9FEAA005E40D8 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
-		29A7E8661CC9FEAA005E40D8 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
 		29A7E8711CCA1DD1005E40D8 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		29A7E8731CCA1DDC005E40D8 /* SwiftParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftParser.swift; sourceTree = "<group>"; };
@@ -158,10 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
+				0B73AAB31CDA3B3A00ADEBD4 /* TSMarkdownParser.framework in Frameworks */,
 				29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */,
 				29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */,
-				29A7E86D1CC9FFB1005E40D8 /* Result.framework in Frameworks */,
-				29A7E86B1CC9FFB1005E40D8 /* Commandant.framework in Frameworks */,
 				0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,8 +275,7 @@
 		0B7C8BEE1CBFEA2B000FE312 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
-				29A7E8651CC9FEAA005E40D8 /* Commandant.framework */,
-				29A7E8661CC9FEAA005E40D8 /* Result.framework */,
+				0B73AAB11CDA3B2800ADEBD4 /* TSMarkdownParser.framework */,
 				29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */,
 				0B7C8BF31CC139EB000FE312 /* pop.framework */,
 				29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */,
