@@ -147,7 +147,7 @@ extension SlidesViewController {
     moveOutAnimation.toValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomIn : AnimationConstants.scaleZoomOut)
 
     guard let currentLayer = currentPageViewController?.view.layer,
-              insertingLayer = pageViewController.view.layer else {
+          let insertingLayer = pageViewController.view.layer else {
       animationCompletion()
       return
     }
