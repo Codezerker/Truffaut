@@ -97,9 +97,12 @@ extension SlidesViewController {
       return
     }
     
-    let pageViewController = template.createPageViewControllerWithPageTitle(
-      page.title,
+    let pageViewController = template.createPageViewController()
+    template.setPageTitleForViewController(
+      pageViewController,
+      withTitle: page.title,
       bulletPoints: page.bulletPoints)
+    
     pageViewController.view.wantsLayer = true
     pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
 

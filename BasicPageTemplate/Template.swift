@@ -14,14 +14,18 @@ class Template: NSObject, TFTemplate {
     return "Page"
   }
   
-  func createPageViewControllerWithPageTitle(title: String, bulletPoints: [String]?) -> NSViewController {
-    let viewController = BasicPageViewController(
+  func createPageViewController() -> NSViewController {
+    return BasicPageViewController(
       nibName: BasicPageViewController().className,
       bundle: NSBundle(forClass: BasicPageViewController.classForCoder()))!
+  }
+  
+  func setPageTitleForViewController(viewController: NSViewController, withTitle title: String, bulletPoints: [String]?) {
+    guard let viewController = viewController as? BasicPageViewController else {
+      return
+    }
     
     viewController.setContents(title: title, contents: bulletPoints)
-    
-    return viewController
   }
   
 }

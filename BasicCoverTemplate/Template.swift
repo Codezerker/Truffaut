@@ -14,14 +14,18 @@ class Template: NSObject, TFTemplate {
     return "Cover"
   }
   
-  func createPageViewControllerWithPageTitle(title: String, bulletPoints: [String]?) -> NSViewController {
-    let viewController = BasicCoverViewController(
+  func createPageViewController() -> NSViewController {
+    return BasicCoverViewController(
       nibName: BasicCoverViewController().className,
       bundle: NSBundle(forClass: BasicCoverViewController.classForCoder()))!
+  }
+  
+  func setPageTitleForViewController(viewController: NSViewController, withTitle title: String, bulletPoints: [String]?) {
+    guard let viewController = viewController as? BasicCoverViewController else {
+      return
+    }
     
     viewController.setContents(title: title, subtitle: bulletPoints?.joinWithSeparator(" | "))
-    
-    return viewController
   }
   
 }

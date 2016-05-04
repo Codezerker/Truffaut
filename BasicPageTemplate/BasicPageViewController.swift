@@ -10,8 +10,8 @@ import Cocoa
 
 class BasicPageViewController: NSViewController {
   
-  @IBOutlet weak var titleLabel: NSTextField!
-  @IBOutlet var contentTextView: NSTextView!
+  @IBOutlet weak var titleLabel: NSTextField?
+  @IBOutlet var contentTextView: NSTextView?
   
   private var titleString = ""
   private var contentString = ""
@@ -21,13 +21,17 @@ class BasicPageViewController: NSViewController {
     contentString = contents?.reduce("") { result, element in
       result?.stringByAppendingString("・ " + element + "\n\n")
     } ?? ""
+    updateContents()
   }
   
   override func viewWillAppear() {
     super.viewWillAppear()
-    
-    titleLabel.stringValue = titleString
-    contentTextView.string = contentString
+    updateContents()
+  }
+  
+  private func updateContents() {
+    titleLabel?.stringValue = titleString
+    contentTextView?.string = contentString
   }
   
 }
