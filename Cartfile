@@ -1,4 +1,4 @@
 github "facebook/pop" "master"
-github "eyeplum/SourceKitten" "master"
+github "eyeplum/SourceKitten" "fix-framework-target"
 github "eyeplum/TSMarkdownParser" "master"
 
