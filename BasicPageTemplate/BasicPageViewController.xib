@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BasicPageViewController" customModule="BasicPageTemplate" customModuleProvider="target">
             <connections>
                 <outlet property="contentTextView" destination="82a-to-M0J" id="o2u-cQ-7Te"/>
+                <outlet property="titleContentConstraint" destination="jai-c7-AL9" id="r98-mj-YXh"/>
                 <outlet property="titleLabel" destination="K3M-nG-XJX" id="aRa-nJ-l2x"/>
+                <outlet property="titleLabelHeightConstraint" destination="X9s-oQ-Q6T" id="ngJ-Xv-I1J"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -18,30 +20,30 @@
             <rect key="frame" x="0.0" y="0.0" width="630" height="404"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxg-QF-Y3G">
+                <scrollView horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxg-QF-Y3G">
                     <rect key="frame" x="60" y="32" width="510" height="158"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Iri-Ld-tnZ">
                         <rect key="frame" x="0.0" y="0.0" width="510" height="158"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView focusRingType="none" editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="82a-to-M0J">
-                                <rect key="frame" x="0.0" y="0.0" width="510" height="158"/>
+                                <rect key="frame" x="0.0" y="0.0" width="510" height="35"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" white="0.29999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="510" height="158"/>
+                                <size key="minSize" width="510" height="0.0"/>
                                 <size key="maxSize" width="593" height="10000000"/>
                                 <attributedString key="textStorage">
                                     <fragment content="Hello">
                                         <attributes>
-                                            <color key="NSColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="NSColor" white="0.29999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                             <font key="NSFont" metaFont="systemThin" size="30"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="510" height="158"/>
+                                <size key="minSize" width="510" height="0.0"/>
                                 <size key="maxSize" width="593" height="10000000"/>
                             </textView>
                         </subviews>
@@ -56,8 +58,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="K3M-nG-XJX">
+                <textField verticalHuggingPriority="249" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="K3M-nG-XJX">
                     <rect key="frame" x="18" y="230" width="594" height="114"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="114" id="X9s-oQ-Q6T"/>
+                    </constraints>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="center" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit." id="lK8-ce-Rs6">
                         <font key="font" metaFont="systemThin" size="48"/>
                         <color key="textColor" red="0.98039215686274506" green="0.21176470588235294" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>

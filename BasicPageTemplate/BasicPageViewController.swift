@@ -11,6 +11,8 @@ import Cocoa
 class BasicPageViewController: NSViewController {
   
   @IBOutlet weak var titleLabel: NSTextField?
+  @IBOutlet weak var titleLabelHeightConstraint: NSLayoutConstraint?
+  @IBOutlet weak var titleContentConstraint: NSLayoutConstraint?
   @IBOutlet var contentTextView: NSTextView?
   
   private var titleString = ""
@@ -32,6 +34,88 @@ class BasicPageViewController: NSViewController {
   private func updateContents() {
     titleLabel?.stringValue = titleString
     contentTextView?.string = contentString
+  }
+  
+}
+
+extension BasicPageViewController {
+  
+  private struct DynamicFontSize {
+    static let defaultWidth: CGFloat = 800
+    static let defaultHeight: CGFloat = 600
+    static let defaultTitleFontSize: CGFloat = 48
+    static let defaultSpacing: CGFloat = 40
+    static let defaultContentFontSize: CGFloat = 30
+    static let defaultTitleMargin: CGFloat = 20
+    
+    static var defaultTitleRatio: CGFloat {
+      return defaultTitleFontSize / defaultHeight
+    }
+    
+    static var defaultSpacingRatio: CGFloat {
+      return defaultSpacing / defaultHeight;
+    }
+    
+    static var defaultContentRatio: CGFloat {
+      return defaultContentFontSize / defaultHeight
+    }
+    
+    static func titleFontSizeWithBounds(viewBounds: CGRect) -> CGFloat {
+      return viewBounds.height * defaultTitleRatio
+    }
+    
+    static func spacingWithBounds(viewBounds: CGRect) -> CGFloat {
+      return viewBounds.height * defaultSpacingRatio
+    }
+    
+    static func contentFontSizeWithBounds(viewBounds: CGRect) -> CGFloat {
+      return viewBounds.height * defaultContentRatio
+    }
+    
+    static func layoutWidthWithBounds(viewBounds: CGRect) -> CGFloat {
+      return viewBounds.width - 2 * defaultTitleMargin
+    }
+  }
+  
+  override func viewWillLayout() {
+    super.viewWillLayout()
+    
+    if var titleFontDescriptor = titleLabel?.font?.fontDescriptor {
+      titleFontDescriptor = titleFontDescriptor.fontDescriptorByAddingAttributes(["UIFontDescriptorFaceAttribute" : "Thin"])
+      let font = NSFont(descriptor: titleFontDescriptor, size: DynamicFontSize.titleFontSizeWithBounds(view.bounds))
+      titleLabel?.font = font
+      titleLabelHeightConstraint?.constant = titleString.layoutHeightWithFont(font, width: DynamicFontSize.layoutWidthWithBounds(view.bounds))
+      titleLabel?.needsLayout = true
+    }
+    
+    titleContentConstraint?.constant = DynamicFontSize.spacingWithBounds(view.bounds)
+    
+    if var contentFontDescriptor = contentTextView?.font?.fontDescriptor {
+      contentFontDescriptor = contentFontDescriptor.fontDescriptorByAddingAttributes(["UIFontDescriptorFaceAttribute" : "Thin"])
+      contentTextView?.font = NSFont(descriptor: contentFontDescriptor, size: DynamicFontSize.contentFontSizeWithBounds(view.bounds))
+      contentTextView?.needsLayout = true
+    }
+  }
+  
+}
+
+extension String {
+  
+  func layoutHeightWithFont(font: NSFont?, width: CGFloat) -> CGFloat {
+    guard let font = font else {
+      return 0
+    }
+    
+    let textStorage = NSTextStorage(string: self)
+    let textContainer = NSTextContainer(containerSize: NSSize(width: width, height: CGFloat.max))
+    let layoutManager = NSLayoutManager()
+    layoutManager.addTextContainer(textContainer)
+    textStorage.addLayoutManager(layoutManager)
+    textStorage.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: self.utf16.count))
+    textContainer.lineFragmentPadding = 0
+    layoutManager.glyphRangeForTextContainer(textContainer)
+    
+    return layoutManager.usedRectForTextContainer(textContainer).height
   }
   
 }
