@@ -711,8 +711,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView appearanceType="vibrantLight" misplaced="YES" blendingMode="behindWindow" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="c6v-fi-bhC">
-                                <rect key="frame" x="0.0" y="120" width="640" height="480"/>
+                            <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="c6v-fi-bhC">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                             </visualEffectView>
                         </subviews>
                         <constraints>
