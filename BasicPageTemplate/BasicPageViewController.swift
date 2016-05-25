@@ -21,7 +21,16 @@ class BasicPageViewController: NSViewController {
   func setContents(title title: String, contents: [String]?) {
     titleString = title
     contentString = contents?.reduce("") { result, element in
-      result?.stringByAppendingString("・ " + element + "\n\n")
+      let bulletPointPrefix: String
+      let bulletPoint: String
+      if element.hasPrefix("  ") {
+        bulletPointPrefix = "        ・ "
+        bulletPoint = element.substringFromIndex(element.startIndex.advancedBy(2))
+      } else {
+        bulletPointPrefix = "・ "
+        bulletPoint = element
+      }
+      return result?.stringByAppendingString(bulletPointPrefix + bulletPoint + "\n\n")
     } ?? ""
     updateContents()
   }
