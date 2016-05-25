@@ -68,19 +68,13 @@ extension BasicCoverViewController {
   override func viewWillLayout() {
     super.viewWillLayout()
     
-    if var titleFontDescriptor = titleLabel?.font?.fontDescriptor {
-      titleFontDescriptor = titleFontDescriptor.fontDescriptorByAddingAttributes(["UIFontDescriptorFaceAttribute" : "Thin"])
-      let font = NSFont(descriptor: titleFontDescriptor, size: DynamicFontSize.titleFontSizeWithBounds(view.bounds))
-      titleLabel?.font = font
-      titleHeightConstraint?.constant = titleString.layoutHeightWithFont(font, width: DynamicFontSize.layoutWidthWithBounds(view.bounds))
-      titleLabel?.needsLayout = true
-    }
+    let font = NSFont.systemFontOfSize(DynamicFontSize.titleFontSizeWithBounds(view.bounds), weight: NSFontWeightThin)
+    titleLabel?.font = font
+    titleHeightConstraint?.constant = titleString.layoutHeightWithFont(font, width: DynamicFontSize.layoutWidthWithBounds(view.bounds))
+    titleLabel?.needsLayout = true
     
-    if var contentFontDescriptor = subtitleLabel?.font?.fontDescriptor {
-      contentFontDescriptor = contentFontDescriptor.fontDescriptorByAddingAttributes(["UIFontDescriptorFaceAttribute" : "Thin"])
-      subtitleLabel?.font = NSFont(descriptor: contentFontDescriptor, size: DynamicFontSize.contentFontSizeWithBounds(view.bounds))
-      subtitleLabel?.needsLayout = true
-    }
+    subtitleLabel?.font = NSFont.systemFontOfSize(DynamicFontSize.contentFontSizeWithBounds(view.bounds), weight: NSFontWeightThin)
+    subtitleLabel?.needsLayout = true
   }
   
 }

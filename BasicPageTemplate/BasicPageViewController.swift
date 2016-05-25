@@ -80,21 +80,14 @@ extension BasicPageViewController {
   override func viewWillLayout() {
     super.viewWillLayout()
     
-    if var titleFontDescriptor = titleLabel?.font?.fontDescriptor {
-      titleFontDescriptor = titleFontDescriptor.fontDescriptorByAddingAttributes(["UIFontDescriptorFaceAttribute" : "Thin"])
-      let font = NSFont(descriptor: titleFontDescriptor, size: DynamicFontSize.titleFontSizeWithBounds(view.bounds))
-      titleLabel?.font = font
-      titleLabelHeightConstraint?.constant = titleString.layoutHeightWithFont(font, width: DynamicFontSize.layoutWidthWithBounds(view.bounds))
-      titleLabel?.needsLayout = true
-    }
-    
+    let font = NSFont.systemFontOfSize(DynamicFontSize.titleFontSizeWithBounds(view.bounds), weight: NSFontWeightThin)
+    titleLabel?.font = font
+    titleLabelHeightConstraint?.constant = titleString.layoutHeightWithFont(font, width: DynamicFontSize.layoutWidthWithBounds(view.bounds))
+    titleLabel?.needsLayout = true
     titleContentConstraint?.constant = DynamicFontSize.spacingWithBounds(view.bounds)
     
-    if var contentFontDescriptor = contentTextView?.font?.fontDescriptor {
-      contentFontDescriptor = contentFontDescriptor.fontDescriptorByAddingAttributes(["UIFontDescriptorFaceAttribute" : "Thin"])
-      contentTextView?.font = NSFont(descriptor: contentFontDescriptor, size: DynamicFontSize.contentFontSizeWithBounds(view.bounds))
-      contentTextView?.needsLayout = true
-    }
+    contentTextView?.font = NSFont.systemFontOfSize(DynamicFontSize.contentFontSizeWithBounds(view.bounds), weight: NSFontWeightThin)
+    contentTextView?.needsLayout = true
   }
   
 }
