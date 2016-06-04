@@ -95,7 +95,7 @@ extension BasicPageViewController {
     titleLabel?.needsLayout = true
     titleContentConstraint?.constant = DynamicFontSize.spacingWithBounds(view.bounds)
     
-    contentTextView?.font = NSFont.systemFontOfSize(DynamicFontSize.contentFontSizeWithBounds(view.bounds), weight: NSFontWeightThin)
+    contentTextView?.font = NSFont.systemFontOfSize(DynamicFontSize.contentFontSizeWithBounds(view.bounds), weight: NSFontWeightLight)
     contentTextView?.needsLayout = true
   }
   
