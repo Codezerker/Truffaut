@@ -23,6 +23,11 @@ class Document: NSDocument {
   }
   
   var slides: Slides?
+  private var fileMonitor: FileMonitor?
+  
+  deinit {
+    removeFileMonitor()
+  }
   
   override class func autosavesInPlace() -> Bool {
     return true
@@ -31,12 +36,14 @@ class Document: NSDocument {
   override func makeWindowControllers() {
     let windowController = MainWindowController.loadFromStoryboard()
     addWindowController(windowController)
+    
+    addFileMonitor()
   }
 
   override func dataOfType(typeName: String) throws -> NSData {
     throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
   }
-
+  
   override func readFromData(data: NSData, ofType typeName: String) throws {
     if let slidesJSON = JSONParser().parse(data) {
       slides = try Slides(json: slidesJSON)
@@ -49,4 +56,26 @@ class Document: NSDocument {
     NSNotificationCenter.defaultCenter().postNotificationName(Notifications.update, object: self)
   }
 
+}
+
+private extension Document {
+  
+  private func addFileMonitor() {
+    guard let fileURL = fileURL else {
+      return
+    }
+    
+    fileMonitor = FileMonitor(fileURL: fileURL) { [weak self] in
+      guard let fileURL = self?.fileURL,
+            let fileType = self?.fileType else {
+          return
+      }
+      _ = try? self?.revertToContentsOfURL(fileURL, ofType: fileType)
+    }
+  }
+  
+  private func removeFileMonitor() {
+    fileMonitor = nil
+  }
+  
 }

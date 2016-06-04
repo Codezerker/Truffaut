@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */; };
+		0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52D5E41D02FEBE005409B5 /* CoreServices.framework */; };
 		0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */; };
 		0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */; };
 		0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Extensions.swift */; };
@@ -98,6 +100,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMonitor.swift; sourceTree = "<group>"; };
+		0B52D5E41D02FEBE005409B5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCoverViewController.swift; sourceTree = "<group>"; };
 		0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCoverViewController.xib; sourceTree = "<group>"; };
 		0B6EED851CC26CAA001BC00B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */,
 				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
 				0B73AAB31CDA3B3A00ADEBD4 /* TSMarkdownParser.framework in Frameworks */,
 				29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */,
@@ -189,6 +194,7 @@
 		0B2FB9DF1CC3D68B005A3FEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B52D5E41D02FEBE005409B5 /* CoreServices.framework */,
 				0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */,
 			);
 			name = Frameworks;
@@ -296,6 +302,7 @@
 		0B7C8BFB1CC13F5D000FE312 /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */,
 				29A7E8731CCA1DDC005E40D8 /* SwiftParser.swift */,
 				29A7E8711CCA1DD1005E40D8 /* JSONParser.swift */,
 				0B7C8BE11CBFD166000FE312 /* Document.swift */,
@@ -600,6 +607,7 @@
 				0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */,
 				0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */,
 				0B73AAA21CD8E06700ADEBD4 /* RemoteServer.swift in Sources */,
+				0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */,
 				29503F991CD990F800D71EC2 /* RemoteProtocol.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
