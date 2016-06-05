@@ -21,17 +21,17 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxg-QF-Y3G">
-                    <rect key="frame" x="60" y="32" width="510" height="158"/>
+                    <rect key="frame" x="60" y="0.0" width="510" height="190"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Iri-Ld-tnZ">
-                        <rect key="frame" x="0.0" y="0.0" width="510" height="158"/>
+                        <rect key="frame" x="0.0" y="0.0" width="510" height="190"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView focusRingType="none" editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="82a-to-M0J">
-                                <rect key="frame" x="0.0" y="0.0" width="510" height="158"/>
+                                <rect key="frame" x="0.0" y="0.0" width="510" height="190"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="510" height="158"/>
+                                <size key="minSize" width="510" height="190"/>
                                 <size key="maxSize" width="593" height="10000000"/>
                                 <attributedString key="textStorage">
                                     <fragment content="Hello">
@@ -43,7 +43,7 @@
                                     </fragment>
                                 </attributedString>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="510" height="158"/>
+                                <size key="minSize" width="510" height="190"/>
                                 <size key="maxSize" width="593" height="10000000"/>
                             </textView>
                         </subviews>
@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="y8i-DP-RAP">
-                        <rect key="frame" x="494" y="0.0" width="16" height="158"/>
+                        <rect key="frame" x="494" y="0.0" width="16" height="190"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
@@ -72,7 +72,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="K3M-nG-XJX" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="3Lv-XF-dSk"/>
-                <constraint firstAttribute="bottom" secondItem="bxg-QF-Y3G" secondAttribute="bottom" constant="32" id="4GO-bw-V3V"/>
+                <constraint firstAttribute="bottom" secondItem="bxg-QF-Y3G" secondAttribute="bottom" id="4GO-bw-V3V"/>
                 <constraint firstAttribute="trailing" secondItem="K3M-nG-XJX" secondAttribute="trailing" constant="20" id="56O-Nk-j9d"/>
                 <constraint firstItem="K3M-nG-XJX" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="60" id="6Eg-rU-eAB"/>
                 <constraint firstItem="bxg-QF-Y3G" firstAttribute="top" secondItem="K3M-nG-XJX" secondAttribute="bottom" constant="40" id="jai-c7-AL9"/>
