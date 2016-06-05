@@ -14,17 +14,37 @@ struct Slides {
     static let bulletPoints = "bulletPoints"
   }
   
+  struct Types {
+    static let cover = "Cover"
+    static let image = "Image"
+    static let page = "Page"
+  }
+  
   struct Page {
     let typeIdentifier: String
     let title: String
     let bulletPoints: [String]?
+    
+    init(typeIdentifier: String, title: String, bulletPoints: [String]?, documentURL: NSURL) {
+      self.typeIdentifier = typeIdentifier
+      self.bulletPoints = bulletPoints
+      
+      switch typeIdentifier {
+      case Types.image:
+        let documentRootURL = documentURL.URLByDeletingLastPathComponent
+        let imageURL = documentRootURL?.URLByAppendingPathComponent(title)
+        self.title = imageURL?.path ?? title
+      default:
+        self.title = title
+      }
+    }
   }
   
   var pages: [Page]
   
   typealias PageJSON = [String : AnyObject]
   
-  init(json: [PageJSON]) throws {
+  init(json: [PageJSON], documentURL: NSURL) throws {
     guard json.count > 0 else {
       throw Document.Error.InvalidData
     }
@@ -37,7 +57,12 @@ struct Slides {
       
       let bulletPoints = pageJSON[JSONKeys.bulletPoints] as? [String]
       
-      return Page(typeIdentifier: typeIdentifier, title: title, bulletPoints: bulletPoints)
+      return Page(
+        typeIdentifier: typeIdentifier,
+        title: title,
+        bulletPoints: bulletPoints,
+        documentURL: documentURL
+      )
     }
   }
   

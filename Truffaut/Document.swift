@@ -45,10 +45,14 @@ class Document: NSDocument {
   }
   
   override func readFromData(data: NSData, ofType typeName: String) throws {
+    guard let documentURL = fileURL else {
+      return
+    }
+    
     if let slidesJSON = JSONParser().parse(data) {
-      slides = try Slides(json: slidesJSON)
+      slides = try Slides(json: slidesJSON, documentURL: documentURL)
     } else if let slidesJSON = SwiftParser().parse(data) {
-      slides = try Slides(json: slidesJSON)
+      slides = try Slides(json: slidesJSON, documentURL: documentURL)
     } else {
       throw Error.InvalidData
     }

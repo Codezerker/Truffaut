@@ -54,7 +54,7 @@ extension BasicPageViewController {
     static let defaultHeight: CGFloat = 600
     static let defaultTitleFontSize: CGFloat = 48
     static let defaultSpacing: CGFloat = 40
-    static let defaultContentFontSize: CGFloat = 30
+    static let defaultContentFontSize: CGFloat = 22
     static let defaultTitleMargin: CGFloat = 20
     
     static var defaultTitleRatio: CGFloat {
