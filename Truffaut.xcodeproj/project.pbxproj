@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */; };
 		0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52D5E41D02FEBE005409B5 /* CoreServices.framework */; };
+		0B52D5F01D0441BB005409B5 /* BasicImageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */; };
 		0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */; };
 		0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Extensions.swift */; };
@@ -54,6 +55,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0B52D5F11D0441C1005409B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B52D5E91D044199005409B5;
+			remoteInfo = BasicImageTemplate;
+		};
 		29F4791E1CC8B49A001CBB63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
@@ -91,6 +99,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				0B52D5F01D0441BB005409B5 /* BasicImageTemplate.truffautplugin in Embed Slide Templates */,
 				0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */,
 				0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */,
 			);
@@ -102,6 +111,8 @@
 /* Begin PBXFileReference section */
 		0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMonitor.swift; sourceTree = "<group>"; };
 		0B52D5E41D02FEBE005409B5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicImageTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B52D5EC1D044199005409B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCoverViewController.swift; sourceTree = "<group>"; };
 		0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCoverViewController.xib; sourceTree = "<group>"; };
 		0B6EED851CC26CAA001BC00B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -153,6 +164,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0B52D5E71D044199005409B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B7C8BD71CBFD166000FE312 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +219,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		0B52D5EB1D044199005409B5 /* BasicImageTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				0B52D5EC1D044199005409B5 /* Info.plist */,
+			);
+			path = BasicImageTemplate;
+			sourceTree = "<group>";
+		};
 		0B6EED841CC26C83001BC00B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +267,7 @@
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
 				0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C151CC22748000FE312 /* BasicPageTemplate */,
+				0B52D5EB1D044199005409B5 /* BasicImageTemplate */,
 				29653B9C1CD8B46A001A992B /* Remote */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
 			);
@@ -253,6 +280,7 @@
 				0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */,
 				0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */,
 				29653B9B1CD8B46A001A992B /* Remote.app */,
+				0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -372,6 +400,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0B52D5E91D044199005409B5 /* BasicImageTemplate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B52D5ED1D044199005409B5 /* Build configuration list for PBXNativeTarget "BasicImageTemplate" */;
+			buildPhases = (
+				0B52D5E61D044199005409B5 /* Sources */,
+				0B52D5E71D044199005409B5 /* Frameworks */,
+				0B52D5E81D044199005409B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BasicImageTemplate;
+			productName = BasicImageTemplate;
+			productReference = 0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
 		0B7C8BD91CBFD166000FE312 /* Truffaut */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B7C8BEB1CBFD166000FE312 /* Build configuration list for PBXNativeTarget "Truffaut" */;
@@ -387,6 +432,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0B52D5F21D0441C1005409B5 /* PBXTargetDependency */,
 				29F4791F1CC8B49A001CBB63 /* PBXTargetDependency */,
 				29F479211CC8B49A001CBB63 /* PBXTargetDependency */,
 			);
@@ -458,6 +504,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Codezerker;
 				TargetAttributes = {
+					0B52D5E91D044199005409B5 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					0B7C8BD91CBFD166000FE312 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 37G4TUHERL;
@@ -489,12 +538,20 @@
 				0B7C8BD91CBFD166000FE312 /* Truffaut */,
 				0B7C8C1F1CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C131CC22748000FE312 /* BasicPageTemplate */,
+				0B52D5E91D044199005409B5 /* BasicImageTemplate */,
 				29653B9A1CD8B46A001A992B /* Remote */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0B52D5E81D044199005409B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B7C8BD81CBFD166000FE312 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -592,6 +649,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0B52D5E61D044199005409B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B7C8BD61CBFD166000FE312 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -647,6 +711,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0B52D5F21D0441C1005409B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B52D5E91D044199005409B5 /* BasicImageTemplate */;
+			targetProxy = 0B52D5F11D0441C1005409B5 /* PBXContainerItemProxy */;
+		};
 		29F4791F1CC8B49A001CBB63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0B7C8C1F1CC227E7000FE312 /* BasicCoverTemplate */;
@@ -687,6 +756,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0B52D5EE1D044199005409B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BasicImageTemplate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicImageTemplate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = truffautplugin;
+			};
+			name = Debug;
+		};
+		0B52D5EF1D044199005409B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BasicImageTemplate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicImageTemplate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = truffautplugin;
+			};
+			name = Release;
+		};
 		0B7C8BE91CBFD166000FE312 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -914,6 +1009,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0B52D5ED1D044199005409B5 /* Build configuration list for PBXNativeTarget "BasicImageTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B52D5EE1D044199005409B5 /* Debug */,
+				0B52D5EF1D044199005409B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		0B7C8BD51CBFD166000FE312 /* Build configuration list for PBXProject "Truffaut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
