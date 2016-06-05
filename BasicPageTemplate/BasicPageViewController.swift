@@ -30,8 +30,8 @@ class BasicPageViewController: NSViewController {
         bulletPointPrefix = "・ "
         bulletPoint = element
       }
-      return result?.stringByAppendingString(bulletPointPrefix + bulletPoint + "\n\n")
-    } ?? ""
+      return result.stringByAppendingString(bulletPointPrefix + bulletPoint + "\n\n")
+    }.stringByReplacingOccurrencesOfString("->", withString: " ➞ ") ?? ""
     updateContents()
   }
   
