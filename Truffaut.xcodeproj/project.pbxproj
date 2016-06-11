@@ -13,6 +13,8 @@
 		0B52D5FA1D044736005409B5 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5F91D044736005409B5 /* Template.swift */; };
 		0B52D5FD1D0448BD005409B5 /* BasicImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5FB1D0448BD005409B5 /* BasicImageViewController.swift */; };
 		0B52D5FE1D0448BD005409B5 /* BasicImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B52D5FC1D0448BD005409B5 /* BasicImageViewController.xib */; };
+		0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; };
+		0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */; };
 		0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */; };
 		0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Extensions.swift */; };
@@ -88,6 +90,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */,
 				29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */,
 				0B73AAB41CDA3B3A00ADEBD4 /* TSMarkdownParser.framework in Embed Frameworks */,
 				0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */,
@@ -120,6 +123,7 @@
 		0B52D5F91D044736005409B5 /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		0B52D5FB1D0448BD005409B5 /* BasicImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicImageViewController.swift; sourceTree = "<group>"; };
 		0B52D5FC1D0448BD005409B5 /* BasicImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicImageViewController.xib; sourceTree = "<group>"; };
+		0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCoverViewController.swift; sourceTree = "<group>"; };
 		0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCoverViewController.xib; sourceTree = "<group>"; };
 		0B6EED851CC26CAA001BC00B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */,
 				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
 				0B73AAB31CDA3B3A00ADEBD4 /* TSMarkdownParser.framework in Frameworks */,
+				0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */,
 				29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */,
 				29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */,
 				0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */,
@@ -320,6 +325,7 @@
 		0B7C8BEE1CBFEA2B000FE312 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */,
 				0B73AAB11CDA3B2800ADEBD4 /* TSMarkdownParser.framework */,
 				29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */,
 				0B7C8BF31CC139EB000FE312 /* pop.framework */,
@@ -1037,6 +1043,7 @@
 				0B52D5EF1D044199005409B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B7C8BD51CBFD166000FE312 /* Build configuration list for PBXProject "Truffaut" */ = {
 			isa = XCConfigurationList;

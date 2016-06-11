@@ -1,4 +1,5 @@
 github "facebook/pop" "master"
 github "eyeplum/SourceKitten" "fix-framework-target"
 github "eyeplum/TSMarkdownParser" "master"
+github "sparkle-project/Sparkle"
 

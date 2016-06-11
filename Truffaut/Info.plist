@@ -63,5 +63,7 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/Codezerker/Truffaut-Releases/master/Truffaut-Appcast.xml</string>
 </dict>
 </plist>

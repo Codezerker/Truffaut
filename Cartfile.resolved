@@ -1,4 +1,5 @@
 github "drmohundro/SWXMLHash" "2.3.1"
-github "eyeplum/TSMarkdownParser" "d0b8d112a471488ce51afb4b3c62d837520890f5"
-github "facebook/pop" "234aeb8645dc3c3ecdd20b3cc04b7c7f9150fb28"
+github "sparkle-project/Sparkle" "1.14.0"
+github "eyeplum/TSMarkdownParser" "70c7f11f3799226e15a4be3331581b3838867a7e"
+github "facebook/pop" "b30efd828111e4dfd1651635c8586f859d1fd3c2"
 github "eyeplum/SourceKitten" "30218ec754472180871f573d2dbfc7e0123b930e"
