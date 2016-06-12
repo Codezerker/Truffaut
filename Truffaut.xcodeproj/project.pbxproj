@@ -43,6 +43,8 @@
 		0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */; };
 		0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD841D0D525200565E8A /* Crashlytics.framework */; };
+		0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD851D0D525200565E8A /* Fabric.framework */; };
 		29503F991CD990F800D71EC2 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29503F981CD990F800D71EC2 /* RemoteProtocol.swift */; };
 		29503F9A1CD990F800D71EC2 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29503F981CD990F800D71EC2 /* RemoteProtocol.swift */; };
 		29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9D1CD8B46A001A992B /* AppDelegate.swift */; };
@@ -159,6 +161,8 @@
 		0B7C8C161CC22748000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicCoverTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8C221CC227E7000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BA6FD841D0D525200565E8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		0BA6FD851D0D525200565E8A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		29503F981CD990F800D71EC2 /* RemoteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteProtocol.swift; path = "Remote Protocol/RemoteProtocol.swift"; sourceTree = "<group>"; };
 		29653B9B1CD8B46A001A992B /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29653B9D1CD8B46A001A992B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,8 +192,10 @@
 			files = (
 				0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */,
 				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
+				0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */,
 				0B73AAB31CDA3B3A00ADEBD4 /* TSMarkdownParser.framework in Frameworks */,
 				0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */,
+				0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */,
 				29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */,
 				29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */,
 				0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */,
@@ -304,6 +310,7 @@
 		0B7C8BDC1CBFD166000FE312 /* Truffaut */ = {
 			isa = PBXGroup;
 			children = (
+				0BA6FD831D0D525200565E8A /* Fabric */,
 				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
 				0B2FB9DF1CC3D68B005A3FEA /* Frameworks */,
 				0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */,
@@ -400,6 +407,15 @@
 			path = BasicCoverTemplate;
 			sourceTree = "<group>";
 		};
+		0BA6FD831D0D525200565E8A /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				0BA6FD841D0D525200565E8A /* Crashlytics.framework */,
+				0BA6FD851D0D525200565E8A /* Fabric.framework */,
+			);
+			path = Fabric;
+			sourceTree = SOURCE_ROOT;
+		};
 		29653B9C1CD8B46A001A992B /* Remote */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +460,7 @@
 				0B7C8BD81CBFD166000FE312 /* Resources */,
 				0B7C8BF71CC139FD000FE312 /* Embed Frameworks */,
 				0B7C8C1A1CC227A7000FE312 /* Embed Slide Templates */,
+				0BA6FD881D0D56D200565E8A /* Fabrics */,
 				0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */,
 			);
 			buildRules = (
@@ -664,6 +681,20 @@
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=\"auto\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
+		0BA6FD881D0D56D200565E8A /* Fabrics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabrics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PROJECT_DIR/Fabric/Fabric.framework/run 8d50cafab59f7d99afb7785689fa60bd10a903e2 7674f7841c1bd1cf1adb18a0995b7ac42bc273e4330b3cad1a099cfa65f71646";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -829,7 +860,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -902,6 +933,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Fabric",
 				);
 				INFOPLIST_FILE = Truffaut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -923,6 +955,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Fabric",
 				);
 				INFOPLIST_FILE = Truffaut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
