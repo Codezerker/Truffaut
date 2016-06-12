@@ -17,6 +17,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     setupFabric()
     PlugIn.sharedPlugIn.loadPlugIns()
     RemoteServer.sharedServer.start()
+    openDocumentIfNeeded()
+  }
+  
+  func applicationShouldHandleReopen(sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+    if flag {
+      return true
+    } else {
+      openDocumentIfNeeded()
+      return false
+    }
   }
   
 }
@@ -31,6 +41,17 @@ extension AppDelegate {
     }
     
     MenuActionDispatcher.dispatchAction(menuItem)
+  }
+  
+}
+
+
+// MARK: - Defaut Actions
+
+private extension AppDelegate {
+  
+  private func openDocumentIfNeeded() {
+    NSDocumentController.sharedDocumentController().openDocument(nil)
   }
   
 }

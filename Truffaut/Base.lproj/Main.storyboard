@@ -23,7 +23,7 @@
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
-                                        <menuItem title="Check for Updates" id="I4i-TN-VJl">
+                                        <menuItem title="Check for Updates..." id="I4i-TN-VJl">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="checkForUpdates:" target="AQc-4C-7sY" id="iY4-Yj-aY9"/>
