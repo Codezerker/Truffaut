@@ -43,6 +43,8 @@
 		0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD841D0D525200565E8A /* Crashlytics.framework */; };
 		0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD851D0D525200565E8A /* Fabric.framework */; };
+		0BD941C51D425B95002BE0E7 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD941C41D425B95002BE0E7 /* Yaml.framework */; };
+		0BD941C61D425BA3002BE0E7 /* Yaml.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD941C41D425B95002BE0E7 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29503F991CD990F800D71EC2 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29503F981CD990F800D71EC2 /* RemoteProtocol.swift */; };
 		29503F9A1CD990F800D71EC2 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29503F981CD990F800D71EC2 /* RemoteProtocol.swift */; };
 		29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9D1CD8B46A001A992B /* AppDelegate.swift */; };
@@ -90,6 +92,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0BD941C61D425BA3002BE0E7 /* Yaml.framework in Embed Frameworks */,
 				0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */,
 				29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */,
 				0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */,
@@ -159,6 +162,7 @@
 		0B7C8C221CC227E7000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BA6FD841D0D525200565E8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0BA6FD851D0D525200565E8A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		0BD941C41D425B95002BE0E7 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
 		29503F981CD990F800D71EC2 /* RemoteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteProtocol.swift; path = "Remote Protocol/RemoteProtocol.swift"; sourceTree = "<group>"; };
 		29653B9B1CD8B46A001A992B /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29653B9D1CD8B46A001A992B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			files = (
 				0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */,
 				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
+				0BD941C51D425B95002BE0E7 /* Yaml.framework in Frameworks */,
 				0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */,
 				0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */,
 				0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */,
@@ -327,6 +332,7 @@
 		0B7C8BEE1CBFEA2B000FE312 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				0BD941C41D425B95002BE0E7 /* Yaml.framework */,
 				0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */,
 				29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */,
 				0B7C8BF31CC139EB000FE312 /* pop.framework */,

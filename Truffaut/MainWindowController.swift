@@ -13,7 +13,7 @@ class MainWindowController: NSWindowController {
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    window?.styleMask = NSFullSizeContentViewWindowMask
+    window?.styleMask.insert(NSFullSizeContentViewWindowMask)
     window?.titlebarAppearsTransparent = true
     window?.titleVisibility = .Hidden
     window?.movable = true
