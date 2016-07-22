@@ -73,11 +73,7 @@ extension RemoteServer: MCSessionDelegate {
 
 extension RemoteServer: MCNearbyServiceAdvertiserDelegate {
   
-  func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
-    print("\(#function) \(error)")
-  }
-  
-  func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
+  func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession?) -> Void) {
     print("\(#function) \(peerID) - \(context)")
     
     // Accept all invitations
@@ -87,6 +83,10 @@ extension RemoteServer: MCNearbyServiceAdvertiserDelegate {
     }
     
     invitationHandler(true, connectedSession!)
+  }
+  
+  func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
+    print("\(#function) \(error)")
   }
   
 }

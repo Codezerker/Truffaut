@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import TSMarkdownParser
 
 class SlidesViewController: NSViewController {
   
