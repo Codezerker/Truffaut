@@ -62,6 +62,12 @@ extension SlidesViewController {
       selector: #selector(updateVisiblePage),
       name: Document.Notifications.update,
       object: nil)
+    
+    NSNotificationCenter.defaultCenter().addObserver(
+      self,
+      selector: #selector(export),
+      name: MenuActionDispatcher.ActionType.Export.notificationName,
+      object: nil)
   }
   
   @objc private func showPrevious() {
@@ -70,6 +76,10 @@ extension SlidesViewController {
   
   @objc private func showNext() {
     show(pageAtIndex: currentPage + 1)
+  }
+  
+  @objc private func export() {
+    ExportController.`default`.testConnection()
   }
   
   @objc private func updateVisiblePage() {

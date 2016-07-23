@@ -11,6 +11,7 @@ struct MenuActionDispatcher {
   enum ActionType: Int {
     case Previous = 10001
     case Next     = 10002
+    case Export   = 10101
     
     var notificationName: String {
       switch self {
@@ -18,20 +19,14 @@ struct MenuActionDispatcher {
         return "GotoPrevious"
       case .Next:
         return "GotoNext"
+      case .Export:
+        return "Export"
       }
     }
     
     func sendNotification() {
       NSNotificationCenter.defaultCenter().postNotificationName(notificationName, object: nil)
     }
-  }
-  
-  static func dispatchAction(menuItem: NSMenuItem) {
-    guard let actionType = ActionType(rawValue: menuItem.tag) else {
-      return
-    }
-    
-    actionType.sendNotification()
   }
   
   static func dispatchAction(command: RemoteProtocol.Command) {

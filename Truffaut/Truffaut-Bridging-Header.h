@@ -5,3 +5,4 @@
 #import <pop/POP.h>
 
 #import "TFPlugInLoader.h"
+#import "DocumentExporterProtocol.h"

@@ -41,6 +41,10 @@
 		0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */; };
 		0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B7FADDF1D4343C100000884 /* DocumentExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADDE1D4343C100000884 /* DocumentExporter.m */; };
+		0B7FADE11D4343C200000884 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADE01D4343C100000884 /* main.m */; };
+		0B7FADE51D4343C200000884 /* DocumentExporter.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 0B7FADDA1D4343C100000884 /* DocumentExporter.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0B7FADEB1D43472300000884 /* ExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADEA1D43472300000884 /* ExportController.swift */; };
 		0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD841D0D525200565E8A /* Crashlytics.framework */; };
 		0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD851D0D525200565E8A /* Fabric.framework */; };
 		0BD941C51D425B95002BE0E7 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD941C41D425B95002BE0E7 /* Yaml.framework */; };
@@ -68,6 +72,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0B52D5E91D044199005409B5;
 			remoteInfo = BasicImageTemplate;
+		};
+		0B7FADE31D4343C200000884 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B7FADD91D4343C100000884;
+			remoteInfo = DocumentExporter;
 		};
 		29F4791E1CC8B49A001CBB63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -112,6 +123,17 @@
 				0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */,
 			);
 			name = "Embed Slide Templates";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7FADE91D4343C200000884 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				0B7FADE51D4343C200000884 /* DocumentExporter.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -160,6 +182,13 @@
 		0B7C8C161CC22748000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicCoverTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8C221CC227E7000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B7FADDA1D4343C100000884 /* DocumentExporter.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = DocumentExporter.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7FADDC1D4343C100000884 /* DocumentExporterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentExporterProtocol.h; sourceTree = "<group>"; };
+		0B7FADDD1D4343C100000884 /* DocumentExporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentExporter.h; sourceTree = "<group>"; };
+		0B7FADDE1D4343C100000884 /* DocumentExporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentExporter.m; sourceTree = "<group>"; };
+		0B7FADE01D4343C100000884 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0B7FADE21D4343C200000884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B7FADEA1D43472300000884 /* ExportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportController.swift; sourceTree = "<group>"; };
 		0BA6FD841D0D525200565E8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0BA6FD851D0D525200565E8A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		0BD941C41D425B95002BE0E7 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
@@ -210,6 +239,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B7C8C1D1CC227E7000FE312 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7FADD71D4343C100000884 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,6 +327,7 @@
 				0B7C8C151CC22748000FE312 /* BasicPageTemplate */,
 				0B52D5EB1D044199005409B5 /* BasicImageTemplate */,
 				29653B9C1CD8B46A001A992B /* Remote */,
+				0B7FADDB1D4343C100000884 /* DocumentExporter */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -303,6 +340,7 @@
 				0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */,
 				29653B9B1CD8B46A001A992B /* Remote.app */,
 				0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */,
+				0B7FADDA1D4343C100000884 /* DocumentExporter.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +392,7 @@
 		0B7C8BFB1CC13F5D000FE312 /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				0B7FADEA1D43472300000884 /* ExportController.swift */,
 				0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */,
 				29A7E8731CCA1DDC005E40D8 /* SwiftParser.swift */,
 				29A7E8711CCA1DD1005E40D8 /* JSONParser.swift */,
@@ -405,6 +444,18 @@
 				0B7C8C221CC227E7000FE312 /* Info.plist */,
 			);
 			path = BasicCoverTemplate;
+			sourceTree = "<group>";
+		};
+		0B7FADDB1D4343C100000884 /* DocumentExporter */ = {
+			isa = PBXGroup;
+			children = (
+				0B7FADDC1D4343C100000884 /* DocumentExporterProtocol.h */,
+				0B7FADDD1D4343C100000884 /* DocumentExporter.h */,
+				0B7FADDE1D4343C100000884 /* DocumentExporter.m */,
+				0B7FADE01D4343C100000884 /* main.m */,
+				0B7FADE21D4343C200000884 /* Info.plist */,
+			);
+			path = DocumentExporter;
 			sourceTree = "<group>";
 		};
 		0BA6FD831D0D525200565E8A /* Fabric */ = {
@@ -459,6 +510,7 @@
 				0B7C8BD71CBFD166000FE312 /* Frameworks */,
 				0B7C8BD81CBFD166000FE312 /* Resources */,
 				0B7C8BF71CC139FD000FE312 /* Embed Frameworks */,
+				0B7FADE91D4343C200000884 /* Embed XPC Services */,
 				0B7C8C1A1CC227A7000FE312 /* Embed Slide Templates */,
 				0BA6FD881D0D56D200565E8A /* Fabrics */,
 				0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */,
@@ -469,6 +521,7 @@
 				0B52D5F21D0441C1005409B5 /* PBXTargetDependency */,
 				29F4791F1CC8B49A001CBB63 /* PBXTargetDependency */,
 				29F479211CC8B49A001CBB63 /* PBXTargetDependency */,
+				0B7FADE41D4343C200000884 /* PBXTargetDependency */,
 			);
 			name = Truffaut;
 			productName = Truffaut;
@@ -508,6 +561,23 @@
 			productName = BasicCoverTemplate;
 			productReference = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */;
 			productType = "com.apple.product-type.bundle";
+		};
+		0B7FADD91D4343C100000884 /* DocumentExporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B7FADE61D4343C200000884 /* Build configuration list for PBXNativeTarget "DocumentExporter" */;
+			buildPhases = (
+				0B7FADD61D4343C100000884 /* Sources */,
+				0B7FADD71D4343C100000884 /* Frameworks */,
+				0B7FADD81D4343C100000884 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DocumentExporter;
+			productName = DocumentExporter;
+			productReference = 0B7FADDA1D4343C100000884 /* DocumentExporter.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 		29653B9A1CD8B46A001A992B /* Remote */ = {
 			isa = PBXNativeTarget;
@@ -551,6 +621,12 @@
 					0B7C8C1F1CC227E7000FE312 = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					0B7FADD91D4343C100000884 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 37G4TUHERL;
+						DevelopmentTeamName = "Yan Li";
+						ProvisioningStyle = Manual;
+					};
 					29653B9A1CD8B46A001A992B = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -574,6 +650,7 @@
 				0B7C8C131CC22748000FE312 /* BasicPageTemplate */,
 				0B52D5E91D044199005409B5 /* BasicImageTemplate */,
 				29653B9A1CD8B46A001A992B /* Remote */,
+				0B7FADD91D4343C100000884 /* DocumentExporter */,
 			);
 		};
 /* End PBXProject section */
@@ -609,6 +686,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7FADD81D4343C100000884 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +808,7 @@
 				0B73AAA21CD8E06700ADEBD4 /* RemoteServer.swift in Sources */,
 				0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */,
 				29503F991CD990F800D71EC2 /* RemoteProtocol.swift in Sources */,
+				0B7FADEB1D43472300000884 /* ExportController.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
 				0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */,
@@ -749,6 +834,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B7FADD61D4343C100000884 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7FADE11D4343C200000884 /* main.m in Sources */,
+				0B7FADDF1D4343C100000884 /* DocumentExporter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		29653B971CD8B46A001A992B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -766,6 +860,11 @@
 			isa = PBXTargetDependency;
 			target = 0B52D5E91D044199005409B5 /* BasicImageTemplate */;
 			targetProxy = 0B52D5F11D0441C1005409B5 /* PBXContainerItemProxy */;
+		};
+		0B7FADE41D4343C200000884 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B7FADD91D4343C100000884 /* DocumentExporter */;
+			targetProxy = 0B7FADE31D4343C200000884 /* PBXContainerItemProxy */;
 		};
 		29F4791F1CC8B49A001CBB63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1043,6 +1142,34 @@
 			};
 			name = Release;
 		};
+		0B7FADE71D4343C200000884 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = DocumentExporter/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.DocumentExporter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0B7FADE81D4343C200000884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Yan Li (37G4TUHERL)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DocumentExporter/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.DocumentExporter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		29653BAA1CD8B46A001A992B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1125,6 +1252,15 @@
 			buildConfigurations = (
 				0B7C8C241CC227E7000FE312 /* Debug */,
 				0B7C8C251CC227E7000FE312 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B7FADE61D4343C200000884 /* Build configuration list for PBXNativeTarget "DocumentExporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B7FADE71D4343C200000884 /* Debug */,
+				0B7FADE81D4343C200000884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
