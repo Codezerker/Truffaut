@@ -22,7 +22,12 @@ class BasicCoverViewController: NSViewController {
     subtitleString = subtitle
     updateContents()
   }
-    
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    updateContents()
+  }
+  
   override func viewWillAppear() {
     super.viewWillAppear()
     updateContents()

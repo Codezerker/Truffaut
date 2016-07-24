@@ -79,7 +79,10 @@ extension SlidesViewController {
   }
   
   @objc private func export() {
-    ExportController.`default`.testConnection()
+    let pdf = ExportController().exportToPDF(withDataSource: self)
+    let exportFolderURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first
+    let pdfFileURL = exportFolderURL?.URLByAppendingPathComponent("Truffaut-Export.pdf")
+    pdf.writeToURL(pdfFileURL!) // FIXME: Display a file panel to choose export destination
   }
   
   @objc private func updateVisiblePage() {
@@ -97,6 +100,29 @@ extension SlidesViewController {
       bulletPoints: page.bulletPoints)
   }
   
+}
+
+extension SlidesViewController: ExportControllerDataSource {
+  
+  func numberOfPagesToExport() -> Int {
+    guard let pages = pages else {
+      return 0
+    }
+    return pages.count
+  }
+  
+  func viewForPageToExport(atIndex index: Int) -> NSView? {
+    guard
+      let page = pages?[index],
+      let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
+      return nil
+    }
+    let pageViewController = template.createPageViewController()
+    template.setPageTitleForViewController(pageViewController,
+                                           withTitle: page.title,
+                                           bulletPoints: page.bulletPoints)
+    return pageViewController.view
+  }
 }
 
 extension SlidesViewController {
