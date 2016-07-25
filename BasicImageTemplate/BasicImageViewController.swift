@@ -23,6 +23,11 @@ class BasicImageViewController: NSViewController {
     updateContents()
   }
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    updateContents()
+  }
+  
   override func viewWillAppear() {
     super.viewWillAppear()
     updateContents()

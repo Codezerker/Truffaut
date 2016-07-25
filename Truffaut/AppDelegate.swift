@@ -35,12 +35,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
   
-  @IBAction func menuAction(sender: AnyObject) {
-    guard let menuItem = sender as? NSMenuItem else {
-      return
-    }
-    
-    MenuActionDispatcher.dispatchAction(menuItem)
+  @IBAction func nextClicked(_ : AnyObject?) {
+    MenuActionDispatcher.ActionType.Next.sendNotification()
+  }
+  
+  @IBAction func previousClicked(_ : AnyObject?) {
+    MenuActionDispatcher.ActionType.Previous.sendNotification()
+  }
+  
+  @IBAction func exportClicked(_ : AnyObject?) {
+    MenuActionDispatcher.ActionType.Export.sendNotification()
   }
   
 }

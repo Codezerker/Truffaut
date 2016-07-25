@@ -23,6 +23,10 @@ class SlidesViewController: NSViewController {
     return (windowController?.document as? Document)?.slides?.pages
   }
   
+  private var fileName: String? {
+    return (windowController?.document as? Document)?.fileNameWithoutExtension
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -62,6 +66,12 @@ extension SlidesViewController {
       selector: #selector(updateVisiblePage),
       name: Document.Notifications.update,
       object: nil)
+    
+    NSNotificationCenter.defaultCenter().addObserver(
+      self,
+      selector: #selector(export),
+      name: MenuActionDispatcher.ActionType.Export.notificationName,
+      object: nil)
   }
   
   @objc private func showPrevious() {
@@ -70,6 +80,25 @@ extension SlidesViewController {
   
   @objc private func showNext() {
     show(pageAtIndex: currentPage + 1)
+  }
+  
+  @objc private func export() {
+    guard let fileName = self.fileName else {
+      return
+    }
+    let openPanel = NSSavePanel()
+    openPanel.allowedFileTypes = [ExportController.ExportingType.pdf.fileExtension]
+    openPanel.allowsOtherFileTypes = false
+    openPanel.nameFieldStringValue = fileName
+    openPanel.beginWithCompletionHandler { result in
+      guard
+        result == NSFileHandlingPanelOKButton,
+        let exportURL = openPanel.URL else {
+        return
+      }
+      let pdf = ExportController().exportToPDF(withDataSource: self)
+      pdf.writeToURL(exportURL)
+    }
   }
   
   @objc private func updateVisiblePage() {
@@ -87,6 +116,29 @@ extension SlidesViewController {
       bulletPoints: page.bulletPoints)
   }
   
+}
+
+extension SlidesViewController: ExportControllerDataSource {
+  
+  func numberOfPagesToExport() -> Int {
+    guard let pages = pages else {
+      return 0
+    }
+    return pages.count
+  }
+  
+  func viewForPageToExport(atIndex index: Int) -> NSView? {
+    guard
+      let page = pages?[index],
+      let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
+      return nil
+    }
+    let pageViewController = template.createPageViewController()
+    template.setPageTitleForViewController(pageViewController,
+                                           withTitle: page.title,
+                                           bulletPoints: page.bulletPoints)
+    return pageViewController.view
+  }
 }
 
 extension SlidesViewController {
