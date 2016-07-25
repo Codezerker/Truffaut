@@ -23,6 +23,10 @@ class SlidesViewController: NSViewController {
     return (windowController?.document as? Document)?.slides?.pages
   }
   
+  private var fileName: String? {
+    return (windowController?.document as? Document)?.fileNameWithoutExtension
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -79,10 +83,22 @@ extension SlidesViewController {
   }
   
   @objc private func export() {
-    let pdf = ExportController().exportToPDF(withDataSource: self)
-    let exportFolderURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first
-    let pdfFileURL = exportFolderURL?.URLByAppendingPathComponent("Truffaut-Export.pdf")
-    pdf.writeToURL(pdfFileURL!) // FIXME: Display a file panel to choose export destination
+    guard let fileName = self.fileName else {
+      return
+    }
+    let openPanel = NSSavePanel()
+    openPanel.allowedFileTypes = [ExportController.ExportingType.pdf.fileExtension]
+    openPanel.allowsOtherFileTypes = false
+    openPanel.nameFieldStringValue = fileName
+    openPanel.beginWithCompletionHandler { result in
+      guard
+        result == NSFileHandlingPanelOKButton,
+        let exportURL = openPanel.URL else {
+        return
+      }
+      let pdf = ExportController().exportToPDF(withDataSource: self)
+      pdf.writeToURL(exportURL)
+    }
   }
   
   @objc private func updateVisiblePage() {

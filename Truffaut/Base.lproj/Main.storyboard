@@ -111,7 +111,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="KF3-7y-KuT"/>
-                                        <menuItem title="Export to..." tag="10101" keyEquivalent="E" id="4dP-gM-Wfd">
+                                        <menuItem title="Export to PDF" tag="10101" keyEquivalent="E" id="4dP-gM-Wfd">
                                             <connections>
                                                 <action selector="exportClicked:" target="Voe-Tx-rLC" id="kU4-PS-kBq"/>
                                             </connections>

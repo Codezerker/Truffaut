@@ -17,6 +17,17 @@ protocol ExportControllerDataSource {
 
 struct ExportController {
   
+  enum ExportingType {
+    case pdf
+    
+    var fileExtension: String {
+      switch self {
+      case .pdf:
+        return "pdf"
+      }
+    }
+  }
+  
   func exportToPDF(withDataSource dataSource: ExportControllerDataSource) -> PDFDocument {
     let pdfDocument = PDFDocument()
     let numberOfPages = dataSource.numberOfPagesToExport()

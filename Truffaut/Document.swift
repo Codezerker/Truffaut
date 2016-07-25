@@ -22,6 +22,9 @@ class Document: NSDocument {
     case InvalidData
   }
   
+  var fileNameWithoutExtension: String? {
+    return fileURL?.URLByDeletingPathExtension?.lastPathComponent
+  }
   var slides: Slides?
   private var fileMonitor: FileMonitor?
   
