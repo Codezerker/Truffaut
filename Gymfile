@@ -1,5 +1,5 @@
 scheme 'Truffaut'
-output_directory './Build'
+output_directory './.build'
 destination 'generic/platform=macOS'
 clean true
 export_options(
