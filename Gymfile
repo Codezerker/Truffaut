@@ -1,0 +1,9 @@
+scheme 'Truffaut'
+output_directory './Build'
+destination 'generic/platform=macOS'
+clean true
+export_options(
+  format: 'app',
+  exportWithOriginalSigningIdentity: true
+)
+
