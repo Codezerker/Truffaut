@@ -47,7 +47,7 @@ private extension ExportController {
   
   private struct Layout {
     
-    static let defaultExportContentSize = CGSize(width: 800, height: 600)
+    static let defaultExportContentSize = CGSize(width: 1440, height: 900)
   }
   
   private func exportViewToPDF(view: NSView) -> PDFPage? {
