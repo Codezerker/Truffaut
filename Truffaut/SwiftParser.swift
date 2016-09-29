@@ -23,10 +23,11 @@ struct SwiftParser: DocumentDataParsing {
   }
   
   fileprivate struct Kinds {
-    static let functionCall      = "source.lang.swift.expr.call"
-    static let functionParameter = "source.lang.swift.decl.var.parameter"
-    static let array             = "source.lang.swift.expr.array"
-    static let element           = "source.lang.swift.structure.elem.expr"
+    static let functionCall          = "source.lang.swift.expr.call"
+    static let functionArgumentLabel = "source.lang.swift.expr.argument"
+    static let functionParameter     = "source.lang.swift.decl.var.parameter"
+    static let array                 = "source.lang.swift.expr.array"
+    static let element               = "source.lang.swift.structure.elem.expr"
   }
   
   fileprivate struct Names {
@@ -54,7 +55,7 @@ struct SwiftParser: DocumentDataParsing {
     guard let initializeParameterExpressions = slideInitializeToken[Keys.substructure] as? [SourceKitRepresentable],
           initializeParameterExpressions.count == 1,
           let parameterToken = initializeParameterExpressions.first as? [String : SourceKitRepresentable],
-          let parameterTokenKind = parameterToken[Keys.kind] as? String, parameterTokenKind == Kinds.functionParameter,
+          let parameterTokenKind = parameterToken[Keys.kind] as? String, parameterTokenKind == Kinds.functionArgumentLabel,
           let parameterTokenName = parameterToken[Keys.name] as? String, parameterTokenName == Names.pages else {
       return nil
     }
@@ -109,7 +110,7 @@ private extension SwiftParser {
 
   func parseElementTitle(token: [String : SourceKitRepresentable], contentString: String) -> String? {
     guard let name = token[Keys.name] as? String, name == Names.title,
-          let kind = token[Keys.kind] as? String, kind == Kinds.functionParameter,
+          let kind = token[Keys.kind] as? String, kind == Kinds.functionArgumentLabel,
           let location = token[Keys.bodyLocation] as? Int64,
           let length = token[Keys.bodyLength] as? Int64 else {
       return nil
@@ -122,7 +123,7 @@ private extension SwiftParser {
   func parseElementBulletPoints(token: [String : SourceKitRepresentable]?, contentString: String) -> [String] {
     guard let token = token,
           let name = token[Keys.name] as? String, name == Names.bulletPoints,
-          let kind = token[Keys.kind] as? String, kind == Kinds.functionParameter,
+          let kind = token[Keys.kind] as? String, kind == Kinds.functionArgumentLabel,
           let subExpressions = token[Keys.substructure] as? [SourceKitRepresentable], subExpressions.count == 1,
           let bulletPointsArrayToken = subExpressions.first else {
       return []
