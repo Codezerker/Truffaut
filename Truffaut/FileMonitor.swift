@@ -10,12 +10,14 @@ import CoreServices.FSEvents
 
 class FileMonitor {
   
+  typealias EventHandler = () -> Void
+  
   let fileURL: NSURL
-  let eventHandler: dispatch_block_t
+  let eventHandler: EventHandler
 
   private var eventStream: FSEventStreamRef?
 
-  init(fileURL: NSURL, eventHandler: dispatch_block_t) {
+  init(fileURL: NSURL, eventHandler: @escaping EventHandler) {
     self.fileURL = fileURL
     self.eventHandler = eventHandler
     
@@ -29,7 +31,7 @@ class FileMonitor {
   private func createEventStream() {
     var context = FSEventStreamContext(
       version: 0,
-      info: UnsafeMutablePointer<Void>(Unmanaged.passUnretained(self).toOpaque()),
+      info: UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque()),
       retain: nil,
       release: nil,
       copyDescription: nil)
@@ -46,11 +48,14 @@ class FileMonitor {
     eventStream = FSEventStreamCreate(
       kCFAllocatorDefault,
       { _, info, _, _, _, _ in
-        let this = Unmanaged<FileMonitor>.fromOpaque(COpaquePointer(info)).takeUnretainedValue()
+        guard let info = info else {
+          return
+        }
+        let this = Unmanaged<FileMonitor>.fromOpaque(info).takeUnretainedValue()
         this.eventHandler()
       },
       &context,
-      pathsToWatch,
+      pathsToWatch as CFArray,
       UInt64(kFSEventStreamEventIdSinceNow),
       0,
       UInt32(flags))
@@ -62,7 +67,7 @@ class FileMonitor {
     FSEventStreamScheduleWithRunLoop(
       eventStream,
       CFRunLoopGetCurrent(),
-      kCFRunLoopDefaultMode)
+      CFRunLoopMode.defaultMode as! CFString)
     
     FSEventStreamStart(eventStream)
   }

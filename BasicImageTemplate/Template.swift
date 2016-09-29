@@ -17,17 +17,17 @@ class Template: NSObject, TFTemplate {
   func createPageViewController() -> NSViewController {
     return BasicImageViewController(
       nibName: BasicImageViewController().className,
-      bundle: NSBundle(forClass: BasicImageViewController.classForCoder()))!
+      bundle: Bundle(for: BasicImageViewController.classForCoder()))!
   }
   
-  func setPageTitleForViewController(viewController: NSViewController, withTitle title: String, bulletPoints: [String]?) {
+  func setPageTitleFor(_ viewController: NSViewController, withTitle title: String, bulletPoints: [String]?) {
     guard let viewController = viewController as? BasicImageViewController else {
       return
     }
     
     let image = NSImage(contentsOfFile: title)
-    let caption = bulletPoints?.joinWithSeparator("\n")
-    viewController.setImage(image, caption: caption)
+    let caption = bulletPoints?.joined(separator: "\n")
+    viewController.setImage(image: image, caption: caption)
   }
-  
+
 }

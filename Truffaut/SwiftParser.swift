@@ -11,7 +11,7 @@ import SourceKittenFramework
 
 struct SwiftParser: DocumentDataParsing {
   
-  private struct Keys {
+  fileprivate struct Keys {
     static let substructure = "key.substructure"
     static let kind         = "key.kind"
     static let name         = "key.name"
@@ -22,45 +22,46 @@ struct SwiftParser: DocumentDataParsing {
     static let bodyLength   = "key.bodylength"
   }
   
-  private struct Kinds {
+  fileprivate struct Kinds {
     static let functionCall      = "source.lang.swift.expr.call"
     static let functionParameter = "source.lang.swift.decl.var.parameter"
     static let array             = "source.lang.swift.expr.array"
     static let element           = "source.lang.swift.structure.elem.expr"
   }
   
-  private struct Names {
+  fileprivate struct Names {
     static let slides       = "Slides"
     static let pages        = "pages"
     static let title        = "title"
     static let bulletPoints = "bulletPoints"
   }
   
-  func parse(data: NSData) -> [Slides.PageJSON]? {
-    guard let contentString = String(data: data, encoding: NSUTF8StringEncoding) else {
+  func parse(data: Data) -> [Slides.PageJSON]? {
+    guard let contentString = String(data: data, encoding: .utf8) else {
       return nil
     }
     
     let file = File(contents: contentString)
     let structure = Structure(file: file).dictionary
     
-    guard let rootExpressions = structure[Keys.substructure] as? [SourceKitRepresentable] where rootExpressions.count == 2,
+    guard let rootExpressions = structure[Keys.substructure] as? [SourceKitRepresentable], rootExpressions.count == 2,
           let slideInitializeToken = rootExpressions.last as? [String : SourceKitRepresentable],
-          let initializeTokenKind = slideInitializeToken[Keys.kind] as? String where initializeTokenKind == Kinds.functionCall,
-          let initializeTokenName = slideInitializeToken[Keys.name] as? String where initializeTokenName == Names.slides else {
+          let initializeTokenKind = slideInitializeToken[Keys.kind] as? String, initializeTokenKind == Kinds.functionCall,
+          let initializeTokenName = slideInitializeToken[Keys.name] as? String, initializeTokenName == Names.slides else {
       return nil
     }
     
-    guard let initializeParameterExpressions = slideInitializeToken[Keys.substructure] as? [SourceKitRepresentable] where initializeParameterExpressions.count == 1,
+    guard let initializeParameterExpressions = slideInitializeToken[Keys.substructure] as? [SourceKitRepresentable],
+          initializeParameterExpressions.count == 1,
           let parameterToken = initializeParameterExpressions.first as? [String : SourceKitRepresentable],
-          let parameterTokenKind = parameterToken[Keys.kind] as? String where parameterTokenKind == Kinds.functionParameter,
-          let parameterTokenName = parameterToken[Keys.name] as? String where parameterTokenName == Names.pages else {
+          let parameterTokenKind = parameterToken[Keys.kind] as? String, parameterTokenKind == Kinds.functionParameter,
+          let parameterTokenName = parameterToken[Keys.name] as? String, parameterTokenName == Names.pages else {
       return nil
     }
     
-    guard let pagesArrayExpressions = parameterToken[Keys.substructure] as? [SourceKitRepresentable] where pagesArrayExpressions.count == 1,
+    guard let pagesArrayExpressions = parameterToken[Keys.substructure] as? [SourceKitRepresentable], pagesArrayExpressions.count == 1,
           let arrayToken = pagesArrayExpressions.first as? [String : SourceKitRepresentable],
-          let arrayTokenKind = arrayToken[Keys.kind] as? String where arrayTokenKind == Kinds.array else {
+          let arrayTokenKind = arrayToken[Keys.kind] as? String, arrayTokenKind == Kinds.array else {
       return nil
     }
     
@@ -71,7 +72,7 @@ struct SwiftParser: DocumentDataParsing {
     var results: [Slides.PageJSON] = []
     for expression in arrayElementExpressions {
       guard let token = expression as? [String : SourceKitRepresentable],
-            let json = parseElementToken(token, contentString: contentString) else {
+            let json = parseElementToken(token: token, contentString: contentString) else {
         continue
       }
       
@@ -86,18 +87,18 @@ struct SwiftParser: DocumentDataParsing {
 private extension SwiftParser {
   
   func parseElementToken(token: [String : SourceKitRepresentable], contentString: String) -> Slides.PageJSON? {
-    guard let kind = token[Keys.kind] as? String where kind == Kinds.functionCall,
+    guard let kind = token[Keys.kind] as? String, kind == Kinds.functionCall,
           let name = token[Keys.name] as? String else {
       return nil
     }
     
-    guard let subexpressions = token[Keys.substructure] as? [SourceKitRepresentable] where subexpressions.count == 2,
+    guard let subexpressions = token[Keys.substructure] as? [SourceKitRepresentable], subexpressions.count == 2,
           let titleToken = subexpressions.first as? [String : SourceKitRepresentable],
-          let title = parseElementTitle(titleToken, contentString: contentString) else {
+          let title = parseElementTitle(token: titleToken, contentString: contentString) else {
       return nil
     }
     
-    let bulletPoints = parseElementBulletPoints(subexpressions.last as? [String : SourceKitRepresentable], contentString: contentString)
+    let bulletPoints = parseElementBulletPoints(token: subexpressions.last as? [String : SourceKitRepresentable], contentString: contentString)
     
     return [
       Slides.JSONKeys.typeIdentifier : name,
@@ -107,32 +108,32 @@ private extension SwiftParser {
   }
 
   func parseElementTitle(token: [String : SourceKitRepresentable], contentString: String) -> String? {
-    guard let name = token[Keys.name] as? String where name == Names.title,
-          let kind = token[Keys.kind] as? String where kind == Kinds.functionParameter,
+    guard let name = token[Keys.name] as? String, name == Names.title,
+          let kind = token[Keys.kind] as? String, kind == Kinds.functionParameter,
           let location = token[Keys.bodyLocation] as? Int64,
           let length = token[Keys.bodyLength] as? Int64 else {
       return nil
     }
     
     let bodyRange = NSRange(location: Int(location), length: Int(length))
-    return contentString.extractTokenValueAtRange(bodyRange)
+    return contentString.extractTokenValueAtRange(range: bodyRange)
   }
   
   func parseElementBulletPoints(token: [String : SourceKitRepresentable]?, contentString: String) -> [String] {
     guard let token = token,
-          let name = token[Keys.name] as? String where name == Names.bulletPoints,
-          let kind = token[Keys.kind] as? String where kind == Kinds.functionParameter,
-          let subExpressions = token[Keys.substructure] as? [SourceKitRepresentable] where subExpressions.count == 1,
+          let name = token[Keys.name] as? String, name == Names.bulletPoints,
+          let kind = token[Keys.kind] as? String, kind == Kinds.functionParameter,
+          let subExpressions = token[Keys.substructure] as? [SourceKitRepresentable], subExpressions.count == 1,
           let bulletPointsArrayToken = subExpressions.first else {
       return []
     }
     
-    return parseBulletPoint(bulletPointsArrayToken, contentString: contentString)
+    return parseBulletPoint(token: bulletPointsArrayToken, contentString: contentString)
   }
   
   func parseBulletPoint(token: SourceKitRepresentable, contentString: String) -> [String] {
     guard let token = token as? [String : SourceKitRepresentable],
-          let kind = token[Keys.kind] as? String where kind == Kinds.array,
+          let kind = token[Keys.kind] as? String, kind == Kinds.array,
           let elements = token[Keys.elements] as? [SourceKitRepresentable] else {
       return []
     }
@@ -140,14 +141,14 @@ private extension SwiftParser {
     var results = [String]()
     for element in elements {
       guard let token = element as? [String : SourceKitRepresentable],
-            let kind = token[Keys.kind] as? String where kind == Kinds.element,
+            let kind = token[Keys.kind] as? String, kind == Kinds.element,
             let location = token[Keys.location] as? Int64,
             let length = token[Keys.length] as? Int64 else {
         return []
       }
       
       let range = NSRange(location: Int(location), length: Int(length))
-      results.append(contentString.extractTokenValueAtRange(range))
+      results.append(contentString.extractTokenValueAtRange(range: range))
     }
     
     return results

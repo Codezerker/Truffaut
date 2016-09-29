@@ -15,23 +15,24 @@ class BasicPageViewController: NSViewController {
   @IBOutlet weak var titleContentConstraint: NSLayoutConstraint?
   @IBOutlet var contentTextView: NSTextView?
   
-  private var titleString = ""
-  private var contentString = ""
+  fileprivate var titleString = ""
+  fileprivate var contentString = ""
   
-  func setContents(title title: String, contents: [String]?) {
+  func setContents(title: String, contents: [String]?) {
     titleString = title
     contentString = contents?.reduce("") { result, element in
       let bulletPointPrefix: String
       let bulletPoint: String
       if element.hasPrefix("  ") {
         bulletPointPrefix = "        ・ "
-        bulletPoint = element.substringFromIndex(element.startIndex.advancedBy(2))
+        let index = element.index(element.startIndex, offsetBy: 2)
+        bulletPoint = element.substring(from: index)
       } else {
         bulletPointPrefix = "・ "
         bulletPoint = element
       }
-      return result.stringByAppendingString(bulletPointPrefix + bulletPoint + "\n\n")
-    }.stringByReplacingOccurrencesOfString("->", withString: " ➞ ") ?? ""
+      return result.appending(bulletPointPrefix + bulletPoint + "\n\n")
+    }.replacingOccurrences(of: "->", with: " ➞ ") ?? ""
     updateContents()
   }
   
@@ -94,13 +95,13 @@ extension BasicPageViewController {
   override func viewWillLayout() {
     super.viewWillLayout()
     
-    let font = NSFont.systemFontOfSize(DynamicFontSize.titleFontSizeWithBounds(view.bounds), weight: NSFontWeightThin)
+    let font = NSFont.systemFont(ofSize: DynamicFontSize.titleFontSizeWithBounds(viewBounds: view.bounds), weight: NSFontWeightThin)
     titleLabel?.font = font
-    titleLabelHeightConstraint?.constant = titleString.layoutHeightWithFont(font, width: DynamicFontSize.layoutWidthWithBounds(view.bounds))
+    titleLabelHeightConstraint?.constant = titleString.layoutHeightWithFont(font: font, width: DynamicFontSize.layoutWidthWithBounds(viewBounds: view.bounds))
     titleLabel?.needsLayout = true
-    titleContentConstraint?.constant = DynamicFontSize.spacingWithBounds(view.bounds)
+    titleContentConstraint?.constant = DynamicFontSize.spacingWithBounds(viewBounds: view.bounds)
     
-    contentTextView?.font = NSFont.systemFontOfSize(DynamicFontSize.contentFontSizeWithBounds(view.bounds), weight: NSFontWeightLight)
+    contentTextView?.font = NSFont.systemFont(ofSize: DynamicFontSize.contentFontSizeWithBounds(viewBounds: view.bounds), weight: NSFontWeightLight)
     contentTextView?.needsLayout = true
   }
   
@@ -114,15 +115,15 @@ extension String {
     }
     
     let textStorage = NSTextStorage(string: self)
-    let textContainer = NSTextContainer(containerSize: NSSize(width: width, height: CGFloat.max))
+    let textContainer = NSTextContainer(containerSize: NSSize(width: width, height: CGFloat.greatestFiniteMagnitude))
     let layoutManager = NSLayoutManager()
     layoutManager.addTextContainer(textContainer)
     textStorage.addLayoutManager(layoutManager)
     textStorage.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: self.utf16.count))
     textContainer.lineFragmentPadding = 0
-    layoutManager.glyphRangeForTextContainer(textContainer)
+    layoutManager.glyphRange(for: textContainer)
     
-    return layoutManager.usedRectForTextContainer(textContainer).height
+    return layoutManager.usedRect(for: textContainer).height
   }
   
 }

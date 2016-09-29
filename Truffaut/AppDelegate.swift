@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     openDocumentIfNeeded()
   }
   
-  func applicationShouldHandleReopen(sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+  func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
     if flag {
       return true
     } else {
@@ -52,10 +52,10 @@ extension AppDelegate {
 
 // MARK: - Defaut Actions
 
-private extension AppDelegate {
+fileprivate extension AppDelegate {
   
-  private func openDocumentIfNeeded() {
-    NSDocumentController.sharedDocumentController().openDocument(nil)
+  fileprivate func openDocumentIfNeeded() {
+    NSDocumentController.shared().openDocument(nil)
   }
   
 }
@@ -65,10 +65,10 @@ private extension AppDelegate {
 import Fabric
 import Crashlytics
 
-private extension AppDelegate {
+fileprivate extension AppDelegate {
   
-  private func setupFabric() {
-    NSUserDefaults.standardUserDefaults().registerDefaults([
+  fileprivate func setupFabric() {
+    UserDefaults.standard.register(defaults: [
       "NSApplicationCrashOnExceptions" : true
     ])
     Fabric.with([Crashlytics.self])

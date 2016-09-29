@@ -22,7 +22,7 @@ class MainViewController: NSViewController {
     super.viewWillAppear()
     
     if let fileURL = (windowController?.document as? Document)?.fileURL {
-      pathControl.URL = fileURL
+      pathControl.url = fileURL
     }
   }
   

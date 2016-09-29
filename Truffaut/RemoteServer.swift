@@ -14,14 +14,14 @@ final class RemoteServer: NSObject {
   static let sharedServer = RemoteServer()
   
   private var advertiser: MCNearbyServiceAdvertiser?
-  private var connectedSession: MCSession?
+  fileprivate var connectedSession: MCSession?
   
   func start() {
     guard self.advertiser == nil else {
       return
     }
     
-    let displayName = "Truffaut on \"\(NSHost.currentHost().localizedName ?? "Unknown Device")\""
+    let displayName = "Truffaut on \"\(Host.current().localizedName ?? "Unknown Device")\""
     let peerID = MCPeerID(displayName: displayName)
     let advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: RemoteProtocol.serviceType)
     advertiser.delegate = self
@@ -34,46 +34,49 @@ final class RemoteServer: NSObject {
 
 extension RemoteServer: MCSessionDelegate {
   
-  func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
+  @available(OSX 10.10, *)
+  public func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) {
+    // ...
+  }
+
+  @available(OSX 10.10, *)
+  public func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+    // ...
+  }
+
+  @available(OSX 10.10, *)
+  public func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+    // ...
+  }
+
+  
+  func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
     print("\(#function) \(peerID) - \(state.rawValue)")
     
     switch state {
-    case MCSessionState.NotConnected:
+    case MCSessionState.notConnected:
       connectedSession = nil
     default:
       break
     }
   }
   
-  func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
-    print("\(#function) \(data.length) - \(peerID)")
+  func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+    print("\(#function) \(data.count) - \(peerID)")
     
     guard let command = RemoteProtocol.Command(data: data) else {
       return
     }
     
-    dispatch_async(dispatch_get_main_queue()) {
-      MenuActionDispatcher.dispatchAction(command)
+    DispatchQueue.main.async {
+      MenuActionDispatcher.dispatchAction(command: command)
     }
   }
-  
-  func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-    // ...
-  }
-  
-  func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress) {
-    // ...
-  }
-  
-  func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?) {
-    // ...
-  }
-  
 }
 
 extension RemoteServer: MCNearbyServiceAdvertiserDelegate {
   
-  func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession?) -> Void) {
+  func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
     print("\(#function) \(peerID) - \(context)")
     
     // Accept all invitations
@@ -84,9 +87,4 @@ extension RemoteServer: MCNearbyServiceAdvertiserDelegate {
     
     invitationHandler(true, connectedSession!)
   }
-  
-  func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
-    print("\(#function) \(error)")
-  }
-  
 }

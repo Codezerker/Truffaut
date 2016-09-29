@@ -19,8 +19,8 @@ extension NSView {
     
     var results = [NSLayoutConstraint]()
     for visualFormatString in visualFormatStrings {
-      let constraints = NSLayoutConstraint.constraintsWithVisualFormat(
-        visualFormatString,
+      let constraints = NSLayoutConstraint.constraints(
+        withVisualFormat: visualFormatString,
         options: [],
         metrics: nil,
         views: views)

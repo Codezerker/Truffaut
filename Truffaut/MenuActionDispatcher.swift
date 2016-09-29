@@ -25,7 +25,7 @@ struct MenuActionDispatcher {
     }
     
     func sendNotification() {
-      NSNotificationCenter.defaultCenter().postNotificationName(notificationName, object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationName), object: nil)
     }
   }
   
@@ -39,9 +39,9 @@ private extension RemoteProtocol.Command {
   
   var actionType: MenuActionDispatcher.ActionType {
     switch self {
-    case Next:
+    case .Next:
       return .Next
-    case Previous:
+    case .Previous:
       return .Previous
     }
   }

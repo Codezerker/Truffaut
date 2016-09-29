@@ -42,7 +42,7 @@ extension StoryboardInstantiatable {
   }
   
   static func loadFromStoryboard() -> ControllerType {
-    let controller = NSStoryboard(name: storyboardName, bundle: nil).instantiateControllerWithIdentifier(storyboardIdentifier) as! ControllerType
+    let controller = NSStoryboard(name: storyboardName, bundle: nil).instantiateController(withIdentifier: storyboardIdentifier) as! ControllerType
     return controller
   }
   

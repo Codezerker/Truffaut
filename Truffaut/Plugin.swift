@@ -16,8 +16,8 @@ class PlugIn {
   
   func loadPlugIns() {
     // Load built-in plugins
-    if let builtInPlugInURL = NSBundle.mainBundle().builtInPlugInsURL {
-      loadPlugInFromURL(builtInPlugInURL)
+    if let builtInPlugInURL = Bundle.main.builtInPlugInsURL {
+      loadPlugInFromURL(URL: builtInPlugInURL)
     }
     
     // Create external plugin directory if needed
@@ -25,7 +25,7 @@ class PlugIn {
     
     // Load external plugins
     if let externalPlugInURL = plugInSearchURL {
-      loadPlugInFromURL(externalPlugInURL)
+      loadPlugInFromURL(URL: externalPlugInURL)
     }
   }
   
@@ -33,31 +33,31 @@ class PlugIn {
 
 extension PlugIn {
   
-  private var plugInSearchURL: NSURL? {
-    guard let URL = try? NSFileManager.defaultManager().URLForDirectory(
-      .ApplicationSupportDirectory,
-      inDomain: .UserDomainMask,
-      appropriateForURL: nil,
+  fileprivate var plugInSearchURL: URL? {
+    guard let URL = try? FileManager.default.url(
+      for: .applicationSupportDirectory,
+      in: .userDomainMask,
+      appropriateFor: nil,
       create: false) else {
         return nil
     }
     
-    return URL.URLByAppendingPathComponent("Truffaut/PlugIns")
+    return URL.appendingPathComponent("Truffaut/PlugIns", isDirectory: true)
   }
   
-  private func createPlugInDirectoryInApplicationSupportIfNeeded() {
+  fileprivate func createPlugInDirectoryInApplicationSupportIfNeeded() {
     guard let plugInSearchURL = plugInSearchURL else {
       return
     }
     
-    _ = try? NSFileManager.defaultManager().createDirectoryAtURL(
-      plugInSearchURL,
+    _ = try? FileManager.default.createDirectory(
+      at: plugInSearchURL,
       withIntermediateDirectories: true,
       attributes: nil);
   }
   
-  private func loadPlugInFromURL(URL: NSURL) {
-    let templateMap = TFPlugInLoader.loadSlidesTempatesWithSearchURL(URL)
+  fileprivate func loadPlugInFromURL(URL: URL) {
+    let templateMap = TFPlugInLoader.loadSlidesTempates(withSearch: URL)
     templateMap.forEach { key, value in
       self.templates[key] = value
     }

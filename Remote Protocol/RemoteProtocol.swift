@@ -14,25 +14,24 @@ struct RemoteProtocol {
   static let serviceType = "truffaut-remote"
   
   // Service Commands
-  enum Command: Int {
-    case Next     = 0xAD1 // Next slide, meaning: A.D., Anno Domini
-    case Previous = 0xBC1 // Previous slide, meaning: B.C., Before Christ
+  enum Command: UInt8 {
+    case Next     = 0x01 // Next slide
+    case Previous = 0x10 // Previous slide
     
     // Generate the NSData representation of the rawValue
-    func dataRepresentation() -> NSData {
-      var intValue = rawValue
-      return NSData(bytes: &intValue, length: sizeof(Int.self))
+    func dataRepresentation() -> Data {
+      return Data(bytes: [rawValue])
     }
     
     // Initialize a Command with a NSData representation
-    init?(data: NSData) {
-      var intValue: Int = 0
-      data.getBytes(&intValue, length: sizeof(Int.self))
+    init?(data: Data) {
+      var intValue: UInt8 = 0
+      data.copyBytes(to: &intValue, count: MemoryLayout<Int>.size)
       
       switch intValue {
-      case Next.rawValue:
+      case Command.Next.rawValue:
         self = .Next
-      case Previous.rawValue:
+      case Command.Previous.rawValue:
         self = .Previous
       default:
         return nil

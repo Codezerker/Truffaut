@@ -1,4 +1,5 @@
-github "drmohundro/SWXMLHash" "2.4.0"
+github "drmohundro/SWXMLHash" "3.0.2"
 github "sparkle-project/Sparkle" "1.14.0"
-github "facebook/pop" "b30efd828111e4dfd1651635c8586f859d1fd3c2"
-github "eyeplum/SourceKitten" "30218ec754472180871f573d2dbfc7e0123b930e"
+github "behrang/YamlSwift" "2.0.1"
+github "facebook/pop" "92b2c5b7bcad64f7507da34f921492c71ff1d330"
+github "jpsim/SourceKitten" "b8f8ed17ada856b6800a733de673e7a57f21dd02"

@@ -31,8 +31,8 @@ struct Slides {
       
       switch typeIdentifier {
       case Types.image:
-        let documentRootURL = documentURL.URLByDeletingLastPathComponent
-        let imageURL = documentRootURL?.URLByAppendingPathComponent(title)
+        let documentRootURL = documentURL.deletingLastPathComponent
+        let imageURL = documentRootURL?.appendingPathComponent(title, isDirectory: false)
         self.title = imageURL?.path ?? title
       default:
         self.title = title
@@ -42,17 +42,17 @@ struct Slides {
   
   var pages: [Page]
   
-  typealias PageJSON = [String : AnyObject]
+  typealias PageJSON = [String : Any]
   
   init(json: [PageJSON], documentURL: NSURL) throws {
     guard json.count > 0 else {
-      throw Document.Error.InvalidData
+      throw Document.ParsingError.InvalidData
     }
     
     pages = try json.map { pageJSON -> Page in
       guard let typeIdentifier = pageJSON[JSONKeys.typeIdentifier] as? String,
             let title = pageJSON[JSONKeys.title] as? String else {
-        throw Document.Error.InvalidData
+        throw Document.ParsingError.InvalidData
       }
       
       let bulletPoints = pageJSON[JSONKeys.bulletPoints] as? [String]

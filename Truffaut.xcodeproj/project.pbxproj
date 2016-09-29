@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B306F7B1D9CB628006E8E63 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD941C41D425B95002BE0E7 /* Yaml.framework */; };
+		0B306F7C1D9CB628006E8E63 /* Yaml.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD941C41D425B95002BE0E7 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */; };
 		0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52D5E41D02FEBE005409B5 /* CoreServices.framework */; };
 		0B52D5F01D0441BB005409B5 /* BasicImageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -44,8 +46,6 @@
 		0B7FADEB1D43472300000884 /* ExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADEA1D43472300000884 /* ExportController.swift */; };
 		0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD841D0D525200565E8A /* Crashlytics.framework */; };
 		0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD851D0D525200565E8A /* Fabric.framework */; };
-		0BD941C51D425B95002BE0E7 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD941C41D425B95002BE0E7 /* Yaml.framework */; };
-		0BD941C61D425BA3002BE0E7 /* Yaml.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD941C41D425B95002BE0E7 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29503F991CD990F800D71EC2 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29503F981CD990F800D71EC2 /* RemoteProtocol.swift */; };
 		29503F9A1CD990F800D71EC2 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29503F981CD990F800D71EC2 /* RemoteProtocol.swift */; };
 		29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9D1CD8B46A001A992B /* AppDelegate.swift */; };
@@ -93,7 +93,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0BD941C61D425BA3002BE0E7 /* Yaml.framework in Embed Frameworks */,
+				0B306F7C1D9CB628006E8E63 /* Yaml.framework in Embed Frameworks */,
 				0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */,
 				29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */,
 				0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */,
@@ -194,7 +194,7 @@
 			files = (
 				0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */,
 				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
-				0BD941C51D425B95002BE0E7 /* Yaml.framework in Frameworks */,
+				0B306F7B1D9CB628006E8E63 /* Yaml.framework in Frameworks */,
 				0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */,
 				0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */,
 				0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */,
@@ -547,6 +547,7 @@
 					0B7C8BD91CBFD166000FE312 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 37G4TUHERL;
+						ProvisioningStyle = Automatic;
 					};
 					0B7C8C131CC22748000FE312 = {
 						CreatedOnToolsVersion = 7.3;
@@ -824,7 +825,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicImageTemplate/BasicImageTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
 				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Debug;
@@ -842,7 +842,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicImageTemplate/BasicImageTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
 				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Release;
@@ -889,6 +888,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -926,6 +926,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -935,7 +936,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -948,7 +949,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Truffaut/Truffaut-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -958,7 +958,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Yan Li (37G4TUHERL)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -971,7 +971,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Truffaut/Truffaut-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -988,7 +987,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicPageTemplate/BasicPageTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
 				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Debug;
@@ -1006,7 +1004,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicPageTemplate/BasicPageTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
 				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Release;
@@ -1024,7 +1021,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicCoverTemplate/BasicCoverTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
 				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Debug;
@@ -1042,7 +1038,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicCoverTemplate/BasicCoverTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
 				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Release;
@@ -1060,7 +1055,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "468bb8c9-fdd7-4f4c-b977-1f23149a364e";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1079,7 +1073,6 @@
 				PROVISIONING_PROFILE = "54a84958-91a5-4c1d-9b49-6a03b8c98d7f";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

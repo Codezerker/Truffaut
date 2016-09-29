@@ -31,30 +31,30 @@ struct ExportController {
   func exportToPDF(withDataSource dataSource: ExportControllerDataSource) -> PDFDocument {
     let pdfDocument = PDFDocument()
     let numberOfPages = dataSource.numberOfPagesToExport()
-    for i in (0..<numberOfPages).reverse() {
+    for i in (0..<numberOfPages).reversed() {
       guard
         let pageView = dataSource.viewForPageToExport(atIndex: i),
-        let pdfPage = exportViewToPDF(pageView) else {
+        let pdfPage = exportViewToPDF(view: pageView) else {
         continue
       }
-      pdfDocument.insertPage(pdfPage, atIndex: 0)
+      pdfDocument.insert(pdfPage, at: 0)
     }
     return pdfDocument
   }
 }
 
-private extension ExportController {
+fileprivate extension ExportController {
   
-  private struct Layout {
+  fileprivate struct Layout {
     
     static let defaultExportContentSize = CGSize(width: 1440, height: 900)
   }
   
-  private func exportViewToPDF(view: NSView) -> PDFPage? {
+  fileprivate func exportViewToPDF(view: NSView) -> PDFPage? {
     view.frame = NSRect(origin: .zero, size: Layout.defaultExportContentSize)
     view.layoutSubtreeIfNeeded()
     
-    let pdfData = view.dataWithPDFInsideRect(view.bounds)
+    let pdfData = view.dataWithPDF(inside: view.bounds)
     guard let pdfRep = NSPDFImageRep(data: pdfData) else {
       return nil
     }

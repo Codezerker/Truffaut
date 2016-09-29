@@ -14,10 +14,10 @@ class BasicCoverViewController: NSViewController {
   @IBOutlet weak var titleHeightConstraint: NSLayoutConstraint?
   @IBOutlet weak var subtitleLabel: NSTextField?
   
-  private var titleString = ""
-  private var subtitleString: String?
+  fileprivate var titleString = ""
+  fileprivate var subtitleString: String?
   
-  func setContents(title title: String, subtitle: String?) {
+  func setContents(title: String, subtitle: String?) {
     titleString = title
     subtitleString = subtitle
     updateContents()
@@ -73,12 +73,12 @@ extension BasicCoverViewController {
   override func viewWillLayout() {
     super.viewWillLayout()
     
-    let font = NSFont.systemFontOfSize(DynamicFontSize.titleFontSizeWithBounds(view.bounds), weight: NSFontWeightThin)
+    let font = NSFont.systemFont(ofSize: DynamicFontSize.titleFontSizeWithBounds(viewBounds: view.bounds), weight: NSFontWeightThin)
     titleLabel?.font = font
-    titleHeightConstraint?.constant = titleString.layoutHeightWithFont(font, width: DynamicFontSize.layoutWidthWithBounds(view.bounds))
+    titleHeightConstraint?.constant = titleString.layoutHeightWithFont(font: font, width: DynamicFontSize.layoutWidthWithBounds(viewBounds: view.bounds))
     titleLabel?.needsLayout = true
     
-    subtitleLabel?.font = NSFont.systemFontOfSize(DynamicFontSize.contentFontSizeWithBounds(view.bounds), weight: NSFontWeightThin)
+    subtitleLabel?.font = NSFont.systemFont(ofSize: DynamicFontSize.contentFontSizeWithBounds(viewBounds: view.bounds), weight: NSFontWeightThin)
     subtitleLabel?.needsLayout = true
   }
   
@@ -92,15 +92,15 @@ extension String {
     }
     
     let textStorage = NSTextStorage(string: self)
-    let textContainer = NSTextContainer(containerSize: NSSize(width: width, height: CGFloat.max))
+    let textContainer = NSTextContainer(containerSize: NSSize(width: width, height: CGFloat.greatestFiniteMagnitude))
     let layoutManager = NSLayoutManager()
     layoutManager.addTextContainer(textContainer)
     textStorage.addLayoutManager(layoutManager)
     textStorage.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: self.utf16.count))
     textContainer.lineFragmentPadding = 0
-    layoutManager.glyphRangeForTextContainer(textContainer)
+    layoutManager.glyphRange(for: textContainer)
     
-    return layoutManager.usedRectForTextContainer(textContainer).height
+    return layoutManager.usedRect(for: textContainer).height
   }
   
 }

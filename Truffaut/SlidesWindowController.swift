@@ -15,9 +15,9 @@ class SlidesWindowController: NSWindowController {
     
     window?.styleMask.insert(NSFullSizeContentViewWindowMask)
     window?.titlebarAppearsTransparent = true
-    window?.titleVisibility = .Hidden
-    window?.movable = true
-    window?.movableByWindowBackground = true
+    window?.titleVisibility = .hidden
+    window?.isMovable = true
+    window?.isMovableByWindowBackground = true
     
     if let contentViewController = contentViewController as? SlidesViewController {
       contentViewController.windowController = self

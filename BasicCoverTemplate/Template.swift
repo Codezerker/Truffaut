@@ -17,15 +17,14 @@ class Template: NSObject, TFTemplate {
   func createPageViewController() -> NSViewController {
     return BasicCoverViewController(
       nibName: BasicCoverViewController().className,
-      bundle: NSBundle(forClass: BasicCoverViewController.classForCoder()))!
+      bundle: Bundle(for: BasicCoverViewController.classForCoder()))!
   }
   
-  func setPageTitleForViewController(viewController: NSViewController, withTitle title: String, bulletPoints: [String]?) {
+  func setPageTitleFor(_ viewController: NSViewController, withTitle title: String, bulletPoints: [String]?) {
     guard let viewController = viewController as? BasicCoverViewController else {
       return
     }
     
-    viewController.setContents(title: title, subtitle: bulletPoints?.joinWithSeparator(" | "))
+    viewController.setContents(title: title, subtitle: bulletPoints?.joined(separator: " | "))
   }
-  
 }

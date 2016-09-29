@@ -10,8 +10,8 @@ import Cocoa
 
 struct JSONParser: DocumentDataParsing {
 
-  func parse(data: NSData) -> [Slides.PageJSON]? {
-    let json = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+  func parse(data: Data) -> [Slides.PageJSON]? {
+    let json = try? JSONSerialization.jsonObject(with: data, options: [])
     return json as? [Slides.PageJSON]
   }
   

@@ -14,16 +14,16 @@ class SlidesViewController: NSViewController {
   
   weak var windowController: NSWindowController?
   
-  private var currentPage = 0
-  private weak var currentPageViewController: NSViewController?
+  fileprivate var currentPage = 0
+  fileprivate weak var currentPageViewController: NSViewController?
   
-  private var animating = false
+  fileprivate var animating = false
   
-  private var pages: [Slides.Page]? {
+  fileprivate var pages: [Slides.Page]? {
     return (windowController?.document as? Document)?.slides?.pages
   }
   
-  private var fileName: String? {
+  fileprivate var fileName: String? {
     return (windowController?.document as? Document)?.fileNameWithoutExtension
   }
   
@@ -32,8 +32,8 @@ class SlidesViewController: NSViewController {
     
     view.wantsLayer = true
     
-    visualEffectView.material = .Light
-    visualEffectView.hidden = true
+    visualEffectView.material = .light
+    visualEffectView.isHidden = true
     
     registerNotifications()
   }
@@ -48,29 +48,29 @@ class SlidesViewController: NSViewController {
 
 extension SlidesViewController {
   
-  private func registerNotifications() {
-    NSNotificationCenter.defaultCenter().addObserver(
+  fileprivate func registerNotifications() {
+    NotificationCenter.default.addObserver(
       self,
       selector: #selector(showPrevious),
-      name: MenuActionDispatcher.ActionType.Previous.notificationName,
+      name: NSNotification.Name(rawValue: MenuActionDispatcher.ActionType.Previous.notificationName),
       object: nil)
     
-    NSNotificationCenter.defaultCenter().addObserver(
+    NotificationCenter.default.addObserver(
       self,
       selector: #selector(showNext),
-      name: MenuActionDispatcher.ActionType.Next.notificationName,
+      name: NSNotification.Name(rawValue: MenuActionDispatcher.ActionType.Next.notificationName),
       object: nil)
     
-    NSNotificationCenter.defaultCenter().addObserver(
+    NotificationCenter.default.addObserver(
       self,
       selector: #selector(updateVisiblePage),
-      name: Document.Notifications.update,
+      name: NSNotification.Name(rawValue: Document.Notifications.update),
       object: nil)
     
-    NSNotificationCenter.defaultCenter().addObserver(
+    NotificationCenter.default.addObserver(
       self,
       selector: #selector(export),
-      name: MenuActionDispatcher.ActionType.Export.notificationName,
+      name: NSNotification.Name(rawValue: MenuActionDispatcher.ActionType.Export.notificationName),
       object: nil)
   }
   
@@ -90,14 +90,14 @@ extension SlidesViewController {
     openPanel.allowedFileTypes = [ExportController.ExportingType.pdf.fileExtension]
     openPanel.allowsOtherFileTypes = false
     openPanel.nameFieldStringValue = fileName
-    openPanel.beginWithCompletionHandler { result in
+    openPanel.begin { result in
       guard
         result == NSFileHandlingPanelOKButton,
-        let exportURL = openPanel.URL else {
+        let exportURL = openPanel.url else {
         return
       }
       let pdf = ExportController().exportToPDF(withDataSource: self)
-      pdf.writeToURL(exportURL)
+      pdf.write(to: exportURL)
     }
   }
   
@@ -110,7 +110,7 @@ extension SlidesViewController {
       return
     }
     
-    template.setPageTitleForViewController(
+    template.setPageTitleFor(
       currentPageViewController,
       withTitle: page.title,
       bulletPoints: page.bulletPoints)
@@ -134,9 +134,9 @@ extension SlidesViewController: ExportControllerDataSource {
       return nil
     }
     let pageViewController = template.createPageViewController()
-    template.setPageTitleForViewController(pageViewController,
-                                           withTitle: page.title,
-                                           bulletPoints: page.bulletPoints)
+    template.setPageTitleFor(pageViewController,
+                             withTitle: page.title,
+                             bulletPoints: page.bulletPoints)
     return pageViewController.view
   }
 }
@@ -152,7 +152,7 @@ extension SlidesViewController {
     static let scaleNormal  = CGPoint(x: 1, y: 1)
   }
   
-  private func show(pageAtIndex index: Int) {
+  fileprivate func show(pageAtIndex index: Int) {
     guard let pages = pages else {
       return
     }
@@ -174,7 +174,7 @@ extension SlidesViewController {
     
     let pageViewController = template.createPageViewController()
     
-    template.setPageTitleForViewController(
+    template.setPageTitleFor(
       pageViewController,
       withTitle: page.title,
       bulletPoints: page.bulletPoints)
@@ -182,7 +182,7 @@ extension SlidesViewController {
     pageViewController.view.wantsLayer = true
     pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-    let animationCompletion: dispatch_block_t = {
+    let animationCompletion: () -> Void = {
       self.currentPageViewController?.removeFromParentViewController()
       self.currentPageViewController?.view.removeFromSuperview()
       
@@ -202,28 +202,28 @@ extension SlidesViewController {
     }
     
     let isMovingForward = (index > currentPage)
-    view.addSubview(pageViewController.view, positioned: isMovingForward ? .Below : .Above, relativeTo: currentView)
+    view.addSubview(pageViewController.view, positioned: isMovingForward ? .below : .above, relativeTo: currentView)
     view.addConstraints(pageViewController.view.fullEdgeLayoutConstrains)
     addChildViewController(pageViewController)
     
     let fadeInAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
-    fadeInAnimation.fromValue = 0
-    fadeInAnimation.toValue = 1
-    fadeInAnimation.completionBlock = { _ in
+    fadeInAnimation?.fromValue = 0
+    fadeInAnimation?.toValue = 1
+    fadeInAnimation?.completionBlock = { _ in
       animationCompletion()
     }
 
     let fadeOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
-    fadeOutAnimation.toValue = 0
+    fadeOutAnimation?.toValue = 0
 
     let moveInAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
-    moveInAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    moveInAnimation.fromValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomOut : AnimationConstants.scaleZoomIn)
-    moveInAnimation.toValue = NSValue(CGPoint: AnimationConstants.scaleNormal)
+    moveInAnimation?.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    moveInAnimation?.fromValue = NSValue(cgPoint: isMovingForward ? AnimationConstants.scaleZoomOut : AnimationConstants.scaleZoomIn)
+    moveInAnimation?.toValue = NSValue(cgPoint: AnimationConstants.scaleNormal)
     
     let moveOutAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
-    moveOutAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    moveOutAnimation.toValue = NSValue(CGPoint: isMovingForward ? AnimationConstants.scaleZoomIn : AnimationConstants.scaleZoomOut)
+    moveOutAnimation?.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    moveOutAnimation?.toValue = NSValue(cgPoint: isMovingForward ? AnimationConstants.scaleZoomIn : AnimationConstants.scaleZoomOut)
 
     guard let currentLayer = currentPageViewController?.view.layer,
           let insertingLayer = pageViewController.view.layer else {
@@ -231,10 +231,10 @@ extension SlidesViewController {
       return
     }
     
-    currentLayer.pop_addAnimation(fadeOutAnimation, forKey: "fade_out")
-    currentLayer.pop_addAnimation(moveOutAnimation, forKey: "zoom_in")
-    insertingLayer.pop_addAnimation(fadeInAnimation, forKey: "fade_in")
-    insertingLayer.pop_addAnimation(moveInAnimation, forKey: "zoom_out")
+    currentLayer.pop_add(fadeOutAnimation, forKey: "fade_out")
+    currentLayer.pop_add(moveOutAnimation, forKey: "zoom_in")
+    insertingLayer.pop_add(fadeInAnimation, forKey: "fade_in")
+    insertingLayer.pop_add(moveInAnimation, forKey: "zoom_out")
   }
   
 }

@@ -9,7 +9,7 @@
 import Cocoa
 
 protocol DocumentDataParsing {
-  func parse(data: NSData) -> [Slides.PageJSON]?
+  func parse(data: Data) -> [Slides.PageJSON]?
 }
 
 class Document: NSDocument {
@@ -18,15 +18,15 @@ class Document: NSDocument {
     static let update = "update"
   }
   
-  enum Error: ErrorType {
+  enum ParsingError: Error {
     case InvalidData
   }
   
   var fileNameWithoutExtension: String? {
-    return fileURL?.URLByDeletingPathExtension?.lastPathComponent
+    return fileURL?.deletingPathExtension().lastPathComponent
   }
   var slides: Slides?
-  private var fileMonitor: FileMonitor?
+  fileprivate var fileMonitor: FileMonitor?
   
   deinit {
     removeFileMonitor()
@@ -42,46 +42,45 @@ class Document: NSDocument {
     
     addFileMonitor()
   }
-
-  override func dataOfType(typeName: String) throws -> NSData {
+  
+  override func data(ofType typeName: String) throws -> Data {
     throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
   }
   
-  override func readFromData(data: NSData, ofType typeName: String) throws {
+  override func read(from data: Data, ofType typeName: String) throws {
     guard let documentURL = fileURL else {
       return
     }
     
-    if let slidesJSON = JSONParser().parse(data) {
-      slides = try Slides(json: slidesJSON, documentURL: documentURL)
-    } else if let slidesJSON = SwiftParser().parse(data) {
-      slides = try Slides(json: slidesJSON, documentURL: documentURL)
+    if let slidesJSON = JSONParser().parse(data: data) {
+      slides = try Slides(json: slidesJSON, documentURL: documentURL as NSURL)
+    } else if let slidesJSON = SwiftParser().parse(data: data) {
+      slides = try Slides(json: slidesJSON, documentURL: documentURL as NSURL)
     } else {
-      throw Error.InvalidData
+      throw ParsingError.InvalidData
     }
     
-    NSNotificationCenter.defaultCenter().postNotificationName(Notifications.update, object: self)
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: Notifications.update), object: self)
   }
-
 }
 
-private extension Document {
+fileprivate extension Document {
   
-  private func addFileMonitor() {
+  fileprivate func addFileMonitor() {
     guard let fileURL = fileURL else {
       return
     }
     
-    fileMonitor = FileMonitor(fileURL: fileURL) { [weak self] in
+    fileMonitor = FileMonitor(fileURL: fileURL as NSURL) { [weak self] in
       guard let fileURL = self?.fileURL,
             let fileType = self?.fileType else {
           return
       }
-      _ = try? self?.revertToContentsOfURL(fileURL, ofType: fileType)
+      _ = try? self?.revert(toContentsOf: fileURL, ofType: fileType)
     }
   }
   
-  private func removeFileMonitor() {
+  fileprivate func removeFileMonitor() {
     fileMonitor = nil
   }
   
