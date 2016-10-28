@@ -1,4 +1,4 @@
 github "facebook/pop" "master"
 github "sparkle-project/Sparkle"
 
-github "jpsim/SourceKitten" "jp-swift-3"
+github "jpsim/SourceKitten" "master"
