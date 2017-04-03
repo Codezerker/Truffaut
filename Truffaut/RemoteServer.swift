@@ -77,7 +77,7 @@ extension RemoteServer: MCSessionDelegate {
 extension RemoteServer: MCNearbyServiceAdvertiserDelegate {
   
   func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
-    print("\(#function) \(peerID) - \(context)")
+    print("\(#function) \(peerID) - \(String(describing: context))")
     
     // Accept all invitations
     if connectedSession == nil {
