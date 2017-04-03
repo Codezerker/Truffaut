@@ -18,5 +18,19 @@ public struct Presentation {
         self.title = title
         self.authors = authors
         self.pages = pages
+        
+        // dump self as a JSON String to STDOUT
+        dump()
+    }
+}
+
+fileprivate extension Presentation {
+    
+    fileprivate func dump() {
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonRepresentation, options: .prettyPrinted),
+              let jsonString = String(data: jsonData, encoding: .utf8) else {
+            return
+        }
+        print(jsonString)
     }
 }
