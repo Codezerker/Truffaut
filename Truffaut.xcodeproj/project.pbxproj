@@ -15,13 +15,13 @@
 		0B14BCDE1E92360700EB0C6A /* TruffautSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B14BCE11E92360700EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B14BCE61E92361800EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B14BCE81E923A1200EB0C6A /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCE71E923A1200EB0C6A /* Presentation.swift */; };
 		0B14BCEA1E923A2100EB0C6A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCE91E923A2100EB0C6A /* Page.swift */; };
 		0B14BCEC1E923A6F00EB0C6A /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCEB1E923A6F00EB0C6A /* Content.swift */; };
 		0B14BCFC1E92429800EB0C6A /* JSONRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCFB1E92429800EB0C6A /* JSONRepresentation.swift */; };
 		0B14BD041E92499300EB0C6A /* TruffautSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */; };
 		0B14BD061E92499300EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
+		0B14BD0E1E925A8C00EB0C6A /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD0D1E925A8C00EB0C6A /* Reader.swift */; };
 		0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */; };
 		0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52D5E41D02FEBE005409B5 /* CoreServices.framework */; };
 		0B52D5F01D0441BB005409B5 /* BasicImageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -182,6 +182,8 @@
 		0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruffautSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruffautSupportTests.swift; sourceTree = "<group>"; };
 		0B14BD051E92499300EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B14BD0C1E925A8C00EB0C6A /* TruffautManifestReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TruffautManifestReader-Bridging-Header.h"; sourceTree = "<group>"; };
+		0B14BD0D1E925A8C00EB0C6A /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMonitor.swift; sourceTree = "<group>"; };
 		0B52D5E41D02FEBE005409B5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicImageTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,7 +250,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B14BCE61E92361800EB0C6A /* TruffautSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +323,8 @@
 				0B14BCC81E92320500EB0C6A /* TruffautManifestReaderProtocol.h */,
 				0B14BCC91E92320500EB0C6A /* TruffautManifestReader.h */,
 				0B14BCCA1E92320500EB0C6A /* TruffautManifestReader.m */,
+				0B14BD0D1E925A8C00EB0C6A /* Reader.swift */,
+				0B14BD0C1E925A8C00EB0C6A /* TruffautManifestReader-Bridging-Header.h */,
 				0B14BCCC1E92320500EB0C6A /* main.m */,
 				0B14BCCE1E92320500EB0C6A /* Info.plist */,
 			);
@@ -739,6 +742,7 @@
 					0B14BCC51E92320500EB0C6A = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 37G4TUHERL;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					0B14BCD91E92360700EB0C6A = {
@@ -940,6 +944,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B14BD0E1E925A8C00EB0C6A /* Reader.swift in Sources */,
 				0B14BCCD1E92320500EB0C6A /* main.m in Sources */,
 				0B14BCCB1E92320500EB0C6A /* TruffautManifestReader.m in Sources */,
 			);
@@ -1093,16 +1098,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 37G4TUHERL;
 				INFOPLIST_FILE = TruffautManifestReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.TruffautManifestReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TruffautManifestReader/TruffautManifestReader-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1110,15 +1120,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 37G4TUHERL;
 				INFOPLIST_FILE = TruffautManifestReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.TruffautManifestReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TruffautManifestReader/TruffautManifestReader-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
