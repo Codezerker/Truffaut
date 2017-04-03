@@ -19,6 +19,9 @@
 		0B14BCE81E923A1200EB0C6A /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCE71E923A1200EB0C6A /* Presentation.swift */; };
 		0B14BCEA1E923A2100EB0C6A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCE91E923A2100EB0C6A /* Page.swift */; };
 		0B14BCEC1E923A6F00EB0C6A /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCEB1E923A6F00EB0C6A /* Content.swift */; };
+		0B14BCFC1E92429800EB0C6A /* JSONRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCFB1E92429800EB0C6A /* JSONRepresentation.swift */; };
+		0B14BD041E92499300EB0C6A /* TruffautSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */; };
+		0B14BD061E92499300EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */; };
 		0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52D5E41D02FEBE005409B5 /* CoreServices.framework */; };
 		0B52D5F01D0441BB005409B5 /* BasicImageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -81,6 +84,13 @@
 			remoteInfo = TruffautManifestReader;
 		};
 		0B14BCDF1E92360700EB0C6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B14BCD91E92360700EB0C6A;
+			remoteInfo = TruffautSupport;
+		};
+		0B14BD071E92499300EB0C6A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
 			proxyType = 1;
@@ -168,6 +178,10 @@
 		0B14BCE91E923A2100EB0C6A /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		0B14BCEB1E923A6F00EB0C6A /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		0B14BCFA1E923DD900EB0C6A /* TruffautSupport copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruffautSupport copy-Info.plist"; path = "/Users/eyeplum/Projects/Truffaut/TruffautSupport copy-Info.plist"; sourceTree = "<absolute>"; };
+		0B14BCFB1E92429800EB0C6A /* JSONRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRepresentation.swift; sourceTree = "<group>"; };
+		0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruffautSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruffautSupportTests.swift; sourceTree = "<group>"; };
+		0B14BD051E92499300EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMonitor.swift; sourceTree = "<group>"; };
 		0B52D5E41D02FEBE005409B5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicImageTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +259,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B14BCFE1E92499300EB0C6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B14BD061E92499300EB0C6A /* TruffautSupport.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B52D5E71D044199005409B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,12 +332,22 @@
 			isa = PBXGroup;
 			children = (
 				0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */,
+				0B14BCFB1E92429800EB0C6A /* JSONRepresentation.swift */,
 				0B14BCE71E923A1200EB0C6A /* Presentation.swift */,
 				0B14BCE91E923A2100EB0C6A /* Page.swift */,
 				0B14BCEB1E923A6F00EB0C6A /* Content.swift */,
 				0B14BCDD1E92360700EB0C6A /* Info.plist */,
 			);
 			path = TruffautSupport;
+			sourceTree = "<group>";
+		};
+		0B14BD021E92499300EB0C6A /* TruffautSupportTests */ = {
+			isa = PBXGroup;
+			children = (
+				0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */,
+				0B14BD051E92499300EB0C6A /* Info.plist */,
+			);
+			path = TruffautSupportTests;
 			sourceTree = "<group>";
 		};
 		0B2FB9DF1CC3D68B005A3FEA /* Frameworks */ = {
@@ -384,6 +416,7 @@
 				29653B9C1CD8B46A001A992B /* Remote */,
 				0B14BCC71E92320500EB0C6A /* TruffautManifestReader */,
 				0B14BCDB1E92360700EB0C6A /* TruffautSupport */,
+				0B14BD021E92499300EB0C6A /* TruffautSupportTests */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
 				0B14BCFA1E923DD900EB0C6A /* TruffautSupport copy-Info.plist */,
 			);
@@ -399,6 +432,7 @@
 				0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */,
 				0B14BCC61E92320500EB0C6A /* TruffautManifestReader.xpc */,
 				0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */,
+				0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -576,6 +610,24 @@
 			productReference = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		0B14BD001E92499300EB0C6A /* TruffautSupportTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B14BD091E92499300EB0C6A /* Build configuration list for PBXNativeTarget "TruffautSupportTests" */;
+			buildPhases = (
+				0B14BCFD1E92499300EB0C6A /* Sources */,
+				0B14BCFE1E92499300EB0C6A /* Frameworks */,
+				0B14BCFF1E92499300EB0C6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B14BD081E92499300EB0C6A /* PBXTargetDependency */,
+			);
+			name = TruffautSupportTests;
+			productName = TruffautSupportTests;
+			productReference = 0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0B52D5E91D044199005409B5 /* BasicImageTemplate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B52D5ED1D044199005409B5 /* Build configuration list for PBXNativeTarget "BasicImageTemplate" */;
@@ -680,7 +732,7 @@
 		0B7C8BD21CBFD166000FE312 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Codezerker;
 				TargetAttributes = {
@@ -692,6 +744,11 @@
 					0B14BCD91E92360700EB0C6A = {
 						CreatedOnToolsVersion = 8.3;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					0B14BD001E92499300EB0C6A = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 37G4TUHERL;
 						ProvisioningStyle = Automatic;
 					};
 					0B52D5E91D044199005409B5 = {
@@ -733,6 +790,7 @@
 				29653B9A1CD8B46A001A992B /* Remote */,
 				0B14BCC51E92320500EB0C6A /* TruffautManifestReader */,
 				0B14BCD91E92360700EB0C6A /* TruffautSupport */,
+				0B14BD001E92499300EB0C6A /* TruffautSupportTests */,
 			);
 		};
 /* End PBXProject section */
@@ -746,6 +804,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B14BCD81E92360700EB0C6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B14BCFF1E92499300EB0C6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -884,9 +949,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B14BCFC1E92429800EB0C6A /* JSONRepresentation.swift in Sources */,
 				0B14BCEA1E923A2100EB0C6A /* Page.swift in Sources */,
 				0B14BCE81E923A1200EB0C6A /* Presentation.swift in Sources */,
 				0B14BCEC1E923A6F00EB0C6A /* Content.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B14BCFD1E92499300EB0C6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B14BD041E92499300EB0C6A /* TruffautSupportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,6 +1038,11 @@
 			isa = PBXTargetDependency;
 			target = 0B14BCD91E92360700EB0C6A /* TruffautSupport */;
 			targetProxy = 0B14BCDF1E92360700EB0C6A /* PBXContainerItemProxy */;
+		};
+		0B14BD081E92499300EB0C6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B14BCD91E92360700EB0C6A /* TruffautSupport */;
+			targetProxy = 0B14BD071E92499300EB0C6A /* PBXContainerItemProxy */;
 		};
 		0B52D5F21D0441C1005409B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1098,6 +1177,40 @@
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0B14BD0A1E92499300EB0C6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 37G4TUHERL;
+				INFOPLIST_FILE = TruffautSupportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.TruffautSupportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0B14BD0B1E92499300EB0C6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 37G4TUHERL;
+				INFOPLIST_FILE = TruffautSupportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.TruffautSupportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1390,6 +1503,14 @@
 			buildConfigurations = (
 				0B14BCE41E92360700EB0C6A /* Debug */,
 				0B14BCE51E92360700EB0C6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0B14BD091E92499300EB0C6A /* Build configuration list for PBXNativeTarget "TruffautSupportTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B14BD0A1E92499300EB0C6A /* Debug */,
+				0B14BD0B1E92499300EB0C6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

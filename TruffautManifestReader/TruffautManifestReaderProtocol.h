@@ -10,9 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NSDictionary<NSString *, id> JSONDictionary;
+
 @protocol TruffautManifestReaderProtocol
 
-- (void)readManifestFileAtURL:(NSURL *)url withReply:(void (^)(NSDictionary<NSString *, id> *))reply;
+- (BOOL)readManifestFileAtURL:(NSURL *)url withReply:(void (^)(JSONDictionary *))reply error:( NSError * _Nullable *)error;
 
 @end
 

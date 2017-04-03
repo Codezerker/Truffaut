@@ -12,5 +12,5 @@ public enum Content {
     
     indirect case bulletPoints([Content])
     case text(String)
-    case image(URL)
+    case image(String)
 }

@@ -10,8 +10,8 @@
 
 @implementation TruffautManifestReader
 
-- (void)readManifestFileAtURL:(NSURL *)url withReply:(void (^)(NSDictionary<NSString *, id> *))reply {
-    
+- (BOOL)readManifestFileAtURL:(NSURL *)url withReply:(void (^)(JSONDictionary *))reply error:(NSError **)error {
+    return NO;
 }
 
 @end
