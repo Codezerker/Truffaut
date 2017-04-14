@@ -12,7 +12,7 @@ struct ReadController {
 
     enum ReadingError: Error {
         case unableToLoadSupportModule
-        case malformedManifestData
+        case malformedManifestData(output: String)
     }
     
     static func read(from url: URL, completion: @escaping (Presentation?, Error?) -> Void) {
@@ -23,7 +23,7 @@ struct ReadController {
                 let output = try Shell.call(command: cmd, arguments: args)
                 guard let outputData = output.data(using: .utf8),
                       let json = try JSONSerialization.jsonObject(with: outputData, options: []) as? JSONDictionary else {
-                    completion(nil, ReadingError.malformedManifestData)
+                    completion(nil, ReadingError.malformedManifestData(output: output))
                     return
                 }
                 completion(Presentation(jsonDictionary: json), nil)

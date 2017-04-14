@@ -14,7 +14,7 @@ let presentation = Presentation(
 
        // Basic Bullet Points
        Page(title: "hello", subtitle: "say hello", contents: [
-           .bulletPoints([
+           .indent([
                .text("hello 1"),
                .text("hello 2"),
                .text("你好 3"),
@@ -23,15 +23,15 @@ let presentation = Presentation(
 
        // Nested Bullet Points
        Page(title: "hello", subtitle: "say hello", contents: [
-           .bulletPoints([
+           .indent([
                .text("Level 1.1"),
-               .bulletPoints([
+               .indent([
                    .text("Level 1.1.1"),
                    .text("Level 1.1.2"),
                ]),
                .text("Level 1.2"),
            ]),
-           .bulletPoints([
+           .indent([
                .text("Level 2.1"),
            ]),
        ]),

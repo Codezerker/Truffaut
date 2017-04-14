@@ -9,25 +9,23 @@
 import Cocoa
 
 class SlidesWindowController: NSWindowController {
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
     
-    window?.styleMask.insert(.fullSizeContentView)
-    window?.titlebarAppearsTransparent = true
-    window?.titleVisibility = .hidden
-    window?.isMovable = true
-    window?.isMovableByWindowBackground = true
-    
-    if let contentViewController = contentViewController as? SlidesViewController {
-      contentViewController.windowController = self
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        window?.styleMask.insert(.fullSizeContentView)
+        window?.titlebarAppearsTransparent = true
+        window?.titleVisibility = .hidden
+        window?.isMovable = true
+        window?.isMovableByWindowBackground = true
+        
+        if let contentViewController = contentViewController as? SlidesViewController {
+            contentViewController.windowController = self
+        }
     }
-  }
-  
 }
 
 extension SlidesWindowController: StoryboardInstantiatable {
-  
-  typealias ControllerType = SlidesWindowController
-  
+    
+    typealias ControllerType = SlidesWindowController
 }

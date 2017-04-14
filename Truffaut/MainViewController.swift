@@ -9,28 +9,27 @@
 import Cocoa
 
 class MainViewController: NSViewController {
-  
-  @IBOutlet weak var pathControl: NSPathControl!
-  
-  weak var windowController: MainWindowController?
-  
-  private lazy var slidesWindowController: SlidesWindowController = {
-    return SlidesWindowController.loadFromStoryboard()
-  }()
-  
-  override func viewWillAppear() {
-    super.viewWillAppear()
     
-    if let fileURL = (windowController?.document as? PresentationDocument)?.fileURL {
-      pathControl.url = fileURL
+    @IBOutlet weak var pathControl: NSPathControl!
+    
+    weak var windowController: MainWindowController?
+    
+    private lazy var slidesWindowController: SlidesWindowController = {
+        return SlidesWindowController.loadFromStoryboard()
+    }()
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        if let fileURL = (windowController?.document as? PresentationDocument)?.fileURL {
+            pathControl.url = fileURL
+        }
     }
-  }
-  
-  @IBAction func showSlides(sender: AnyObject?) {
-    windowController?.document?.addWindowController(slidesWindowController)
-    slidesWindowController.showWindow(nil)
     
-    windowController?.window?.orderOut(nil)
-  }
-  
+    @IBAction func showSlides(sender: AnyObject?) {
+        windowController?.document?.addWindowController(slidesWindowController)
+        slidesWindowController.showWindow(nil)
+        
+        windowController?.window?.orderOut(nil)
+    }
 }
