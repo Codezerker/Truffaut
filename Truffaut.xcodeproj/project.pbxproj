@@ -20,7 +20,6 @@
 		0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; };
 		0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Extensions.swift */; };
-		0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */; };
 		0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */; };
 		0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */; };
 		0B7C8BE21CBFD166000FE312 /* PresentationDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* PresentationDocument.swift */; };
@@ -98,7 +97,6 @@
 		0B14BD121E9398FE00EB0C6A /* Shell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		0B6EED851CC26CAA001BC00B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionDispatcher.swift; sourceTree = "<group>"; };
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -184,14 +182,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0B6EED911CC27568001BC00B /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */,
-			);
-			name = Menu;
-			sourceTree = "<group>";
-		};
 		0B7C8BD11CBFD166000FE312 = {
 			isa = PBXGroup;
 			children = (
@@ -219,7 +209,6 @@
 				0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */,
 				0BAB64B21EA0C200001CE96A /* Interface */,
 				0BAB64B11EA0C1F0001CE96A /* Utilities */,
-				0B6EED911CC27568001BC00B /* Menu */,
 				0B7C8BFB1CC13F5D000FE312 /* Document */,
 				0B7C8BFA1CC13F4A000FE312 /* Main Window */,
 				0B7C8BFC1CC13F91000FE312 /* Slides Window */,
@@ -554,7 +543,6 @@
 				0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */,
 				0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */,
 				0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */,
-				0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */,
 				0B7FADEB1D43472300000884 /* ExportController.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,

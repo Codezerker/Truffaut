@@ -42,46 +42,19 @@ class SlidesViewController: NSViewController {
         
         show(pageAtIndex: currentPage)
     }
-    
 }
 
 extension SlidesViewController {
     
-    fileprivate func registerNotifications() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(showPrevious),
-            name: NSNotification.Name(rawValue: MenuActionDispatcher.ActionType.Previous.notificationName),
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(showNext),
-            name: NSNotification.Name(rawValue: MenuActionDispatcher.ActionType.Next.notificationName),
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateVisiblePage),
-            name: NSNotification.Name(rawValue: PresentationDocument.Notifications.update),
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(export),
-            name: NSNotification.Name(rawValue: MenuActionDispatcher.ActionType.Export.notificationName),
-            object: nil)
-    }
-    
-    @objc private func showPrevious() {
+    @IBAction func showPreviousPage(_ sender: Any?) {
         show(pageAtIndex: currentPage - 1)
     }
     
-    @objc private func showNext() {
+    @IBAction func showNextPage(_ sender: Any?) {
         show(pageAtIndex: currentPage + 1)
     }
     
-    @objc private func export() {
+    @IBAction func exportPresentationToPDF(_ sender: Any?) {
         guard let fileName = self.fileName else {
             return
         }
@@ -99,10 +72,18 @@ extension SlidesViewController {
             pdf.write(to: exportURL)
         }
     }
+}
+
+extension SlidesViewController {
+    
+    fileprivate func registerNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateVisiblePage),
+                                               name: PresentationDocument.Notifications.update,
+                                               object: nil)
+    }
     
     @objc private func updateVisiblePage() {
-        print(#function)
-        
 //        guard let page = pages?[currentPage],
 //            let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier],
 //            let currentPageViewController = currentPageViewController else {

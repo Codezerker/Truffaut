@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F54b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -113,7 +114,7 @@
                                         <menuItem isSeparatorItem="YES" id="KF3-7y-KuT"/>
                                         <menuItem title="Export to PDF" tag="10101" keyEquivalent="E" id="4dP-gM-Wfd">
                                             <connections>
-                                                <action selector="exportClicked:" target="Voe-Tx-rLC" id="kU4-PS-kBq"/>
+                                                <action selector="exportPresentationToPDF:" target="Ady-hI-5gd" id="c0l-yX-RgW"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
@@ -357,13 +358,13 @@
                                         <menuItem title="Previous" tag="10001" keyEquivalent="" id="qpl-Qd-Vcy">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="previousClicked:" target="Voe-Tx-rLC" id="LRQ-a1-7Lu"/>
+                                                <action selector="showPreviousPage:" target="Ady-hI-5gd" id="4KD-Mg-EDS"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Next" tag="10002" keyEquivalent="" id="tox-mi-YWa">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="nextClicked:" target="Voe-Tx-rLC" id="T5E-bl-DgX"/>
+                                                <action selector="showNextPage:" target="Ady-hI-5gd" id="k6N-pD-2P9"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -758,7 +759,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="showSlidesWithSender:" target="5gI-5U-AMq" id="k4Q-rp-0Ej"/>
+                                    <action selector="showSlides:" target="5gI-5U-AMq" id="W8c-0k-WJ1"/>
                                 </connections>
                             </button>
                             <pathControl focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aju-RI-36a">

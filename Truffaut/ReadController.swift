@@ -23,12 +23,18 @@ struct ReadController {
                 let output = try Shell.call(command: cmd, arguments: args)
                 guard let outputData = output.data(using: .utf8),
                       let json = try JSONSerialization.jsonObject(with: outputData, options: []) as? JSONDictionary else {
-                    completion(nil, ReadingError.malformedManifestData(output: output))
+                    DispatchQueue.main.async {
+                        completion(nil, ReadingError.malformedManifestData(output: output))
+                    }
                     return
                 }
-                completion(Presentation(jsonDictionary: json), nil)
+                DispatchQueue.main.async {
+                    completion(Presentation(jsonDictionary: json), nil)
+                }
             } catch {
-                completion(nil, error)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
             }
         }
     }

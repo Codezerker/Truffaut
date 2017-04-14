@@ -28,23 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-// MARK: - Menu Action
-
-extension AppDelegate {
-    
-    @IBAction func nextClicked(_ : AnyObject?) {
-        MenuActionDispatcher.ActionType.Next.sendNotification()
-    }
-    
-    @IBAction func previousClicked(_ : AnyObject?) {
-        MenuActionDispatcher.ActionType.Previous.sendNotification()
-    }
-    
-    @IBAction func exportClicked(_ : AnyObject?) {
-        MenuActionDispatcher.ActionType.Export.sendNotification()
-    }
-}
-
 // MARK: - Defaut Actions
 
 fileprivate extension AppDelegate {

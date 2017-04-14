@@ -12,7 +12,7 @@ import TruffautSupport
 class PresentationDocument: NSDocument {
     
     struct Notifications {
-        static let update = "update"
+        static let update = NSNotification.Name(rawValue: "update")
     }
     
     enum ParsingError: Error {
@@ -45,9 +45,7 @@ class PresentationDocument: NSDocument {
                 return
             }
             self.presentation = presentation
-            
-            // TODO: reload UI
-            dump(presentation)
+            NotificationCenter.default.post(name: Notifications.update, object: self, userInfo: nil)
         }
     }
 }
