@@ -17,19 +17,9 @@
 		0B14BD041E92499300EB0C6A /* TruffautSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */; };
 		0B14BD061E92499300EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD121E9398FE00EB0C6A /* Shell.swift */; };
-		0B52D5F01D0441BB005409B5 /* BasicImageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B52D5FA1D044736005409B5 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5F91D044736005409B5 /* Template.swift */; };
-		0B52D5FD1D0448BD005409B5 /* BasicImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5FB1D0448BD005409B5 /* BasicImageViewController.swift */; };
-		0B52D5FE1D0448BD005409B5 /* BasicImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B52D5FC1D0448BD005409B5 /* BasicImageViewController.xib */; };
 		0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; };
 		0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */; };
-		0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */; };
 		0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Extensions.swift */; };
-		0B6EED891CC26E4B001BC00B /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED881CC26E4B001BC00B /* Template.swift */; };
-		0B6EED8C1CC26E6A001BC00B /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED8B1CC26E6A001BC00B /* Template.swift */; };
-		0B6EED8F1CC26EB0001BC00B /* BasicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */; };
-		0B6EED901CC26EB0001BC00B /* BasicPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */; };
 		0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */; };
 		0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */; };
 		0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */; };
@@ -40,10 +30,6 @@
 		0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */; };
 		0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */; };
 		0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C011CC1422B000FE312 /* Definitions.swift */; };
-		0B7C8C0A1CC20642000FE312 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C091CC20642000FE312 /* Plugin.swift */; };
-		0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */; };
-		0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7FADEB1D43472300000884 /* ExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADEA1D43472300000884 /* ExportController.swift */; };
 		0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD841D0D525200565E8A /* Crashlytics.framework */; };
 		0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD851D0D525200565E8A /* Fabric.framework */; };
@@ -64,27 +50,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0B14BCD91E92360700EB0C6A;
 			remoteInfo = TruffautSupport;
-		};
-		0B52D5F11D0441C1005409B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B52D5E91D044199005409B5;
-			remoteInfo = BasicImageTemplate;
-		};
-		29F4791E1CC8B49A001CBB63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B7C8C1F1CC227E7000FE312;
-			remoteInfo = BasicCoverTemplate;
-		};
-		29F479201CC8B49A001CBB63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B7C8BD21CBFD166000FE312 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B7C8C131CC22748000FE312;
-			remoteInfo = BasicPageTemplate;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -107,9 +72,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				0B52D5F01D0441BB005409B5 /* BasicImageTemplate.truffautplugin in Embed Slide Templates */,
-				0B7C8C261CC22800000FE312 /* BasicCoverTemplate.truffautplugin in Embed Slide Templates */,
-				0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */,
 			);
 			name = "Embed Slide Templates";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,22 +91,8 @@
 		0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruffautSupportTests.swift; sourceTree = "<group>"; };
 		0B14BD051E92499300EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B14BD121E9398FE00EB0C6A /* Shell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
-		0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicImageTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B52D5EC1D044199005409B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B52D5F81D044736005409B5 /* BasicImageTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicImageTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
-		0B52D5F91D044736005409B5 /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
-		0B52D5FB1D0448BD005409B5 /* BasicImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicImageViewController.swift; sourceTree = "<group>"; };
-		0B52D5FC1D0448BD005409B5 /* BasicImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicImageViewController.xib; sourceTree = "<group>"; };
 		0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
-		0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCoverViewController.swift; sourceTree = "<group>"; };
-		0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCoverViewController.xib; sourceTree = "<group>"; };
 		0B6EED851CC26CAA001BC00B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0B6EED871CC26CC5001BC00B /* BasicCoverTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicCoverTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
-		0B6EED881CC26E4B001BC00B /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
-		0B6EED8A1CC26E6A001BC00B /* BasicPageTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicPageTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
-		0B6EED8B1CC26E6A001BC00B /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
-		0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPageViewController.swift; sourceTree = "<group>"; };
-		0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPageViewController.xib; sourceTree = "<group>"; };
 		0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionDispatcher.swift; sourceTree = "<group>"; };
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,15 +105,7 @@
 		0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesWindowController.swift; sourceTree = "<group>"; };
 		0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
 		0B7C8C011CC1422B000FE312 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
-		0B7C8C091CC20642000FE312 /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
 		0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Truffaut-Bridging-Header.h"; sourceTree = "<group>"; };
-		0B7C8C0C1CC20865000FE312 /* TFPlugInLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFPlugInLoader.h; sourceTree = "<group>"; };
-		0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFPlugInLoader.m; sourceTree = "<group>"; };
-		0B7C8C0F1CC209F2000FE312 /* TFTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFTemplate.h; sourceTree = "<group>"; };
-		0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicPageTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B7C8C161CC22748000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicCoverTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B7C8C221CC227E7000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7FADEA1D43472300000884 /* ExportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportController.swift; sourceTree = "<group>"; };
 		0BA6FD841D0D525200565E8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0BA6FD851D0D525200565E8A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -188,13 +128,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B52D5E71D044199005409B5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0B7C8BD71CBFD166000FE312 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,20 +136,6 @@
 				0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */,
 				0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */,
 				0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B7C8C111CC22748000FE312 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B7C8C1D1CC227E7000FE312 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,21 +164,10 @@
 			path = TruffautSupportTests;
 			sourceTree = "<group>";
 		};
-		0B52D5EB1D044199005409B5 /* BasicImageTemplate */ = {
-			isa = PBXGroup;
-			children = (
-				0B52D5F81D044736005409B5 /* BasicImageTemplate-Bridging-Header.h */,
-				0B52D5F91D044736005409B5 /* Template.swift */,
-				0B52D5FB1D0448BD005409B5 /* BasicImageViewController.swift */,
-				0B52D5FC1D0448BD005409B5 /* BasicImageViewController.xib */,
-				0B52D5EC1D044199005409B5 /* Info.plist */,
-			);
-			path = BasicImageTemplate;
-			sourceTree = "<group>";
-		};
 		0B6EED841CC26C83001BC00B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */,
 				0B7C8BE31CBFD166000FE312 /* Assets.xcassets */,
 				0B7C8BE81CBFD166000FE312 /* Info.plist */,
 			);
@@ -278,9 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
-				0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */,
-				0B7C8C151CC22748000FE312 /* BasicPageTemplate */,
-				0B52D5EB1D044199005409B5 /* BasicImageTemplate */,
 				0B14BCDB1E92360700EB0C6A /* TruffautSupport */,
 				0B14BD021E92499300EB0C6A /* TruffautSupportTests */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
@@ -292,9 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				0B7C8BDA1CBFD166000FE312 /* Truffaut.app */,
-				0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */,
-				0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */,
-				0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */,
 				0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */,
 				0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */,
 			);
@@ -304,14 +206,12 @@
 		0B7C8BDC1CBFD166000FE312 /* Truffaut */ = {
 			isa = PBXGroup;
 			children = (
-				0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */,
 				0B7C8BE51CBFD166000FE312 /* Main.storyboard */,
 				0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */,
 				0B7C8C011CC1422B000FE312 /* Definitions.swift */,
 				0B6EED851CC26CAA001BC00B /* Extensions.swift */,
 				0B6EED911CC27568001BC00B /* Menu */,
 				0B7C8BFB1CC13F5D000FE312 /* Document */,
-				0B7C8C081CC2062B000FE312 /* Plugin */,
 				0B7C8BFA1CC13F4A000FE312 /* Main Window */,
 				0B7C8BFC1CC13F91000FE312 /* Slides Window */,
 				0B6EED841CC26C83001BC00B /* Supporting Files */,
@@ -355,41 +255,6 @@
 				0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */,
 			);
 			name = "Slides Window";
-			sourceTree = "<group>";
-		};
-		0B7C8C081CC2062B000FE312 /* Plugin */ = {
-			isa = PBXGroup;
-			children = (
-				0B7C8C0F1CC209F2000FE312 /* TFTemplate.h */,
-				0B7C8C0C1CC20865000FE312 /* TFPlugInLoader.h */,
-				0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */,
-				0B7C8C091CC20642000FE312 /* Plugin.swift */,
-			);
-			name = Plugin;
-			sourceTree = "<group>";
-		};
-		0B7C8C151CC22748000FE312 /* BasicPageTemplate */ = {
-			isa = PBXGroup;
-			children = (
-				0B6EED8A1CC26E6A001BC00B /* BasicPageTemplate-Bridging-Header.h */,
-				0B6EED8B1CC26E6A001BC00B /* Template.swift */,
-				0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */,
-				0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */,
-				0B7C8C161CC22748000FE312 /* Info.plist */,
-			);
-			path = BasicPageTemplate;
-			sourceTree = "<group>";
-		};
-		0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */ = {
-			isa = PBXGroup;
-			children = (
-				0B6EED871CC26CC5001BC00B /* BasicCoverTemplate-Bridging-Header.h */,
-				0B6EED881CC26E4B001BC00B /* Template.swift */,
-				0B6EED801CC25755001BC00B /* BasicCoverViewController.swift */,
-				0B6EED811CC25755001BC00B /* BasicCoverViewController.xib */,
-				0B7C8C221CC227E7000FE312 /* Info.plist */,
-			);
-			path = BasicCoverTemplate;
 			sourceTree = "<group>";
 		};
 		0BA6FD831D0D525200565E8A /* Fabric */ = {
@@ -462,23 +327,6 @@
 			productReference = 0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0B52D5E91D044199005409B5 /* BasicImageTemplate */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B52D5ED1D044199005409B5 /* Build configuration list for PBXNativeTarget "BasicImageTemplate" */;
-			buildPhases = (
-				0B52D5E61D044199005409B5 /* Sources */,
-				0B52D5E71D044199005409B5 /* Frameworks */,
-				0B52D5E81D044199005409B5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BasicImageTemplate;
-			productName = BasicImageTemplate;
-			productReference = 0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */;
-			productType = "com.apple.product-type.bundle";
-		};
 		0B7C8BD91CBFD166000FE312 /* Truffaut */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B7C8BEB1CBFD166000FE312 /* Build configuration list for PBXNativeTarget "Truffaut" */;
@@ -495,49 +343,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				0B52D5F21D0441C1005409B5 /* PBXTargetDependency */,
-				29F4791F1CC8B49A001CBB63 /* PBXTargetDependency */,
-				29F479211CC8B49A001CBB63 /* PBXTargetDependency */,
 				0B14BCE01E92360700EB0C6A /* PBXTargetDependency */,
 			);
 			name = Truffaut;
 			productName = Truffaut;
 			productReference = 0B7C8BDA1CBFD166000FE312 /* Truffaut.app */;
 			productType = "com.apple.product-type.application";
-		};
-		0B7C8C131CC22748000FE312 /* BasicPageTemplate */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B7C8C171CC22748000FE312 /* Build configuration list for PBXNativeTarget "BasicPageTemplate" */;
-			buildPhases = (
-				0B7C8C101CC22748000FE312 /* Sources */,
-				0B7C8C111CC22748000FE312 /* Frameworks */,
-				0B7C8C121CC22748000FE312 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BasicPageTemplate;
-			productName = BasicPageTemplate;
-			productReference = 0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */;
-			productType = "com.apple.product-type.bundle";
-		};
-		0B7C8C1F1CC227E7000FE312 /* BasicCoverTemplate */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B7C8C231CC227E7000FE312 /* Build configuration list for PBXNativeTarget "BasicCoverTemplate" */;
-			buildPhases = (
-				0B7C8C1C1CC227E7000FE312 /* Sources */,
-				0B7C8C1D1CC227E7000FE312 /* Frameworks */,
-				0B7C8C1E1CC227E7000FE312 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BasicCoverTemplate;
-			productName = BasicCoverTemplate;
-			productReference = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -559,19 +370,10 @@
 						DevelopmentTeam = 37G4TUHERL;
 						ProvisioningStyle = Automatic;
 					};
-					0B52D5E91D044199005409B5 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					0B7C8BD91CBFD166000FE312 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 37G4TUHERL;
 						ProvisioningStyle = Automatic;
-					};
-					0B7C8C131CC22748000FE312 = {
-						CreatedOnToolsVersion = 7.3;
-					};
-					0B7C8C1F1CC227E7000FE312 = {
-						CreatedOnToolsVersion = 7.3;
 					};
 				};
 			};
@@ -589,9 +391,6 @@
 			projectRoot = "";
 			targets = (
 				0B7C8BD91CBFD166000FE312 /* Truffaut */,
-				0B7C8C1F1CC227E7000FE312 /* BasicCoverTemplate */,
-				0B7C8C131CC22748000FE312 /* BasicPageTemplate */,
-				0B52D5E91D044199005409B5 /* BasicImageTemplate */,
 				0B14BCD91E92360700EB0C6A /* TruffautSupport */,
 				0B14BD001E92499300EB0C6A /* TruffautSupportTests */,
 			);
@@ -613,36 +412,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B52D5E81D044199005409B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B52D5FE1D0448BD005409B5 /* BasicImageViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0B7C8BD81CBFD166000FE312 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0B7C8BE41CBFD166000FE312 /* Assets.xcassets in Resources */,
 				0B7C8BE71CBFD166000FE312 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B7C8C121CC22748000FE312 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B6EED901CC26EB0001BC00B /* BasicPageViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B7C8C1E1CC227E7000FE312 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B6EED831CC25755001BC00B /* BasicCoverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,51 +502,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B52D5E61D044199005409B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B52D5FA1D044736005409B5 /* Template.swift in Sources */,
-				0B52D5FD1D0448BD005409B5 /* BasicImageViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0B7C8BD61CBFD166000FE312 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7C8C0A1CC20642000FE312 /* Plugin.swift in Sources */,
 				0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */,
 				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
 				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
 				0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */,
 				0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */,
 				0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */,
-				0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */,
 				0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */,
 				0B7FADEB1D43472300000884 /* ExportController.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
 				0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */,
 				0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B7C8C101CC22748000FE312 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B6EED8F1CC26EB0001BC00B /* BasicPageViewController.swift in Sources */,
-				0B6EED8C1CC26E6A001BC00B /* Template.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B7C8C1C1CC227E7000FE312 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */,
-				0B6EED891CC26E4B001BC00B /* Template.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,21 +533,6 @@
 			isa = PBXTargetDependency;
 			target = 0B14BCD91E92360700EB0C6A /* TruffautSupport */;
 			targetProxy = 0B14BD071E92499300EB0C6A /* PBXContainerItemProxy */;
-		};
-		0B52D5F21D0441C1005409B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B52D5E91D044199005409B5 /* BasicImageTemplate */;
-			targetProxy = 0B52D5F11D0441C1005409B5 /* PBXContainerItemProxy */;
-		};
-		29F4791F1CC8B49A001CBB63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B7C8C1F1CC227E7000FE312 /* BasicCoverTemplate */;
-			targetProxy = 29F4791E1CC8B49A001CBB63 /* PBXContainerItemProxy */;
-		};
-		29F479211CC8B49A001CBB63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B7C8C131CC22748000FE312 /* BasicPageTemplate */;
-			targetProxy = 29F479201CC8B49A001CBB63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -906,40 +637,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.TruffautSupportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		0B52D5EE1D044199005409B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = BasicImageTemplate/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicImageTemplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "BasicImageTemplate/BasicImageTemplate-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				WRAPPER_EXTENSION = truffautplugin;
-			};
-			name = Debug;
-		};
-		0B52D5EF1D044199005409B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = BasicImageTemplate/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicImageTemplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "BasicImageTemplate/BasicImageTemplate-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				WRAPPER_EXTENSION = truffautplugin;
 			};
 			name = Release;
 		};
@@ -1078,74 +775,6 @@
 			};
 			name = Release;
 		};
-		0B7C8C181CC22748000FE312 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = BasicPageTemplate/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicPageTemplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "BasicPageTemplate/BasicPageTemplate-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				WRAPPER_EXTENSION = truffautplugin;
-			};
-			name = Debug;
-		};
-		0B7C8C191CC22748000FE312 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = BasicPageTemplate/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicPageTemplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "BasicPageTemplate/BasicPageTemplate-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				WRAPPER_EXTENSION = truffautplugin;
-			};
-			name = Release;
-		};
-		0B7C8C241CC227E7000FE312 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = BasicCoverTemplate/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicCoverTemplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "BasicCoverTemplate/BasicCoverTemplate-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				WRAPPER_EXTENSION = truffautplugin;
-			};
-			name = Debug;
-		};
-		0B7C8C251CC227E7000FE312 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = BasicCoverTemplate/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.BasicCoverTemplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "BasicCoverTemplate/BasicCoverTemplate-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				WRAPPER_EXTENSION = truffautplugin;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1167,15 +796,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B52D5ED1D044199005409B5 /* Build configuration list for PBXNativeTarget "BasicImageTemplate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B52D5EE1D044199005409B5 /* Debug */,
-				0B52D5EF1D044199005409B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0B7C8BD51CBFD166000FE312 /* Build configuration list for PBXProject "Truffaut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1190,24 +810,6 @@
 			buildConfigurations = (
 				0B7C8BEC1CBFD166000FE312 /* Debug */,
 				0B7C8BED1CBFD166000FE312 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0B7C8C171CC22748000FE312 /* Build configuration list for PBXNativeTarget "BasicPageTemplate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B7C8C181CC22748000FE312 /* Debug */,
-				0B7C8C191CC22748000FE312 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0B7C8C231CC227E7000FE312 /* Build configuration list for PBXNativeTarget "BasicCoverTemplate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B7C8C241CC227E7000FE312 /* Debug */,
-				0B7C8C251CC227E7000FE312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,6 +6,8 @@
 //  Copyright © 2016 Codezerker. All rights reserved.
 //
 
+import Foundation
+
 struct MenuActionDispatcher {
     
     enum ActionType: Int {
