@@ -17,8 +17,6 @@
 		0B14BD041E92499300EB0C6A /* TruffautSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */; };
 		0B14BD061E92499300EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD121E9398FE00EB0C6A /* Shell.swift */; };
-		0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */; };
-		0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52D5E41D02FEBE005409B5 /* CoreServices.framework */; };
 		0B52D5F01D0441BB005409B5 /* BasicImageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B52D5FA1D044736005409B5 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5F91D044736005409B5 /* Template.swift */; };
 		0B52D5FD1D0448BD005409B5 /* BasicImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52D5FB1D0448BD005409B5 /* BasicImageViewController.swift */; };
@@ -33,20 +31,15 @@
 		0B6EED8F1CC26EB0001BC00B /* BasicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */; };
 		0B6EED901CC26EB0001BC00B /* BasicPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */; };
 		0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */; };
-		0B73AAA21CD8E06700ADEBD4 /* RemoteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73AAA11CD8E06700ADEBD4 /* RemoteServer.swift */; };
-		0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */; };
 		0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */; };
 		0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */; };
 		0B7C8BE21CBFD166000FE312 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* Document.swift */; };
 		0B7C8BE41CBFD166000FE312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE31CBFD166000FE312 /* Assets.xcassets */; };
 		0B7C8BE71CBFD166000FE312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE51CBFD166000FE312 /* Main.storyboard */; };
-		0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BF31CC139EB000FE312 /* pop.framework */; };
-		0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7C8BF31CC139EB000FE312 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BF81CC13E14000FE312 /* MainWindowController.swift */; };
 		0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */; };
 		0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */; };
 		0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C011CC1422B000FE312 /* Definitions.swift */; };
-		0B7C8C071CC1DC33000FE312 /* Slides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C061CC1DC33000FE312 /* Slides.swift */; };
 		0B7C8C0A1CC20642000FE312 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C091CC20642000FE312 /* Plugin.swift */; };
 		0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C0D1CC20865000FE312 /* TFPlugInLoader.m */; };
 		0B7C8C1B1CC227C1000FE312 /* BasicPageTemplate.truffautplugin in Embed Slide Templates */ = {isa = PBXBuildFile; fileRef = 0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,14 +47,7 @@
 		0B7FADEB1D43472300000884 /* ExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADEA1D43472300000884 /* ExportController.swift */; };
 		0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD841D0D525200565E8A /* Crashlytics.framework */; };
 		0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD851D0D525200565E8A /* Fabric.framework */; };
-		29503F991CD990F800D71EC2 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29503F981CD990F800D71EC2 /* RemoteProtocol.swift */; };
-		29503F9A1CD990F800D71EC2 /* RemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29503F981CD990F800D71EC2 /* RemoteProtocol.swift */; };
-		29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9D1CD8B46A001A992B /* AppDelegate.swift */; };
-		29653BA01CD8B46A001A992B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29653B9F1CD8B46A001A992B /* WelcomeViewController.swift */; };
-		29653BA31CD8B46A001A992B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA11CD8B46A001A992B /* Main.storyboard */; };
-		29653BA51CD8B46A001A992B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA41CD8B46A001A992B /* Assets.xcassets */; };
-		29653BA81CD8B46A001A992B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */; };
-		29653BAE1CD8B72C001A992B /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */; };
+		0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB64AE1EA08D7C001CE96A /* ReadController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,7 +107,6 @@
 			files = (
 				0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */,
 				0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Embed Frameworks */,
-				0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +127,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B0C72F41E922FFD00EDA5C3 /* Yams.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yams.framework; path = Carthage/Build/Mac/Yams.framework; sourceTree = "<group>"; };
 		0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TruffautSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TruffautSupport.h; sourceTree = "<group>"; };
 		0B14BCDD1E92360700EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,8 +139,6 @@
 		0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruffautSupportTests.swift; sourceTree = "<group>"; };
 		0B14BD051E92499300EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B14BD121E9398FE00EB0C6A /* Shell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
-		0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMonitor.swift; sourceTree = "<group>"; };
-		0B52D5E41D02FEBE005409B5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicImageTemplate.truffautplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B52D5EC1D044199005409B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B52D5F81D044736005409B5 /* BasicImageTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicImageTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -174,8 +156,6 @@
 		0B6EED8D1CC26EB0001BC00B /* BasicPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPageViewController.swift; sourceTree = "<group>"; };
 		0B6EED8E1CC26EB0001BC00B /* BasicPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPageViewController.xib; sourceTree = "<group>"; };
 		0B6EED921CC27584001BC00B /* MenuActionDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuActionDispatcher.swift; sourceTree = "<group>"; };
-		0B73AAA11CD8E06700ADEBD4 /* RemoteServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteServer.swift; sourceTree = "<group>"; };
-		0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -183,12 +163,10 @@
 		0B7C8BE31CBFD166000FE312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B7C8BE61CBFD166000FE312 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B7C8BE81CBFD166000FE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B7C8BF31CC139EB000FE312 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/Mac/pop.framework; sourceTree = "<group>"; };
 		0B7C8BF81CC13E14000FE312 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesWindowController.swift; sourceTree = "<group>"; };
 		0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
 		0B7C8C011CC1422B000FE312 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
-		0B7C8C061CC1DC33000FE312 /* Slides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slides.swift; sourceTree = "<group>"; };
 		0B7C8C091CC20642000FE312 /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
 		0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Truffaut-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B7C8C0C1CC20865000FE312 /* TFPlugInLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFPlugInLoader.h; sourceTree = "<group>"; };
@@ -201,17 +179,7 @@
 		0B7FADEA1D43472300000884 /* ExportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportController.swift; sourceTree = "<group>"; };
 		0BA6FD841D0D525200565E8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0BA6FD851D0D525200565E8A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		29503F981CD990F800D71EC2 /* RemoteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteProtocol.swift; path = "Remote Protocol/RemoteProtocol.swift"; sourceTree = "<group>"; };
-		29653B9B1CD8B46A001A992B /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		29653B9D1CD8B46A001A992B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29653B9F1CD8B46A001A992B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		29653BA21CD8B46A001A992B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		29653BA41CD8B46A001A992B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		29653BA71CD8B46A001A992B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		29653BA91CD8B46A001A992B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = DEVELOPER_DIR; };
-		29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Carthage/Build/Mac/SourceKittenFramework.framework; sourceTree = "<group>"; };
-		29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
+		0BAB64AE1EA08D7C001CE96A /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,12 +210,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B14BCE11E92360700EB0C6A /* TruffautSupport.framework in Frameworks */,
-				0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */,
-				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
 				0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */,
 				0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */,
 				0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */,
-				0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,14 +227,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		29653B981CD8B46A001A992B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				29653BAE1CD8B72C001A992B /* MultipeerConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,16 +253,6 @@
 				0B14BD051E92499300EB0C6A /* Info.plist */,
 			);
 			path = TruffautSupportTests;
-			sourceTree = "<group>";
-		};
-		0B2FB9DF1CC3D68B005A3FEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0B52D5E41D02FEBE005409B5 /* CoreServices.framework */,
-				0B73AAA31CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework */,
-			);
-			name = Frameworks;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		0B52D5EB1D044199005409B5 /* BasicImageTemplate */ = {
@@ -337,31 +284,13 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
-		0B73AAA01CD8E04C00ADEBD4 /* Remote Service */ = {
-			isa = PBXGroup;
-			children = (
-				0B73AAA11CD8E06700ADEBD4 /* RemoteServer.swift */,
-			);
-			name = "Remote Service";
-			sourceTree = "<group>";
-		};
-		0B73AAA51CD8E3E500ADEBD4 /* Remote Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				29503F981CD990F800D71EC2 /* RemoteProtocol.swift */,
-			);
-			name = "Remote Protocol";
-			sourceTree = "<group>";
-		};
 		0B7C8BD11CBFD166000FE312 = {
 			isa = PBXGroup;
 			children = (
-				0B73AAA51CD8E3E500ADEBD4 /* Remote Protocol */,
 				0B7C8BDC1CBFD166000FE312 /* Truffaut */,
 				0B7C8C211CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C151CC22748000FE312 /* BasicPageTemplate */,
 				0B52D5EB1D044199005409B5 /* BasicImageTemplate */,
-				29653B9C1CD8B46A001A992B /* Remote */,
 				0B14BCDB1E92360700EB0C6A /* TruffautSupport */,
 				0B14BD021E92499300EB0C6A /* TruffautSupportTests */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
@@ -375,7 +304,6 @@
 				0B7C8BDA1CBFD166000FE312 /* Truffaut.app */,
 				0B7C8C141CC22748000FE312 /* BasicPageTemplate.truffautplugin */,
 				0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */,
-				29653B9B1CD8B46A001A992B /* Remote.app */,
 				0B52D5EA1D044199005409B5 /* BasicImageTemplate.truffautplugin */,
 				0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */,
 				0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */,
@@ -386,9 +314,6 @@
 		0B7C8BDC1CBFD166000FE312 /* Truffaut */ = {
 			isa = PBXGroup;
 			children = (
-				0BA6FD831D0D525200565E8A /* Fabric */,
-				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
-				0B2FB9DF1CC3D68B005A3FEA /* Frameworks */,
 				0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */,
 				0B7C8BE51CBFD166000FE312 /* Main.storyboard */,
 				0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */,
@@ -397,10 +322,11 @@
 				0B6EED911CC27568001BC00B /* Menu */,
 				0B7C8BFB1CC13F5D000FE312 /* Document */,
 				0B7C8C081CC2062B000FE312 /* Plugin */,
-				0B73AAA01CD8E04C00ADEBD4 /* Remote Service */,
 				0B7C8BFA1CC13F4A000FE312 /* Main Window */,
 				0B7C8BFC1CC13F91000FE312 /* Slides Window */,
 				0B6EED841CC26C83001BC00B /* Supporting Files */,
+				0BA6FD831D0D525200565E8A /* Fabric */,
+				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
 			);
 			path = Truffaut;
 			sourceTree = "<group>";
@@ -408,11 +334,7 @@
 		0B7C8BEE1CBFEA2B000FE312 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
-				0B0C72F41E922FFD00EDA5C3 /* Yams.framework */,
 				0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */,
-				29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */,
-				0B7C8BF31CC139EB000FE312 /* pop.framework */,
-				29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */,
 			);
 			name = Carthage;
 			path = ..;
@@ -430,11 +352,8 @@
 		0B7C8BFB1CC13F5D000FE312 /* Document */ = {
 			isa = PBXGroup;
 			children = (
-				0B7FADEA1D43472300000884 /* ExportController.swift */,
-				0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */,
-				0B14BD121E9398FE00EB0C6A /* Shell.swift */,
 				0B7C8BE11CBFD166000FE312 /* Document.swift */,
-				0B7C8C061CC1DC33000FE312 /* Slides.swift */,
+				0BAB64B01EA08E2C001CE96A /* Tools */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -492,18 +411,14 @@
 			path = Fabric;
 			sourceTree = SOURCE_ROOT;
 		};
-		29653B9C1CD8B46A001A992B /* Remote */ = {
+		0BAB64B01EA08E2C001CE96A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				29653B9D1CD8B46A001A992B /* AppDelegate.swift */,
-				29653B9F1CD8B46A001A992B /* WelcomeViewController.swift */,
-				29653BA11CD8B46A001A992B /* Main.storyboard */,
-				29653BA41CD8B46A001A992B /* Assets.xcassets */,
-				29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */,
-				29653BA91CD8B46A001A992B /* Info.plist */,
-				29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */,
+				0BAB64AE1EA08D7C001CE96A /* ReadController.swift */,
+				0B14BD121E9398FE00EB0C6A /* Shell.swift */,
+				0B7FADEA1D43472300000884 /* ExportController.swift */,
 			);
-			path = Remote;
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -635,25 +550,6 @@
 			productReference = 0B7C8C201CC227E7000FE312 /* BasicCoverTemplate.truffautplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
-		29653B9A1CD8B46A001A992B /* Remote */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 29653BAC1CD8B46A001A992B /* Build configuration list for PBXNativeTarget "Remote" */;
-			buildPhases = (
-				0B73AAA91CD8FCFE00ADEBD4 /* Update CFBundleVersion */,
-				29653B971CD8B46A001A992B /* Sources */,
-				29653B981CD8B46A001A992B /* Frameworks */,
-				29653B991CD8B46A001A992B /* Resources */,
-				0B73AAAA1CD8FD0F00ADEBD4 /* Recover CFBundleVersion */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Remote;
-			productName = Remote;
-			productReference = 29653B9B1CD8B46A001A992B /* Remote.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -688,9 +584,6 @@
 					0B7C8C1F1CC227E7000FE312 = {
 						CreatedOnToolsVersion = 7.3;
 					};
-					29653B9A1CD8B46A001A992B = {
-						CreatedOnToolsVersion = 7.3;
-					};
 				};
 			};
 			buildConfigurationList = 0B7C8BD51CBFD166000FE312 /* Build configuration list for PBXProject "Truffaut" */;
@@ -710,7 +603,6 @@
 				0B7C8C1F1CC227E7000FE312 /* BasicCoverTemplate */,
 				0B7C8C131CC22748000FE312 /* BasicPageTemplate */,
 				0B52D5E91D044199005409B5 /* BasicImageTemplate */,
-				29653B9A1CD8B46A001A992B /* Remote */,
 				0B14BCD91E92360700EB0C6A /* TruffautSupport */,
 				0B14BD001E92499300EB0C6A /* TruffautSupportTests */,
 			);
@@ -765,16 +657,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29653B991CD8B46A001A992B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				29653BA81CD8B46A001A992B /* LaunchScreen.storyboard in Resources */,
-				29653BA51CD8B46A001A992B /* Assets.xcassets in Resources */,
-				29653BA31CD8B46A001A992B /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -807,34 +689,6 @@
 			shellScript = "GIT=/usr/bin/git\n\nBUILD_SUFIX=\"\"\n\n#if [ $CONFIGURATION == Debug ]\n#then\n#BUILD_SUFIX=\"D\"\n#fi\n\nbuildNumber=\"`$GIT rev-list HEAD --count`$BUILD_SUFIX\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
 		0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Recover CFBundleVersion";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "buildNumber=\"auto\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
-		};
-		0B73AAA91CD8FCFE00ADEBD4 /* Update CFBundleVersion */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Update CFBundleVersion";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "GIT=/usr/bin/git\n\nBUILD_SUFIX=\"\"\n\nif [ $CONFIGURATION == Debug ]\nthen\nBUILD_SUFIX=\"D\"\nfi\n\nbuildNumber=\"`$GIT rev-list HEAD --count`$BUILD_SUFIX\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
-		};
-		0B73AAAA1CD8FD0F00ADEBD4 /* Recover CFBundleVersion */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -902,13 +756,10 @@
 				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
 				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
 				0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */,
-				0B7C8C071CC1DC33000FE312 /* Slides.swift in Sources */,
+				0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */,
 				0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */,
 				0B7C8C0E1CC20865000FE312 /* TFPlugInLoader.m in Sources */,
 				0B6EED931CC27584001BC00B /* MenuActionDispatcher.swift in Sources */,
-				0B73AAA21CD8E06700ADEBD4 /* RemoteServer.swift in Sources */,
-				0B52D5E31D02FEA6005409B5 /* FileMonitor.swift in Sources */,
-				29503F991CD990F800D71EC2 /* RemoteProtocol.swift in Sources */,
 				0B7FADEB1D43472300000884 /* ExportController.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
@@ -932,16 +783,6 @@
 			files = (
 				0B6EED821CC25755001BC00B /* BasicCoverViewController.swift in Sources */,
 				0B6EED891CC26E4B001BC00B /* Template.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		29653B971CD8B46A001A992B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				29503F9A1CD990F800D71EC2 /* RemoteProtocol.swift in Sources */,
-				29653BA01CD8B46A001A992B /* WelcomeViewController.swift in Sources */,
-				29653B9E1CD8B46A001A992B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,22 +823,6 @@
 				0B7C8BE61CBFD166000FE312 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		29653BA11CD8B46A001A992B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29653BA21CD8B46A001A992B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29653BA71CD8B46A001A992B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1332,42 +1157,6 @@
 			};
 			name = Release;
 		};
-		29653BAA1CD8B46A001A992B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yan Li (D6D98RMPZC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yan Li (D6D98RMPZC)";
-				INFOPLIST_FILE = Remote/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.Truffaut.Remote;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "468bb8c9-fdd7-4f4c-b977-1f23149a364e";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		29653BAB1CD8B46A001A992B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yan Li (37G4TUHERL)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yan Li (37G4TUHERL)";
-				INFOPLIST_FILE = Remote/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codezerker.Truffaut.Remote;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54a84958-91a5-4c1d-9b49-6a03b8c98d7f";
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1430,15 +1219,6 @@
 			buildConfigurations = (
 				0B7C8C241CC227E7000FE312 /* Debug */,
 				0B7C8C251CC227E7000FE312 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		29653BAC1CD8B46A001A992B /* Build configuration list for PBXNativeTarget "Remote" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				29653BAA1CD8B46A001A992B /* Debug */,
-				29653BAB1CD8B46A001A992B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
