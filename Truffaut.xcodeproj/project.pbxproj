@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B0C72F51E922FFD00EDA5C3 /* Yams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0C72F41E922FFD00EDA5C3 /* Yams.framework */; };
-		0B0C72F71E92301900EDA5C3 /* Yams.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0C72F41E922FFD00EDA5C3 /* Yams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B14BCDE1E92360700EB0C6A /* TruffautSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B14BCE11E92360700EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -64,12 +62,6 @@
 		29653BA51CD8B46A001A992B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA41CD8B46A001A992B /* Assets.xcassets */; };
 		29653BA81CD8B46A001A992B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29653BA61CD8B46A001A992B /* LaunchScreen.storyboard */; };
 		29653BAE1CD8B72C001A992B /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */; };
-		29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; };
-		29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */; };
-		29A7E8701CC9FFB1005E40D8 /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		29A7E8721CCA1DD1005E40D8 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A7E8711CCA1DD1005E40D8 /* JSONParser.swift */; };
-		29A7E8741CCA1DDC005E40D8 /* SwiftParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A7E8731CCA1DDC005E40D8 /* SwiftParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,11 +120,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */,
-				0B0C72F71E92301900EDA5C3 /* Yams.framework in Embed Frameworks */,
-				29A7E8641CC9F60E005E40D8 /* SourceKittenFramework.framework in Embed Frameworks */,
 				0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Embed Frameworks */,
 				0B7C8BF61CC139FD000FE312 /* pop.framework in Embed Frameworks */,
-				29A7E8701CC9FFB1005E40D8 /* SWXMLHash.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,8 +212,6 @@
 		29653BAD1CD8B72C001A992B /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		29A7E8621CC9F5EE005E40D8 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Carthage/Build/Mac/SourceKittenFramework.framework; sourceTree = "<group>"; };
 		29A7E8671CC9FEAA005E40D8 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
-		29A7E8711CCA1DD1005E40D8 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
-		29A7E8731CCA1DDC005E40D8 /* SwiftParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,14 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B14BCE11E92360700EB0C6A /* TruffautSupport.framework in Frameworks */,
-				0B0C72F51E922FFD00EDA5C3 /* Yams.framework in Frameworks */,
 				0B52D5E51D02FEBE005409B5 /* CoreServices.framework in Frameworks */,
 				0B73AAA41CD8E0BB00ADEBD4 /* MultipeerConnectivity.framework in Frameworks */,
 				0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */,
 				0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */,
 				0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */,
-				29A7E8631CC9F5EE005E40D8 /* SourceKittenFramework.framework in Frameworks */,
-				29A7E86F1CC9FFB1005E40D8 /* SWXMLHash.framework in Frameworks */,
 				0B7C8BF51CC139FD000FE312 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,8 +433,6 @@
 				0B7FADEA1D43472300000884 /* ExportController.swift */,
 				0B52D5E21D02FEA6005409B5 /* FileMonitor.swift */,
 				0B14BD121E9398FE00EB0C6A /* Shell.swift */,
-				29A7E8731CCA1DDC005E40D8 /* SwiftParser.swift */,
-				29A7E8711CCA1DD1005E40D8 /* JSONParser.swift */,
 				0B7C8BE11CBFD166000FE312 /* Document.swift */,
 				0B7C8C061CC1DC33000FE312 /* Slides.swift */,
 			);
@@ -915,10 +897,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29A7E8741CCA1DDC005E40D8 /* SwiftParser.swift in Sources */,
 				0B7C8C0A1CC20642000FE312 /* Plugin.swift in Sources */,
 				0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */,
-				29A7E8721CCA1DD1005E40D8 /* JSONParser.swift in Sources */,
 				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
 				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
 				0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */,
@@ -1398,6 +1378,7 @@
 				0B14BCE51E92360700EB0C6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B14BD091E92499300EB0C6A /* Build configuration list for PBXNativeTarget "TruffautSupportTests" */ = {
 			isa = XCConfigurationList;
@@ -1406,6 +1387,7 @@
 				0B14BD0B1E92499300EB0C6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B52D5ED1D044199005409B5 /* Build configuration list for PBXNativeTarget "BasicImageTemplate" */ = {
 			isa = XCConfigurationList;

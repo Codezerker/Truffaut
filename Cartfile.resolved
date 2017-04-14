@@ -1,5 +1,2 @@
-github "drmohundro/SWXMLHash" "3.0.4"
 github "facebook/pop" "68796e3b2dfcabf1c395e4dccaf1f91b06018b30"
-github "jpsim/SourceKitten" "dca3e657657b4097bd3bf9a3f07d43938d85dac2"
-github "jpsim/Yams" "0.3.0"
 github "sparkle-project/Sparkle" "1.17.0"
