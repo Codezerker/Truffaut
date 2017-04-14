@@ -21,7 +21,7 @@ class MainViewController: NSViewController {
   override func viewWillAppear() {
     super.viewWillAppear()
     
-    if let fileURL = (windowController?.document as? Document)?.fileURL {
+    if let fileURL = (windowController?.document as? PresentationDocument)?.fileURL {
       pathControl.url = fileURL
     }
   }

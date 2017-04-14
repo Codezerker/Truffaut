@@ -10,7 +10,9 @@ import Foundation
 
 public enum Content {
     
-    indirect case bulletPoints([Content])
     case text(String)
     case image(String)
+    case sourceCode(String)
+    
+    indirect case indent([Content])
 }

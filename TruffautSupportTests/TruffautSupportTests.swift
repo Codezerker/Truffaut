@@ -16,13 +16,13 @@ class TruffautSupportTests: XCTestCase {
             title: "presentation title",
             authors: ["Yan Li <eyeplum@gmail.com>", "@eyeplum"],
             pages: [
-                Page(template: "default",
-                     title: "hello",
+                Page(title: "hello",
                      subtitle: "say hello",
                      contents: [
-                        .bulletPoints([
+                        .indent([
                             .image("./image/url.png"),
                             .text("hello"),
+                            .sourceCode("hello.swift")
                         ]),
                      ]),
             ])
@@ -35,9 +35,33 @@ class TruffautSupportTests: XCTestCase {
         XCTAssertEqual(presentation.title, newPresentation.title)
         XCTAssertEqual(presentation.authors, newPresentation.authors)
         XCTAssertEqual(presentation.pages.count, newPresentation.pages.count)
-        XCTAssertEqual(presentation.pages[0].templateIdentifier, newPresentation.pages[0].templateIdentifier)
         XCTAssertEqual(presentation.pages[0].title, newPresentation.pages[0].title)
         XCTAssertEqual(presentation.pages[0].subtitle, newPresentation.pages[0].subtitle)
         XCTAssertEqual(presentation.pages[0].contents?.count, newPresentation.pages[0].contents?.count)
+        
+        guard let indent = newPresentation.pages[0].contents?.first,
+              case let .indent(contents) = indent else {
+            XCTAssert(false)
+            return
+        }
+        XCTAssertEqual(contents.count, 3)
+        
+        guard case let .image(path) = contents[0] else {
+            XCTAssert(false)
+            return
+        }
+        XCTAssertEqual(path, "./image/url.png")
+        
+        guard case let .text(string) = contents[1] else {
+            XCTAssert(false)
+            return
+        }
+        XCTAssertEqual(string, "hello")
+        
+        guard case let .sourceCode(codePath) = contents[2] else {
+            XCTAssert(false)
+            return
+        }
+        XCTAssertEqual(codePath, "hello.swift")
     }
 }

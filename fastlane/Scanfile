@@ -1,0 +1,3 @@
+scheme 'TruffautSupport'
+output_types 'html'
+open_report true

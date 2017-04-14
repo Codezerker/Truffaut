@@ -10,13 +10,11 @@ import Foundation
 
 public struct Page {
     
-    public let templateIdentifier: String
     public let title: String?
     public let subtitle: String?
     public let contents: [Content]?
     
-    public init(template: String, title: String? = nil, subtitle: String? = nil, contents: [Content]? = nil) {
-        self.templateIdentifier = template
+    public init(title: String? = nil, subtitle: String? = nil, contents: [Content]? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.contents = contents

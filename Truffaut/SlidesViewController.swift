@@ -19,11 +19,11 @@ class SlidesViewController: NSViewController {
     fileprivate weak var currentPageViewController: NSViewController?
     
     fileprivate var presentation: Presentation? {
-        return (windowController?.document as? Document)?.presentation
+        return (windowController?.document as? PresentationDocument)?.presentation
     }
     
     fileprivate var fileName: String? {
-        return (windowController?.document as? Document)?.fileNameWithoutExtension
+        return (windowController?.document as? PresentationDocument)?.fileNameWithoutExtension
     }
     
     override func viewDidLoad() {
@@ -63,7 +63,7 @@ extension SlidesViewController {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(updateVisiblePage),
-            name: NSNotification.Name(rawValue: Document.Notifications.update),
+            name: NSNotification.Name(rawValue: PresentationDocument.Notifications.update),
             object: nil)
         
         NotificationCenter.default.addObserver(

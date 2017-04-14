@@ -9,7 +9,7 @@
 import Cocoa
 import TruffautSupport
 
-class Document: NSDocument {
+class PresentationDocument: NSDocument {
     
     struct Notifications {
         static let update = "update"

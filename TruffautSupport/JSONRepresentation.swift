@@ -47,16 +47,13 @@ extension Presentation: JSONRepresentation {
 extension Page: JSONRepresentation {
     
     fileprivate struct JSONKeys {
-        static let templateIdentifier = "template_identifier"
         static let title = "title"
         static let subtitle = "subtitle"
         static let contents = "contents"
     }
     
     public var jsonRepresentation: JSONDictionary {
-        var result: JSONDictionary = [
-            JSONKeys.templateIdentifier : templateIdentifier,
-        ]
+        var result: JSONDictionary = [:]
         
         if let title = title {
             result[JSONKeys.title] = title
@@ -74,11 +71,6 @@ extension Page: JSONRepresentation {
     }
     
     public init?(jsonDictionary: JSONDictionary) {
-        guard let templateIdentifier = jsonDictionary[JSONKeys.templateIdentifier] as? String else {
-            return nil
-        }
-        self.templateIdentifier = templateIdentifier
-        
         title = jsonDictionary[JSONKeys.title] as? String
         subtitle = jsonDictionary[JSONKeys.subtitle] as? String
         
@@ -90,20 +82,25 @@ extension Page: JSONRepresentation {
 extension Content: JSONRepresentation {
     
     fileprivate struct JSONKeys {
-        static let bulletPoints = "bullet_points"
+        static let indent = "indent"
+        static let sourceCode = "source_code"
         static let image = "image"
         static let text = "text"
     }
     
     public var jsonRepresentation: JSONDictionary {
         switch self {
-        case .bulletPoints(let contents):
+        case .indent(let contents):
             return [
-                JSONKeys.bulletPoints : contents.map { $0.jsonRepresentation },
+                JSONKeys.indent : contents.map { $0.jsonRepresentation },
             ]
         case .image(let path):
             return [
                 JSONKeys.image : path,
+            ]
+        case .sourceCode(let path):
+            return [
+                JSONKeys.sourceCode : path
             ]
         case .text(let value):
             return [
@@ -117,16 +114,21 @@ extension Content: JSONRepresentation {
             return nil
         }
         switch firstKey {
-        case JSONKeys.bulletPoints:
+        case JSONKeys.indent:
             guard let contentJSON = jsonDictionary[firstKey] as? [JSONDictionary] else {
                 return nil
             }
-            self = .bulletPoints(contentJSON.flatMap { Content(jsonDictionary: $0) })
+            self = .indent(contentJSON.flatMap { Content(jsonDictionary: $0) })
         case JSONKeys.image:
             guard let imagePath = jsonDictionary[firstKey] as? String else {
                 return nil
             }
             self = .image(imagePath)
+        case JSONKeys.sourceCode:
+            guard let sourceCodePath = jsonDictionary[firstKey] as? String else {
+                return nil
+            }
+            self = .sourceCode(sourceCodePath)
         case JSONKeys.text:
             guard let value = jsonDictionary[firstKey] as? String else {
                 return nil
