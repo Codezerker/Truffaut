@@ -25,6 +25,7 @@ let presentation = Presentation(
        // Simple Text
        Page(contents: [
            .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+           .text("— Someone"),
        ]),
 
        // Basic Bullet Points

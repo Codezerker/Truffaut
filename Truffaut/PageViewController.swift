@@ -89,7 +89,6 @@ fileprivate extension PageViewController {
         if let title = page.title {
             contentStackView.alignment = .leading
             let titleLabel = NSTextField(wrappingLabelWithString: page.title ?? "")
-            titleLabel.alignment = .center
             titleLabel.font = Font.Page.title
             contentStackView.addView(titleLabel, in: .top)
             pageGravity = .top
