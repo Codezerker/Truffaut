@@ -33,8 +33,6 @@ class SlidesViewController: NSViewController {
         
         visualEffectView.material = .light
         visualEffectView.isHidden = true
-        
-        registerNotifications()
     }
     
     override func viewWillAppear() {
@@ -74,53 +72,18 @@ extension SlidesViewController {
     }
 }
 
-extension SlidesViewController {
-    
-    fileprivate func registerNotifications() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateVisiblePage),
-                                               name: PresentationDocument.Notifications.update,
-                                               object: nil)
-    }
-    
-    @objc private func updateVisiblePage() {
-//        guard let page = pages?[currentPage],
-//            let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier],
-//            let currentPageViewController = currentPageViewController else {
-//                return
-//        }
-//        
-//        template.setPageTitleFor(
-//            currentPageViewController,
-//            withTitle: page.title,
-//            bulletPoints: page.bulletPoints)
-    }
-    
-}
-
 extension SlidesViewController: ExportControllerDataSource {
     
     func numberOfPagesToExport() -> Int {
-        return 0
-        
-//        guard let pages = pages else {
-//            return 0
-//        }
-//        return pages.count
+        guard let pages = presentation?.pages else {
+            return 0
+        }
+        return pages.count
     }
     
     func viewForPageToExport(atIndex index: Int) -> NSView? {
+        // FIXME: implement PDF view rendering
         return nil
-        
-//        guard let page = pages?[index],
-//              let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
-//            return nil
-//        }
-//        let pageViewController = template.createPageViewController()
-//        template.setPageTitleFor(pageViewController,
-//                                 withTitle: page.title,
-//                                 bulletPoints: page.bulletPoints)
-//        return pageViewController.view
     }
 }
 
@@ -136,38 +99,31 @@ extension SlidesViewController {
     }
     
     fileprivate func show(pageAtIndex index: Int) {
-//        guard let pages = pages else {
-//            return
-//        }
-//        
-//        guard index >= 0 && index < pages.count else {
-//            return
-//        }
-//        
-//        let page = pages[index]
-//        
-//        guard let template = PlugIn.sharedPlugIn.templates[page.typeIdentifier] else {
-//            return
-//        }
-//        
-//        let pageViewController = template.createPageViewController()
-//        
-//        template.setPageTitleFor(
-//            pageViewController,
-//            withTitle: page.title,
-//            bulletPoints: page.bulletPoints)
-//        
-//        pageViewController.view.wantsLayer = true
-//        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(pageViewController.view)
-//        view.addConstraints(pageViewController.view.fullEdgeLayoutConstrains)
-//        addChildViewController(pageViewController)
-//        
-//        self.currentPageViewController?.removeFromParentViewController()
-//        self.currentPageViewController?.view.removeFromSuperview()
-//        
-//        self.currentPage = index
-//        self.currentPageViewController = pageViewController
+        guard let pages = presentation?.pages,
+              index >= 0 && index < pages.count else {
+            return
+        }
+        
+        currentPage = index
+        
+        let pageViewController = PageViewController()
+        pageViewController.page = pages[index]
+        pageViewController.view.wantsLayer = true
+        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pageViewController.view)
+        addChildViewController(pageViewController)
+        
+        NSLayoutConstraint.activate([
+            pageViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            pageViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+            pageViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            pageViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+            ])
+        
+        self.currentPageViewController?.removeFromParentViewController()
+        self.currentPageViewController?.view.removeFromSuperview()
+        
+        self.currentPage = index
+        self.currentPageViewController = pageViewController
     }
-    
 }

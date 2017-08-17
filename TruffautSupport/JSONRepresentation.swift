@@ -82,6 +82,7 @@ extension Page: JSONRepresentation {
 extension Content: JSONRepresentation {
     
     fileprivate struct JSONKeys {
+        static let title = "title"
         static let indent = "indent"
         static let sourceCode = "source_code"
         static let image = "image"
@@ -90,6 +91,10 @@ extension Content: JSONRepresentation {
     
     public var jsonRepresentation: JSONDictionary {
         switch self {
+        case .title(let title):
+            return [
+                JSONKeys.title : title,
+            ]
         case .indent(let contents):
             return [
                 JSONKeys.indent : contents.map { $0.jsonRepresentation },
@@ -114,6 +119,11 @@ extension Content: JSONRepresentation {
             return nil
         }
         switch firstKey {
+        case JSONKeys.title:
+            guard let title = jsonDictionary[firstKey] as? String else {
+                return nil
+            }
+            self = .title(title)
         case JSONKeys.indent:
             guard let contentJSON = jsonDictionary[firstKey] as? [JSONDictionary] else {
                 return nil

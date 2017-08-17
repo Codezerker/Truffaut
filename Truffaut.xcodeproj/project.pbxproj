@@ -19,7 +19,9 @@
 		0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD121E9398FE00EB0C6A /* Shell.swift */; };
 		0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; };
 		0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EED851CC26CAA001BC00B /* Extensions.swift */; };
+		0B62141A1F45978A00B66C9B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6214181F45978A00B66C9B /* PageViewController.swift */; };
+		0B62141B1F45978A00B66C9B /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6214191F45978A00B66C9B /* PageViewController.xib */; };
+		0B62141D1F45A39000B66C9B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62141C1F45A39000B66C9B /* Font.swift */; };
 		0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */; };
 		0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */; };
 		0B7C8BE21CBFD166000FE312 /* PresentationDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BE11CBFD166000FE312 /* PresentationDocument.swift */; };
@@ -28,16 +30,11 @@
 		0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BF81CC13E14000FE312 /* MainWindowController.swift */; };
 		0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */; };
 		0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */; };
-		0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C011CC1422B000FE312 /* Definitions.swift */; };
+		0B7C8C021CC1422B000FE312 /* StoryboardLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C011CC1422B000FE312 /* StoryboardLoading.swift */; };
 		0B7FADEB1D43472300000884 /* ExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADEA1D43472300000884 /* ExportController.swift */; };
 		0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD841D0D525200565E8A /* Crashlytics.framework */; };
 		0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD851D0D525200565E8A /* Fabric.framework */; };
 		0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB64AE1EA08D7C001CE96A /* ReadController.swift */; };
-		0BAB64B41EA0C24B001CE96A /* Pages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BAB64B31EA0C24B001CE96A /* Pages.storyboard */; };
-		0BAB64B61EA0C469001CE96A /* CoverPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB64B51EA0C469001CE96A /* CoverPageViewController.swift */; };
-		0BAB64B81EA0C4C5001CE96A /* TextPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB64B71EA0C4C5001CE96A /* TextPageViewController.swift */; };
-		0BAB64BA1EA0C4E8001CE96A /* SingleImagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB64B91EA0C4E8001CE96A /* SingleImagePageViewController.swift */; };
-		0BAB64BD1EA0C702001CE96A /* PagePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB64BC1EA0C702001CE96A /* PagePresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +93,9 @@
 		0B14BD051E92499300EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B14BD121E9398FE00EB0C6A /* Shell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
-		0B6EED851CC26CAA001BC00B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0B6214181F45978A00B66C9B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		0B6214191F45978A00B66C9B /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		0B62141C1F45A39000B66C9B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		0B7C8BDA1CBFD166000FE312 /* Truffaut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truffaut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7C8BDD1CBFD166000FE312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B7C8BDF1CBFD166000FE312 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -107,17 +106,12 @@
 		0B7C8BF81CC13E14000FE312 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesWindowController.swift; sourceTree = "<group>"; };
 		0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
-		0B7C8C011CC1422B000FE312 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		0B7C8C011CC1422B000FE312 /* StoryboardLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardLoading.swift; sourceTree = "<group>"; };
 		0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Truffaut-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B7FADEA1D43472300000884 /* ExportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportController.swift; sourceTree = "<group>"; };
 		0BA6FD841D0D525200565E8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0BA6FD851D0D525200565E8A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		0BAB64AE1EA08D7C001CE96A /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
-		0BAB64B31EA0C24B001CE96A /* Pages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pages.storyboard; sourceTree = "<group>"; };
-		0BAB64B51EA0C469001CE96A /* CoverPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverPageViewController.swift; sourceTree = "<group>"; };
-		0BAB64B71EA0C4C5001CE96A /* TextPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPageViewController.swift; sourceTree = "<group>"; };
-		0BAB64B91EA0C4E8001CE96A /* SingleImagePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImagePageViewController.swift; sourceTree = "<group>"; };
-		0BAB64BC1EA0C702001CE96A /* PagePresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagePresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				0B7C8BE11CBFD166000FE312 /* PresentationDocument.swift */,
-				0BAB64B01EA08E2C001CE96A /* Tools */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -251,7 +244,8 @@
 			children = (
 				0B7C8BFD1CC14006000FE312 /* SlidesWindowController.swift */,
 				0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */,
-				0BAB64BB1EA0C574001CE96A /* Pages */,
+				0B6214181F45978A00B66C9B /* PageViewController.swift */,
+				0B6214191F45978A00B66C9B /* PageViewController.xib */,
 			);
 			name = "Slides Window";
 			sourceTree = "<group>";
@@ -265,21 +259,14 @@
 			path = Fabric;
 			sourceTree = SOURCE_ROOT;
 		};
-		0BAB64B01EA08E2C001CE96A /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				0BAB64AE1EA08D7C001CE96A /* ReadController.swift */,
-				0B14BD121E9398FE00EB0C6A /* Shell.swift */,
-				0B7FADEA1D43472300000884 /* ExportController.swift */,
-			);
-			name = Tools;
-			sourceTree = "<group>";
-		};
 		0BAB64B11EA0C1F0001CE96A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				0B7C8C011CC1422B000FE312 /* Definitions.swift */,
-				0B6EED851CC26CAA001BC00B /* Extensions.swift */,
+				0B62141C1F45A39000B66C9B /* Font.swift */,
+				0B7C8C011CC1422B000FE312 /* StoryboardLoading.swift */,
+				0BAB64AE1EA08D7C001CE96A /* ReadController.swift */,
+				0B14BD121E9398FE00EB0C6A /* Shell.swift */,
+				0B7FADEA1D43472300000884 /* ExportController.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -288,20 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				0B7C8BE51CBFD166000FE312 /* Main.storyboard */,
-				0BAB64B31EA0C24B001CE96A /* Pages.storyboard */,
 			);
 			name = Interface;
-			sourceTree = "<group>";
-		};
-		0BAB64BB1EA0C574001CE96A /* Pages */ = {
-			isa = PBXGroup;
-			children = (
-				0BAB64BC1EA0C702001CE96A /* PagePresentable.swift */,
-				0BAB64B51EA0C469001CE96A /* CoverPageViewController.swift */,
-				0BAB64B71EA0C4C5001CE96A /* TextPageViewController.swift */,
-				0BAB64B91EA0C4E8001CE96A /* SingleImagePageViewController.swift */,
-			);
-			name = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,9 +420,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B62141B1F45978A00B66C9B /* PageViewController.xib in Resources */,
 				0B7C8BE41CBFD166000FE312 /* Assets.xcassets in Resources */,
 				0B7C8BE71CBFD166000FE312 /* Main.storyboard in Resources */,
-				0BAB64B41EA0C24B001CE96A /* Pages.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,20 +511,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7C8C021CC1422B000FE312 /* Definitions.swift in Sources */,
+				0B7C8C021CC1422B000FE312 /* StoryboardLoading.swift in Sources */,
 				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
-				0BAB64BD1EA0C702001CE96A /* PagePresentable.swift in Sources */,
 				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
-				0BAB64B81EA0C4C5001CE96A /* TextPageViewController.swift in Sources */,
-				0B6EED861CC26CAA001BC00B /* Extensions.swift in Sources */,
+				0B62141A1F45978A00B66C9B /* PageViewController.swift in Sources */,
 				0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */,
 				0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */,
 				0B7FADEB1D43472300000884 /* ExportController.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
+				0B62141D1F45A39000B66C9B /* Font.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
 				0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */,
-				0BAB64BA1EA0C4E8001CE96A /* SingleImagePageViewController.swift in Sources */,
-				0BAB64B61EA0C469001CE96A /* CoverPageViewController.swift in Sources */,
 				0B7C8BE21CBFD166000FE312 /* PresentationDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import Foundation
 
 public enum Content {
     
+    case title(String)
     case text(String)
     case image(String)
     case sourceCode(String)
