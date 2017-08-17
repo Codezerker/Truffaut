@@ -1,5 +1,20 @@
 import TruffautSupport
 
+let codeSample =
+"""
+class PageViewController: NSViewController {
+
+    private weak var contentStackView: NSStackView?
+    
+    var page: Page?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpViews()
+    }
+}
+"""
+
 let presentation = Presentation(
    title: "Presentation Title",
    authors: ["Yan Li"],
@@ -43,18 +58,6 @@ let presentation = Presentation(
 
        // Source Code
        Page(title: "Source Code", contents: [
-           .sourceCode("""
-           class PageViewController: NSViewController {
-
-               private weak var contentStackView: NSStackView?
-
-               var page: Page?
-
-               override func viewDidLoad() {
-                   super.viewDidLoad()
-                   setUpViews()
-               }
-           }
-           """),
+           .sourceCode(codeSample),
        ])
    ])
