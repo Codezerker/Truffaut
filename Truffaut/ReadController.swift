@@ -59,11 +59,16 @@ fileprivate extension ReadController {
                 throw ReadingError.unableToLoadSupportModule
             }
             return [
+                /* swiftc settings */
                 "--driver-mode=swift",
+                "-target", "x86_64-apple-macosx10.12",
+                
+                /* link options */
                 "-I", searchPath,
                 "-L", searchPath,
                 "-l\(supportModuleName)",
-                "-target", "x86_64-apple-macosx10.12",
+                
+                /* manifest file path */
                 url.path
             ]
         }
