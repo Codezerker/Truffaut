@@ -54,7 +54,7 @@ let presentation = Presentation(
                    super.viewDidLoad()
                    setUpViews()
                }
-           }       
+           }
            """),
        ])
    ])
