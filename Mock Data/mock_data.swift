@@ -42,7 +42,19 @@ let presentation = Presentation(
        ]),
 
        // Source Code
-       Page(title: "Source Code Pro", contents: [
-           .sourceCode("mock_data.swift"),
+       Page(title: "Source Code", contents: [
+           .sourceCode("""
+           class PageViewController: NSViewController {
+
+               private weak var contentStackView: NSStackView?
+
+               var page: Page?
+
+               override func viewDidLoad() {
+                   super.viewDidLoad()
+                   setUpViews()
+               }
+           }       
+           """),
        ])
    ])

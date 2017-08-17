@@ -86,7 +86,6 @@
 		0B14BCE71E923A1200EB0C6A /* Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentation.swift; sourceTree = "<group>"; };
 		0B14BCE91E923A2100EB0C6A /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		0B14BCEB1E923A6F00EB0C6A /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
-		0B14BCFA1E923DD900EB0C6A /* TruffautSupport copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruffautSupport copy-Info.plist"; path = "/Users/eyeplum/Projects/Truffaut/TruffautSupport copy-Info.plist"; sourceTree = "<absolute>"; };
 		0B14BCFB1E92429800EB0C6A /* JSONRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRepresentation.swift; sourceTree = "<group>"; };
 		0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruffautSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruffautSupportTests.swift; sourceTree = "<group>"; };
@@ -183,7 +182,6 @@
 				0B14BCDB1E92360700EB0C6A /* TruffautSupport */,
 				0B14BD021E92499300EB0C6A /* TruffautSupportTests */,
 				0B7C8BDB1CBFD166000FE312 /* Products */,
-				0B14BCFA1E923DD900EB0C6A /* TruffautSupport copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
