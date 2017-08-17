@@ -18,6 +18,6 @@ struct Font {
     struct Page {
         static let title = NSFont.boldSystemFont(ofSize: 38)
         static let text = NSFont.systemFont(ofSize: 24)
-        static let source = NSFont(name: "SF Mono", size: 24)
+        static let source = NSFont(name: "SF Mono", size: 18)
     }
 }

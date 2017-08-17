@@ -44,18 +44,28 @@ let presentation = Presentation(
                    .text("Level 1.1.1"),
                    .text("Level 1.1.2"),
                ]),
-               //.text("Level 1.2"),
+               .text("Level 1.2"),
            ]),
-           .text("Level 2.1"),
+           .indent([
+               .text("Level 2.1"),
+           ]),
+       ]),
+
+       // Source Code
+       Page(title: "Source Code", contents: [
+           .sourceCode(codeSample),
+       ]),
+
+       // Nested Source Code
+       Page(title: "Source Code", contents: [
+           .text("A simple example:"),
+           .indent([
+               .sourceCode(codeSample),
+           ]),
        ]),
 
        // Single Image
        Page(contents: [
            .image("images/sample.png"),
        ]),
-
-       // Source Code
-       Page(title: "Source Code", contents: [
-           .sourceCode(codeSample),
-       ])
    ])
