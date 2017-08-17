@@ -25,6 +25,7 @@ fileprivate extension PageViewController {
     
     private struct LayoutConstants {
         static let pageMargin: CGFloat = 42
+        static let spacing: CGFloat = 16
         static let indentOffset: CGFloat = 32
     }
     
@@ -35,6 +36,7 @@ fileprivate extension PageViewController {
         
         let contentStackView = NSStackView(views: [])
         contentStackView.orientation = .vertical
+        contentStackView.spacing = LayoutConstants.spacing
         view.addSubview(contentStackView)
         self.contentStackView = contentStackView
         

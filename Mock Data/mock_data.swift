@@ -29,11 +29,9 @@ let presentation = Presentation(
 
        // Basic Bullet Points
        Page(title: "hello", subtitle: "say hello", contents: [
-           .indent([
-               .text("hello 1"),
-               .text("hello 2"),
-               .text("你好 3"),
-           ]),
+           .text("hello 1"),
+           .text("hello 2"),
+           .text("你好 3"),
        ]),
 
        // Nested Bullet Points
