@@ -25,7 +25,7 @@ fileprivate extension PageViewController {
     
     private struct LayoutConstants {
         static let pageMargin: CGFloat = 42
-        static let indentOffset: CGFloat = 0
+        static let indentOffset: CGFloat = 32
     }
     
     private func setUpViews() {
@@ -81,38 +81,51 @@ fileprivate extension PageViewController {
                                                    left: LayoutConstants.pageMargin,
                                                    bottom: LayoutConstants.pageMargin,
                                                    right: LayoutConstants.pageMargin)
-        contentStackView.alignment = .leading
         contentStackView.distribution = .gravityAreas
         
-        let titleLabel = NSTextField(wrappingLabelWithString: page.title ?? "")
-        titleLabel.alignment = .center
-        titleLabel.font = Font.Page.title
-        contentStackView.addView(titleLabel, in: .top)
+        let pageGravity: NSStackView.Gravity
+        if let title = page.title {
+            contentStackView.alignment = .leading
+            let titleLabel = NSTextField(wrappingLabelWithString: page.title ?? "")
+            titleLabel.alignment = .center
+            titleLabel.font = Font.Page.title
+            contentStackView.addView(titleLabel, in: .top)
+            pageGravity = .top
+        } else {
+            contentStackView.alignment = .centerX
+            pageGravity = .center
+        }
         
         // FIXME: layout subtitle
         
-        let indentStackView = NSStackView(views: [])
-        indentStackView.orientation = .vertical
-        indentStackView.alignment = .leading
-        indentStackView.distribution = .gravityAreas
-        indentStackView.edgeInsets = NSEdgeInsets(top: 0, left: LayoutConstants.indentOffset, bottom: 0, right: 0)
-        contentStackView.addView(indentStackView, in: .top)
-        
-        for content in contents {
+        func addContent(content: Content, to stackView: NSStackView) {
             switch content {
+            case .indent(let nestedContents):
+                let indentStackView = NSStackView(views: [])
+                indentStackView.orientation = .vertical
+                indentStackView.alignment = .leading
+                indentStackView.distribution = .gravityAreas
+                indentStackView.edgeInsets = NSEdgeInsets(top: 0, left: LayoutConstants.indentOffset, bottom: 0, right: 0)
+                for nestedContent in nestedContents {
+                    addContent(content: nestedContent, to: indentStackView)
+                }
+                stackView.addView(indentStackView, in: pageGravity)
             case .text(let text):
                 let label = NSTextField(wrappingLabelWithString: text)
                 label.font = Font.Page.text
-                indentStackView.addView(label, in: .top)
+                stackView.addView(label, in: pageGravity)
             case .sourceCode(let source):
                 let label = NSTextField(wrappingLabelWithString: source)
                 label.font = Font.Page.source
-                indentStackView.addView(label, in: .top)
+                stackView.addView(label, in: pageGravity)
             default:
                 // FIXME: layout image
-                // FIXME: layout indent
-                continue
+                break
             }
+        }
+        
+        for content in contents {
+            addContent(content: content, to: contentStackView)
         }
     }
 }

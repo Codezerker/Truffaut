@@ -44,11 +44,9 @@ let presentation = Presentation(
                    .text("Level 1.1.1"),
                    .text("Level 1.1.2"),
                ]),
-               .text("Level 1.2"),
+               //.text("Level 1.2"),
            ]),
-           .indent([
-               .text("Level 2.1"),
-           ]),
+           .text("Level 2.1"),
        ]),
 
        // Single Image
