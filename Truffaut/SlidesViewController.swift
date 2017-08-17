@@ -64,7 +64,7 @@ extension SlidesViewController {
         openPanel.nameFieldStringValue = fileName
         openPanel.begin { result in
             guard
-                result == NSFileHandlingPanelOKButton,
+                result.rawValue == NSFileHandlingPanelOKButton,
                 let exportURL = openPanel.url else {
                     return
             }

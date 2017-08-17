@@ -25,7 +25,7 @@ class PresentationDocument: NSDocument {
 
     var presentation: Presentation?
     
-    override class func autosavesInPlace() -> Bool {
+    override class var autosavesInPlace: Bool {
         return true
     }
     

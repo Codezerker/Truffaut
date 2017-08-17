@@ -13,7 +13,7 @@ class SlidesWindowController: NSWindowController {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        window?.styleMask.insert(.fullSizeContentView)
+        window?.styleMask.insert(NSWindow.StyleMask.fullSizeContentView)
         window?.titlebarAppearsTransparent = true
         window?.titleVisibility = .hidden
         window?.isMovable = true
