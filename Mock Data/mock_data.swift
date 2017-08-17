@@ -5,9 +5,9 @@ let codeSample =
 class PageViewController: NSViewController {
 
     private weak var contentStackView: NSStackView?
-    
+
     var page: Page?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
