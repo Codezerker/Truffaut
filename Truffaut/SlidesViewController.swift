@@ -11,8 +11,6 @@ import TruffautSupport
 
 class SlidesViewController: NSViewController {
     
-    @IBOutlet weak var visualEffectView: NSVisualEffectView!
-    
     weak var windowController: NSWindowController?
     
     fileprivate var currentPage = 0
@@ -26,18 +24,8 @@ class SlidesViewController: NSViewController {
         return (windowController?.document as? PresentationDocument)?.fileNameWithoutExtension
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.wantsLayer = true
-        
-        visualEffectView.material = .light
-        visualEffectView.isHidden = true
-    }
-    
     override func viewWillAppear() {
         super.viewWillAppear()
-        
         show(pageAtIndex: currentPage)
     }
 }
@@ -108,7 +96,6 @@ extension SlidesViewController {
         
         let pageViewController = PageViewController()
         pageViewController.page = pages[index]
-        pageViewController.view.wantsLayer = true
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pageViewController.view)
         addChildViewController(pageViewController)

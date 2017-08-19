@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F54b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13178.6"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -690,6 +690,9 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="480" height="120"/>
                         <value key="maxSize" type="size" width="480" height="120"/>
+                        <connections>
+                            <outlet property="delegate" destination="jGA-0Y-lOj" id="vMg-lO-2jx"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="5gI-5U-AMq" kind="relationship" relationship="window.shadowedContentViewController" id="nsd-lR-9xd"/>
@@ -708,6 +711,9 @@
                         <rect key="contentRect" x="0.0" y="0.0" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
                         <value key="minSize" type="size" width="800" height="600"/>
+                        <connections>
+                            <outlet property="delegate" destination="dJ6-f1-YHA" id="37t-Bl-RxE"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="n2t-7Y-6M4" kind="relationship" relationship="window.shadowedContentViewController" id="dRr-zH-e29"/>
@@ -724,21 +730,7 @@
                     <view key="view" id="GPM-Yq-aZi">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="c6v-fi-bhC">
-                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
-                            </visualEffectView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="c6v-fi-bhC" secondAttribute="trailing" id="P9j-hd-mET"/>
-                            <constraint firstItem="c6v-fi-bhC" firstAttribute="top" secondItem="GPM-Yq-aZi" secondAttribute="top" id="QC0-pI-9pf"/>
-                            <constraint firstItem="c6v-fi-bhC" firstAttribute="leading" secondItem="GPM-Yq-aZi" secondAttribute="leading" id="ogL-6C-e1X"/>
-                            <constraint firstAttribute="bottom" secondItem="c6v-fi-bhC" secondAttribute="bottom" id="pPe-v1-wvd"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="visualEffectView" destination="c6v-fi-bhC" id="5vt-Am-IZS"/>
-                    </connections>
                 </viewController>
                 <customObject id="Pe4-yx-JUh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

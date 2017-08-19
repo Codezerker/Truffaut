@@ -21,3 +21,11 @@ struct Font {
         static let source = NSFont(name: "SF Mono", size: 18)
     }
 }
+
+struct TextColor {
+
+    static let title = NSColor.white
+    static let subtitle = NSColor.white
+    static let text = NSColor.white
+    static let source = NSColor.white
+}
