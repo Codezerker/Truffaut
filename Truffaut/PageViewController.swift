@@ -38,6 +38,10 @@ fileprivate extension PageViewController {
         let contentStackView = NSStackView(views: [])
         contentStackView.orientation = .vertical
         contentStackView.spacing = LayoutConstants.spacing
+        contentStackView.edgeInsets = NSEdgeInsets(top: LayoutConstants.pageMargin,
+                                                   left: LayoutConstants.pageMargin,
+                                                   bottom: LayoutConstants.pageMargin,
+                                                   right: LayoutConstants.pageMargin)
         visualEffectView.addSubview(contentStackView)
         self.contentStackView = contentStackView
         
@@ -82,10 +86,6 @@ fileprivate extension PageViewController {
             return
         }
         
-        contentStackView.edgeInsets = NSEdgeInsets(top: LayoutConstants.pageMargin,
-                                                   left: LayoutConstants.pageMargin,
-                                                   bottom: LayoutConstants.pageMargin,
-                                                   right: LayoutConstants.pageMargin)
         let pageGravity: NSStackView.Gravity
         if let title = page.title {
             contentStackView.alignment = .leading
