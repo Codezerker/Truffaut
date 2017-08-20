@@ -86,24 +86,27 @@ fileprivate extension PageViewController {
                                                    left: LayoutConstants.pageMargin,
                                                    bottom: LayoutConstants.pageMargin,
                                                    right: LayoutConstants.pageMargin)
-        contentStackView.distribution = .gravityAreas
-        
         let pageGravity: NSStackView.Gravity
         if let title = page.title {
             contentStackView.alignment = .leading
+            contentStackView.distribution = .gravityAreas
+
+            pageGravity = .top
+            
             let titleLabel = NSTextField(wrappingLabelWithString: page.title ?? "")
             titleLabel.font = Font.Page.title
             titleLabel.textColor = TextColor.title
-            contentStackView.addView(titleLabel, in: .top)
-            pageGravity = .top
+            contentStackView.addView(titleLabel, in: pageGravity)
         } else {
             contentStackView.alignment = .centerX
+            contentStackView.distribution = .gravityAreas
+            
             pageGravity = .center
         }
         
         // FIXME: layout subtitle
         
-        func addContent(content: Content, to stackView: NSStackView) {
+        func addContent(content: Content, to stackView: NSStackView, isLast: Bool) {
             switch content {
             case .indent(let nestedContents):
                 let indentStackView = NSStackView(views: [])
@@ -112,11 +115,12 @@ fileprivate extension PageViewController {
                 indentStackView.distribution = .gravityAreas
                 indentStackView.edgeInsets = NSEdgeInsets(top: 0, left: LayoutConstants.indentOffset, bottom: 0, right: 0)
                 for nestedContent in nestedContents {
-                    addContent(content: nestedContent, to: indentStackView)
+                    addContent(content: nestedContent, to: indentStackView, isLast: false)
                 }
                 stackView.addView(indentStackView, in: pageGravity)
             case .text(let text):
-                let label = NSTextField(wrappingLabelWithString: text)
+                let displayText = text.replacingOccurrences(of: "->", with: " ➞ ")
+                let label = NSTextField(wrappingLabelWithString: displayText)
                 label.font = Font.Page.text
                 label.textColor = TextColor.text
                 stackView.addView(label, in: pageGravity)
@@ -129,10 +133,18 @@ fileprivate extension PageViewController {
                 // FIXME: layout image
                 break
             }
+            
+            if isLast {
+                // workaround: insert a vertically growable dummy view
+                // this will make sure there is no ambiguity in vertical layout
+                let bottomView = NSView()
+                bottomView.setContentHuggingPriority(.defaultLow, for: .vertical)
+                stackView.addView(bottomView, in: .bottom)
+            }
         }
         
-        for content in contents {
-            addContent(content: content, to: contentStackView)
+        for (index, content) in contents.enumerated() {
+            addContent(content: content, to: contentStackView, isLast: index + 1 == contents.count)
         }
     }
 }
