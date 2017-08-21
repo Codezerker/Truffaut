@@ -51,6 +51,9 @@ fileprivate extension ExportController {
     
     fileprivate func exportViewToPDF(view: NSView) -> PDFPage? {
         view.frame = NSRect(origin: .zero, size: Layout.defaultExportContentSize)
+        
+        // FIXME: in some cases the layout is incorrect,
+        // we don't know the reason yet
         view.updateConstraintsForSubtreeIfNeeded()
         view.layoutSubtreeIfNeeded()
         
