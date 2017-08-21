@@ -45,18 +45,20 @@ struct ExportController {
 fileprivate extension ExportController {
     
     fileprivate struct Layout {
-        
-        static let defaultExportContentSize = CGSize(width: 1280, height: 720)
+
+        static let defaultExportContentSize = CGSize(width: 960, height: 720)
     }
     
     fileprivate func exportViewToPDF(view: NSView) -> PDFPage? {
         view.frame = NSRect(origin: .zero, size: Layout.defaultExportContentSize)
         view.updateConstraintsForSubtreeIfNeeded()
         view.layoutSubtreeIfNeeded()
+        
         let pdfData = view.dataWithPDF(inside: view.bounds)
         guard let pdfRep = NSPDFImageRep(data: pdfData) else {
             return nil
         }
+        
         let pdfImage = NSImage(size: view.bounds.size)
         pdfImage.addRepresentation(pdfRep)
         return PDFPage(image: pdfImage)
