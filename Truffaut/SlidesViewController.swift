@@ -68,22 +68,23 @@ extension SlidesViewController: ExportControllerDataSource {
         return pages.count
     }
     
+    private struct ExportLayout {
+        static let width: CGFloat = 1280
+        static let height: CGFloat = 720
+    }
+    
     func viewForPageToExport(atIndex index: Int) -> NSView? {
-        // FIXME: implement PDF view rendering
-        return nil
+        guard let page = presentation?.pages[index] else {
+            return nil
+        }
+        let pageViewController = PageViewController()
+        pageViewController.page = page
+        pageViewController.isExporting = true
+        return pageViewController.view
     }
 }
 
 extension SlidesViewController {
-    
-    struct AnimationConstants {
-        static let scaleFactorZoomIn  = 1.2
-        static let scaleFactorZoomOut = 0.8
-        
-        static let scaleZoomIn  = CGPoint(x: scaleFactorZoomIn, y: scaleFactorZoomIn)
-        static let scaleZoomOut = CGPoint(x: scaleFactorZoomOut, y: scaleFactorZoomOut)
-        static let scaleNormal  = CGPoint(x: 1, y: 1)
-    }
     
     fileprivate func show(pageAtIndex index: Int) {
         guard let pages = presentation?.pages,

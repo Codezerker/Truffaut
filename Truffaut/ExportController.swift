@@ -32,10 +32,9 @@ struct ExportController {
         let pdfDocument = PDFDocument()
         let numberOfPages = dataSource.numberOfPagesToExport()
         for i in (0..<numberOfPages).reversed() {
-            guard
-                let pageView = dataSource.viewForPageToExport(atIndex: i),
-                let pdfPage = exportViewToPDF(view: pageView) else {
-                    continue
+            guard let pageView = dataSource.viewForPageToExport(atIndex: i),
+                  let pdfPage = exportViewToPDF(view: pageView) else {
+                continue
             }
             pdfDocument.insert(pdfPage, at: 0)
         }
@@ -47,13 +46,13 @@ fileprivate extension ExportController {
     
     fileprivate struct Layout {
         
-        static let defaultExportContentSize = CGSize(width: 1440, height: 900)
+        static let defaultExportContentSize = CGSize(width: 1280, height: 720)
     }
     
     fileprivate func exportViewToPDF(view: NSView) -> PDFPage? {
         view.frame = NSRect(origin: .zero, size: Layout.defaultExportContentSize)
+        view.updateConstraintsForSubtreeIfNeeded()
         view.layoutSubtreeIfNeeded()
-        
         let pdfData = view.dataWithPDF(inside: view.bounds)
         guard let pdfRep = NSPDFImageRep(data: pdfData) else {
             return nil

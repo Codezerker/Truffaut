@@ -15,6 +15,7 @@ class PageViewController: NSViewController {
     private weak var contentStackView: NSStackView?
     
     var page: Page?
+    var isExporting = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,12 +71,12 @@ fileprivate extension PageViewController {
         
         let titleLabel = NSTextField(wrappingLabelWithString: page.title ?? "")
         titleLabel.font = Font.Cover.title
-        titleLabel.textColor = TextColor.title
+        titleLabel.textColor = isExporting ? TextColor.Export.title : TextColor.Display.title
         contentStackView.addView(titleLabel, in: .center)
         
         let subtitleLabel = NSTextField(wrappingLabelWithString: page.subtitle ?? "")
         subtitleLabel.font = Font.Cover.subtitle
-        subtitleLabel.textColor = TextColor.subtitle
+        subtitleLabel.textColor = isExporting ? TextColor.Export.title : TextColor.Display.subtitle
         contentStackView.addView(subtitleLabel, in: .center)
     }
     
@@ -95,7 +96,7 @@ fileprivate extension PageViewController {
             
             let titleLabel = NSTextField(wrappingLabelWithString: page.title ?? "")
             titleLabel.font = Font.Page.title
-            titleLabel.textColor = TextColor.title
+            titleLabel.textColor = isExporting ? TextColor.Export.title : TextColor.Display.title
             contentStackView.addView(titleLabel, in: pageGravity)
         } else {
             contentStackView.alignment = .centerX
@@ -122,12 +123,12 @@ fileprivate extension PageViewController {
                 let displayText = text.replacingOccurrences(of: "->", with: " ➞ ")
                 let label = NSTextField(wrappingLabelWithString: displayText)
                 label.font = Font.Page.text
-                label.textColor = TextColor.text
+                label.textColor = isExporting ? TextColor.Export.text : TextColor.Display.text
                 stackView.addView(label, in: pageGravity)
             case .sourceCode(let source):
                 let label = NSTextField(wrappingLabelWithString: source)
                 label.font = Font.Page.source
-                label.textColor = TextColor.source
+                label.textColor = isExporting ? TextColor.Export.source : TextColor.Display.source
                 stackView.addView(label, in: pageGravity)
             default:
                 // FIXME: layout image
