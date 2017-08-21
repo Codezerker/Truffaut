@@ -40,8 +40,9 @@ class PresentationDocument: NSDocument {
     
     override func read(from url: URL, ofType typeName: String) throws {
         ReadController.read(from: url) { presentation, error in
-            guard let presentation = presentation else {
-                // TODO: handle error
+            guard let presentation = presentation, error == nil else {
+                let alert = NSAlert(error: error!)
+                alert.runModal()
                 return
             }
             self.presentation = presentation
