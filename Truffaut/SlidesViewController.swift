@@ -49,10 +49,9 @@ extension SlidesViewController {
         openPanel.allowsOtherFileTypes = false
         openPanel.nameFieldStringValue = fileName
         openPanel.begin { result in
-            guard
-                result.rawValue == NSFileHandlingPanelOKButton,
-                let exportURL = openPanel.url else {
-                    return
+            guard result == NSApplication.ModalResponse.OK,
+                  let exportURL = openPanel.url else {
+                return
             }
             let pdf = ExportController().exportToPDF(withDataSource: self)
             pdf.write(to: exportURL)

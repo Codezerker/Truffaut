@@ -26,7 +26,7 @@ class Shell: NSObject {
         let pipe = Pipe()
         process.standardOutput = pipe
         
-        process.launch()
+        try process.run()
         process.waitUntilExit()
         
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
