@@ -49,6 +49,10 @@ extension SlidesViewController {
         show(pageAtIndex: currentPage + 1)
     }
     
+    // FIXME:
+    // because the document view for the page view is flipped, the PDF image is messed up.
+    // Disable export for now.
+    /*
     @IBAction func exportPresentationToPDF(_ sender: Any?) {
         guard let fileName = self.fileName else {
             return
@@ -66,6 +70,7 @@ extension SlidesViewController {
             pdf.write(to: exportURL)
         }
     }
+    */
 }
 
 extension SlidesViewController: ExportControllerDataSource {

@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PageViewController" customModule="Truffaut" customModuleProvider="target">
             <connections>
+                <outlet property="scrollView" destination="WHC-m3-WrH" id="qOo-RA-a6W"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="visualEffectView" destination="O69-2Y-asZ" id="csv-vH-g9D"/>
             </connections>
@@ -19,6 +20,35 @@
             <subviews>
                 <visualEffectView blendingMode="behindWindow" material="ultraDark" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="O69-2Y-asZ">
                     <rect key="frame" x="0.0" y="0.0" width="797" height="606"/>
+                    <subviews>
+                        <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHC-m3-WrH">
+                            <rect key="frame" x="0.0" y="0.0" width="797" height="606"/>
+                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="4dM-GT-YLj">
+                                <rect key="frame" x="0.0" y="0.0" width="782" height="591"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m8P-EX-EHG">
+                                        <rect key="frame" x="0.0" y="0.0" width="767" height="576"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </view>
+                                </subviews>
+                            </clipView>
+                            <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="FtQ-iU-0Th">
+                                <rect key="frame" x="0.0" y="591" width="782" height="15"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Urm-Mx-zeW">
+                                <rect key="frame" x="782" y="0.0" width="15" height="591"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                        </scrollView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="WHC-m3-WrH" firstAttribute="top" secondItem="O69-2Y-asZ" secondAttribute="top" id="Pog-9L-7pX"/>
+                        <constraint firstAttribute="trailing" secondItem="WHC-m3-WrH" secondAttribute="trailing" id="b7J-dl-ude"/>
+                        <constraint firstItem="WHC-m3-WrH" firstAttribute="leading" secondItem="O69-2Y-asZ" secondAttribute="leading" id="ows-W5-GHg"/>
+                        <constraint firstAttribute="bottom" secondItem="WHC-m3-WrH" secondAttribute="bottom" id="pYK-jO-ukf"/>
+                    </constraints>
                 </visualEffectView>
             </subviews>
             <constraints>
