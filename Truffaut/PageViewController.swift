@@ -14,9 +14,21 @@ class PageViewController: NSViewController {
     @IBOutlet private weak var visualEffectView: NSVisualEffectView!
     private weak var contentStackView: NSStackView?
     
-    var page: Page?
-    var isExporting = false
+    let page: Page
+    let imageBaseURL: URL
+    let isExporting: Bool
     
+    init(page: Page, imageBaseURL: URL, isExporting: Bool = false) {
+        self.page = page
+        self.imageBaseURL = imageBaseURL
+        self.isExporting = isExporting
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
@@ -32,10 +44,6 @@ fileprivate extension PageViewController {
     }
     
     private func setUpViews() {
-        guard let page = page else {
-            return
-        }
-        
         let contentStackView = NSStackView(views: [])
         contentStackView.orientation = .vertical
         contentStackView.spacing = LayoutConstants.spacing
@@ -61,8 +69,7 @@ fileprivate extension PageViewController {
     }
     
     private func layoutPageAsCover() {
-        guard let page = page,
-              let contentStackView = contentStackView else {
+        guard let contentStackView = contentStackView else {
             return
         }
         
@@ -81,8 +88,7 @@ fileprivate extension PageViewController {
     }
     
     private func layoutPage() {
-        guard let page = page,
-              let contents = page.contents,
+        guard let contents = page.contents,
               let contentStackView = contentStackView else {
             return
         }
@@ -130,8 +136,15 @@ fileprivate extension PageViewController {
                 label.font = Font.Page.source
                 label.textColor = isExporting ? TextColor.Export.source : TextColor.Display.source
                 stackView.addView(label, in: pageGravity)
+            case .image(let relativePath):
+                let imageURL = imageBaseURL.appendingPathComponent(relativePath, isDirectory: false)
+                guard let image = NSImage(contentsOf: imageURL) else {
+                    break
+                }
+                let imageView = NSImageView(image: image)
+                imageView.imageScaling = .scaleProportionallyUpOrDown
+                stackView.addView(imageView, in: pageGravity)
             default:
-                // FIXME: layout image
                 break
             }
             

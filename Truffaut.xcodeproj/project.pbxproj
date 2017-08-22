@@ -67,16 +67,6 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B7C8C1A1CC227A7000FE312 /* Embed Slide Templates */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed Slide Templates";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -337,7 +327,6 @@
 				0B7C8BD71CBFD166000FE312 /* Frameworks */,
 				0B7C8BD81CBFD166000FE312 /* Resources */,
 				0B7C8BF71CC139FD000FE312 /* Embed Frameworks */,
-				0B7C8C1A1CC227A7000FE312 /* Embed Slide Templates */,
 				0BA6FD881D0D56D200565E8A /* Fabrics */,
 				0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */,
 			);

@@ -24,6 +24,15 @@ class SlidesViewController: NSViewController {
         return (windowController?.document as? PresentationDocument)?.fileNameWithoutExtension
     }
     
+    fileprivate var documentFolderURL: URL? {
+        guard let document = windowController?.document,
+              let documentURL = document.fileURL,
+              let folderURL = documentURL?.deletingLastPathComponent() else {
+            return nil
+        }
+        return folderURL
+    }
+    
     override func viewWillAppear() {
         super.viewWillAppear()
         show(pageAtIndex: currentPage)
@@ -74,12 +83,11 @@ extension SlidesViewController: ExportControllerDataSource {
     }
     
     func viewForPageToExport(atIndex index: Int) -> NSView? {
-        guard let page = presentation?.pages[index] else {
+        guard let page = presentation?.pages[index],
+              let documentFolderURL = documentFolderURL else {
             return nil
         }
-        let pageViewController = PageViewController()
-        pageViewController.page = page
-        pageViewController.isExporting = true
+        let pageViewController = PageViewController(page: page, imageBaseURL: documentFolderURL, isExporting: true)
         return pageViewController.view
     }
 }
@@ -88,14 +96,14 @@ extension SlidesViewController {
     
     fileprivate func show(pageAtIndex index: Int) {
         guard let pages = presentation?.pages,
+              let documentFolderURL = documentFolderURL,
               index >= 0 && index < pages.count else {
             return
         }
         
         currentPage = index
         
-        let pageViewController = PageViewController()
-        pageViewController.page = pages[index]
+        let pageViewController = PageViewController(page: pages[index], imageBaseURL: documentFolderURL)
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pageViewController.view)
         addChildViewController(pageViewController)
