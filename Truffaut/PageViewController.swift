@@ -33,17 +33,34 @@ class PageViewController: NSViewController {
         super.viewDidLoad()
         setUpViews()
     }
+    
+    override func viewWillLayout() {
+        super.viewWillLayout()
+        DynamicLayout.currentScreenSize = view.bounds.size
+        setUpViews()
+    }
 }
 
 fileprivate extension PageViewController {
     
     private struct LayoutConstants {
-        static let pageMargin: CGFloat = 42
-        static let spacing: CGFloat = 16
-        static let indentOffset: CGFloat = 32
+        
+        static var pageMargin: CGFloat {
+            return DynamicLayout.sizeFittingCurrentScreenSize(originalSize: 42)
+        }
+        
+        static var spacing: CGFloat {
+            return DynamicLayout.sizeFittingCurrentScreenSize(originalSize: 16)
+        }
+        
+        static var indentOffset: CGFloat {
+            return DynamicLayout.sizeFittingCurrentScreenSize(originalSize: 32)
+        }
     }
     
     private func setUpViews() {
+        self.contentStackView?.removeFromSuperview()
+        
         let contentStackView = NSStackView(views: [])
         contentStackView.orientation = .vertical
         contentStackView.spacing = LayoutConstants.spacing

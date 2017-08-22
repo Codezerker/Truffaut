@@ -14,7 +14,7 @@ class SlidesViewController: NSViewController {
     weak var windowController: NSWindowController?
     
     fileprivate var currentPage = 0
-    fileprivate weak var currentPageViewController: NSViewController?
+    fileprivate weak var currentPageViewController: PageViewController?
     
     fileprivate var presentation: Presentation? {
         return (windowController?.document as? PresentationDocument)?.presentation

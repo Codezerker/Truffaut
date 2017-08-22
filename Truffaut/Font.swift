@@ -8,17 +8,46 @@
 
 import AppKit
 
-struct Font {
+struct DynamicLayout {
     
+    private static let defaultScreenSize = NSSize(width: 800, height: 600)
+    static var currentScreenSize = DynamicLayout.defaultScreenSize
+    
+    static func sizeFittingCurrentScreenSize(originalSize: CGFloat) -> CGFloat {
+        return min(originalSize / DynamicLayout.defaultScreenSize.width * DynamicLayout.currentScreenSize.width,
+                   originalSize / DynamicLayout.defaultScreenSize.height * DynamicLayout.currentScreenSize.height)
+    }
+}
+
+struct Font {
+
     struct Cover {
-        static let title = NSFont.boldSystemFont(ofSize: 42)
-        static let subtitle = NSFont.systemFont(ofSize: 24)
+        
+        static var title: NSFont {
+            return NSFont.boldSystemFont(ofSize: DynamicLayout.sizeFittingCurrentScreenSize(originalSize: 42))
+        }
+        
+        static var subtitle: NSFont {
+            return NSFont.systemFont(ofSize: DynamicLayout.sizeFittingCurrentScreenSize(originalSize: 24))
+        }
     }
     
     struct Page {
-        static let title = NSFont.boldSystemFont(ofSize: 38)
-        static let text = NSFont.systemFont(ofSize: 24)
-        static let source = NSFont(name: "SF Mono", size: 18)
+        
+        static var title: NSFont {
+            return NSFont.boldSystemFont(ofSize: DynamicLayout.sizeFittingCurrentScreenSize(originalSize: 38))
+        }
+        
+        static var text: NSFont {
+            return NSFont.systemFont(ofSize: DynamicLayout.sizeFittingCurrentScreenSize(originalSize: 24))
+        }
+        
+        static var source: NSFont {
+            guard let sfMono = NSFont(name: "SF Mono", size: DynamicLayout.sizeFittingCurrentScreenSize(originalSize: 18)) else {
+                return text
+            }
+            return sfMono
+        }
     }
 }
 
