@@ -35,7 +35,18 @@ struct SyntaxHighlighter {
               let attrString = NSMutableAttributedString(html: htmlData, baseURL: URL(string: "/")!, documentAttributes: nil) else {
             return nil
         }
-        attrString.addAttribute(.font, value: font, range: NSRange(location: 0, length: attrString.length))
+        let fullStringRange = NSRange(location: 0, length: attrString.length)
+        attrString.addAttribute(.font, value: font, range: fullStringRange)
+        attrString.enumerateAttribute(.foregroundColor, in: fullStringRange, options: []) { attr, range, _ in
+            guard let foregroundColor = attr as? NSColor,
+                  foregroundColor.redComponent == 0,
+                  foregroundColor.greenComponent == 0,
+                  foregroundColor.blueComponent == 0,
+                  foregroundColor.alphaComponent == 1 else {
+                return
+            }
+            attrString.addAttribute(.foregroundColor, value: TextColor.Display.source, range: range)
+        }
         return attrString
     }
 }

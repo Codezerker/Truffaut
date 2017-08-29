@@ -12,7 +12,7 @@ else
   lexer = Rouge::Lexers::Swift.new
 end
 
-formatter = Rouge::Formatters::HTMLInline.new Rouge::Themes::ThankfulEyes.new
+formatter = Rouge::Formatters::HTMLInline.new Rouge::Themes::MonokaiSublime.new
 
 result = formatter.format(lexer.lex(source))
 puts result
