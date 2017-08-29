@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0712891F557C290074EC7A /* SyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0712881F557C290074EC7A /* SyntaxHighlighter.swift */; };
+		0B07128B1F557D730074EC7A /* syntax-hl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0B07128A1F557D730074EC7A /* syntax-hl.rb */; };
 		0B14BCDE1E92360700EB0C6A /* TruffautSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B14BCE11E92360700EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -69,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B0712881F557C290074EC7A /* SyntaxHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighter.swift; sourceTree = "<group>"; };
+		0B07128A1F557D730074EC7A /* syntax-hl.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = "syntax-hl.rb"; sourceTree = "<group>"; };
 		0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TruffautSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TruffautSupport.h; sourceTree = "<group>"; };
 		0B14BCDD1E92360700EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		0B6EED841CC26C83001BC00B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B07128A1F557D730074EC7A /* syntax-hl.rb */,
 				0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */,
 				0B7C8BE31CBFD166000FE312 /* Assets.xcassets */,
 				0B7C8BE81CBFD166000FE312 /* Info.plist */,
@@ -250,6 +255,7 @@
 				0B62141C1F45A39000B66C9B /* Font.swift */,
 				0B7C8C011CC1422B000FE312 /* StoryboardLoading.swift */,
 				0BAB64AE1EA08D7C001CE96A /* ReadController.swift */,
+				0B0712881F557C290074EC7A /* SyntaxHighlighter.swift */,
 				0B14BD121E9398FE00EB0C6A /* Shell.swift */,
 				0B7FADEA1D43472300000884 /* ExportController.swift */,
 			);
@@ -406,6 +412,7 @@
 			files = (
 				0B62141B1F45978A00B66C9B /* PageViewController.xib in Resources */,
 				0B7C8BE41CBFD166000FE312 /* Assets.xcassets in Resources */,
+				0B07128B1F557D730074EC7A /* syntax-hl.rb in Resources */,
 				0B7C8BE71CBFD166000FE312 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B7C8C021CC1422B000FE312 /* StoryboardLoading.swift in Sources */,
+				0B0712891F557C290074EC7A /* SyntaxHighlighter.swift in Sources */,
 				0B7C8BFE1CC14006000FE312 /* SlidesWindowController.swift in Sources */,
 				0B7C8BE01CBFD166000FE312 /* MainViewController.swift in Sources */,
 				0B62141A1F45978A00B66C9B /* PageViewController.swift in Sources */,

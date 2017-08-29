@@ -11,6 +11,7 @@ import Foundation
 public enum Content {
     
     public enum FileType: String, Codable {
+        case plainText
         case swift
         case shell
     }
@@ -35,11 +36,7 @@ extension Content: Codable {
 
         case indent
     }
-    
-    public enum ContentError: Error {
-        case malformedContent
-    }
-    
+        
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         if let title = try values.decodeIfPresent(String.self, forKey: .title) {

@@ -163,6 +163,19 @@ fileprivate extension PageViewController {
                 label.font = Font.Page.source
                 label.textColor = isExporting ? TextColor.Export.source : TextColor.Display.source
                 stackView.addView(label, in: pageGravity)
+                
+                // syntax highlighting
+                switch fileType {
+                case .plainText:
+                    break
+                default:
+                    guard let attrString = SyntaxHighlighter.attributedString(from: source,
+                                                                              ofType: fileType,
+                                                                              withFont: Font.Page.source) else {
+                        break
+                    }
+                    label.attributedStringValue = attrString
+                }
             case .image(let relativePath):
                 let imageURL = imageBaseURL.appendingPathComponent(relativePath, isDirectory: false)
                 guard let image = NSImage(contentsOf: imageURL) else {
