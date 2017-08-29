@@ -28,11 +28,11 @@ class TruffautSupportTests: XCTestCase {
                 Page(title: "hello",
                      subtitle: "say hello",
                      contents: [
-//                        .indent([
+                        .indent([
                             .image("./image/url.png"),
                             .text("hello"),
                             .sourceCode(.swift, sourceCode),
-//                        ]),
+                        ]),
                      ]),
             ])
 
@@ -49,15 +49,13 @@ class TruffautSupportTests: XCTestCase {
         XCTAssertEqual(presentation.pages[0].subtitle, newPresentation.pages[0].subtitle)
         XCTAssertEqual(presentation.pages[0].contents?.count, newPresentation.pages[0].contents?.count)
         
-//        guard let indent = newPresentation.pages[0].contents?.first,
-//              case let .indent(contents) = indent else {
-//            XCTAssert(false)
-//            return
-//        }
-//        XCTAssertEqual(contents.count, 3)
+        guard let indent = newPresentation.pages[0].contents?.first,
+              case let .indent(contents) = indent else {
+            XCTAssert(false)
+            return
+        }
+        XCTAssertEqual(contents.count, 3)
         
-        let contents = presentation.pages[0].contents!
-
         guard case let .image(path) = contents[0] else {
             XCTAssert(false)
             return

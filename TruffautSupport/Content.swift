@@ -51,6 +51,8 @@ extension Content: Codable {
         } else if let sourceCode = try? values.decode(String.self, forKey: .sourceCode),
                   let fileType = try? values.decode(FileType.self, forKey: .fileType) {
             self = .sourceCode(fileType, sourceCode)
+        } else if let contents = try? values.decode([Content].self, forKey: .indent) {
+            self = .indent(contents)
         } else {
             throw ContentError.malformedContent
         }
@@ -68,8 +70,8 @@ extension Content: Codable {
         case .sourceCode(let fileType, let sourceCode):
             try container.encode(fileType, forKey: .fileType)
             try container.encode(sourceCode, forKey: .sourceCode)
-        default:
-            throw ContentError.malformedContent
+        case .indent(let contents):
+            try container.encode(contents, forKey: .indent)
         }
     }
 }
