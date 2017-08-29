@@ -158,24 +158,24 @@ fileprivate extension PageViewController {
                 label.textColor = isExporting ? TextColor.Export.text : TextColor.Display.text
                 stackView.addView(label, in: pageGravity)
             case .sourceCode(let fileType, let source):
-                let label = NSTextField(wrappingLabelWithString: source)
+                let label: NSTextField
+                switch fileType {
+                case .plainText:
+                    label = NSTextField(labelWithString: source)
+                default:
+                    guard let sourceWithSyntaxHighlighting =
+                        SyntaxHighlighter.attributedString(from: source,
+                                                           ofType: fileType,
+                                                           withFont: Font.Page.source) else {
+                        label = NSTextField(labelWithString: source)
+                        break
+                    }
+                    label = NSTextField(labelWithAttributedString: sourceWithSyntaxHighlighting)
+                }
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = Font.Page.source
                 label.textColor = isExporting ? TextColor.Export.source : TextColor.Display.source
                 stackView.addView(label, in: pageGravity)
-                
-                // syntax highlighting
-                switch fileType {
-                case .plainText:
-                    break
-                default:
-                    guard let attrString = SyntaxHighlighter.attributedString(from: source,
-                                                                              ofType: fileType,
-                                                                              withFont: Font.Page.source) else {
-                        break
-                    }
-                    label.attributedStringValue = attrString
-                }
             case .image(let relativePath):
                 let imageURL = imageBaseURL.appendingPathComponent(relativePath, isDirectory: false)
                 guard let image = NSImage(contentsOf: imageURL) else {

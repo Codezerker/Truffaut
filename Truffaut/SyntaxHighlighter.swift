@@ -16,11 +16,12 @@ struct SyntaxHighlighter {
             return nil
         }
         do {
-            let output = try Shell.call(command: "/usr/local/bin/ruby", arguments: [
+            var output = try Shell.call(command: "/usr/local/bin/ruby", arguments: [
                 scriptPath,
                 sourceCode,
                 type.rawValue,
             ])
+            output.removeLast() // remove '\n'
             return attributedString(from: output, font: font)
         } catch {
             return nil
