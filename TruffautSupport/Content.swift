@@ -42,19 +42,21 @@ extension Content: Codable {
     
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        if let title = try? values.decode(String.self, forKey: .title) {
+        if let title = try values.decodeIfPresent(String.self, forKey: .title) {
             self = .title(title)
-        } else if let imageFilePath = try? values.decode(String.self, forKey: .image) {
+        } else if let imageFilePath = try values.decodeIfPresent(String.self, forKey: .image) {
             self = .image(imageFilePath)
-        } else if let text = try? values.decode(String.self, forKey: .text) {
+        } else if let text = try values.decodeIfPresent(String.self, forKey: .text) {
             self = .text(text)
-        } else if let sourceCode = try? values.decode(String.self, forKey: .sourceCode),
-                  let fileType = try? values.decode(FileType.self, forKey: .fileType) {
+        } else if let sourceCode = try values.decodeIfPresent(String.self, forKey: .sourceCode),
+                  let fileType = try values.decodeIfPresent(FileType.self, forKey: .fileType) {
             self = .sourceCode(fileType, sourceCode)
-        } else if let contents = try? values.decode([Content].self, forKey: .indent) {
+        } else if let contents = try values.decodeIfPresent([Content].self, forKey: .indent) {
             self = .indent(contents)
         } else {
-            throw ContentError.malformedContent
+            let context = DecodingError.Context(codingPath: values.codingPath,
+                                                debugDescription: "Unexpected content")
+            throw DecodingError.dataCorrupted(context)
         }
     }
     
