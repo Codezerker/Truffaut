@@ -21,15 +21,15 @@ struct ReadController {
                 let cmd = ManifestReading.command
                 let args = try ManifestReading.commandArguments(with: url)
                 let output = try Shell.call(command: cmd, arguments: args)
-                guard let outputData = output.data(using: .utf8),
-                      let json = try JSONSerialization.jsonObject(with: outputData, options: []) as? JSONDictionary else {
+                guard let outputData = output.data(using: .utf8) else {
                     DispatchQueue.main.async {
                         completion(nil, ReadingError.malformedManifestData(output: output))
                     }
                     return
                 }
+                let presentation = try JSONDecoder().decode(Presentation.self, from: outputData)
                 DispatchQueue.main.async {
-                    completion(Presentation(jsonDictionary: json), nil)
+                    completion(presentation, nil)
                 }
             } catch {
                 DispatchQueue.main.async {

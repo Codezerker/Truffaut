@@ -157,7 +157,7 @@ fileprivate extension PageViewController {
                 label.font = Font.Page.text
                 label.textColor = isExporting ? TextColor.Export.text : TextColor.Display.text
                 stackView.addView(label, in: pageGravity)
-            case .sourceCode(let source):
+            case .sourceCode(let fileType, let source):
                 let label = NSTextField(wrappingLabelWithString: source)
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = Font.Page.source

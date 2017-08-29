@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Presentation {
+public struct Presentation: Codable {
     
     public let title: String
     public let authors: [String]
@@ -24,10 +24,12 @@ public struct Presentation {
     }
 }
 
-fileprivate extension Presentation {
+private extension Presentation {
     
-    fileprivate func dump() {
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonRepresentation, options: .prettyPrinted),
+    private func dump() {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        guard let jsonData = try? encoder.encode(self),
               let jsonString = String(data: jsonData, encoding: .utf8) else {
             return
         }

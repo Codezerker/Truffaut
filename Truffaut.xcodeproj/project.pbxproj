@@ -13,7 +13,6 @@
 		0B14BCE81E923A1200EB0C6A /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCE71E923A1200EB0C6A /* Presentation.swift */; };
 		0B14BCEA1E923A2100EB0C6A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCE91E923A2100EB0C6A /* Page.swift */; };
 		0B14BCEC1E923A6F00EB0C6A /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCEB1E923A6F00EB0C6A /* Content.swift */; };
-		0B14BCFC1E92429800EB0C6A /* JSONRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCFB1E92429800EB0C6A /* JSONRepresentation.swift */; };
 		0B14BD041E92499300EB0C6A /* TruffautSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */; };
 		0B14BD061E92499300EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD121E9398FE00EB0C6A /* Shell.swift */; };
@@ -76,7 +75,6 @@
 		0B14BCE71E923A1200EB0C6A /* Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentation.swift; sourceTree = "<group>"; };
 		0B14BCE91E923A2100EB0C6A /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		0B14BCEB1E923A6F00EB0C6A /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
-		0B14BCFB1E92429800EB0C6A /* JSONRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRepresentation.swift; sourceTree = "<group>"; };
 		0B14BD011E92499300EB0C6A /* TruffautSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruffautSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruffautSupportTests.swift; sourceTree = "<group>"; };
 		0B14BD051E92499300EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */,
-				0B14BCFB1E92429800EB0C6A /* JSONRepresentation.swift */,
 				0B14BCE71E923A1200EB0C6A /* Presentation.swift */,
 				0B14BCE91E923A2100EB0C6A /* Page.swift */,
 				0B14BCEB1E923A6F00EB0C6A /* Content.swift */,
@@ -479,7 +476,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B14BCFC1E92429800EB0C6A /* JSONRepresentation.swift in Sources */,
 				0B14BCEA1E923A2100EB0C6A /* Page.swift in Sources */,
 				0B14BCE81E923A1200EB0C6A /* Presentation.swift in Sources */,
 				0B14BCEC1E923A6F00EB0C6A /* Content.swift in Sources */,

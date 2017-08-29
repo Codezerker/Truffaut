@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Page {
+public struct Page: Codable {
     
     public let title: String?
     public let subtitle: String?
