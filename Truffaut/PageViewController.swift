@@ -164,10 +164,6 @@ fileprivate extension PageViewController {
                     label = NSTextField(labelWithString: source)
                 default:
                     label = NSTextField(labelWithAttributedString: NSAttributedString(string: source))
-                    label.translatesAutoresizingMaskIntoConstraints = false
-                    label.font = Font.Page.source
-                    label.textColor = isExporting ? TextColor.Export.source : TextColor.Display.source
-                    stackView.addView(label, in: pageGravity)
                     SyntaxHighlighter.highlight(sourceCode: source,
                                                 ofType: fileType,
                                                 withFont: Font.Page.source) { result in
@@ -177,6 +173,10 @@ fileprivate extension PageViewController {
                                                     label.attributedStringValue = result
                                                 }
                 }
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.font = Font.Page.source
+                label.textColor = isExporting ? TextColor.Export.source : TextColor.Display.source
+                stackView.addView(label, in: pageGravity)
             case .image(let relativePath):
                 let imageURL = imageBaseURL.appendingPathComponent(relativePath, isDirectory: false)
                 guard let image = NSImage(contentsOf: imageURL) else {
