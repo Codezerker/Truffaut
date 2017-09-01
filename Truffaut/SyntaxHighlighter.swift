@@ -11,20 +11,36 @@ import TruffautSupport
 
 struct SyntaxHighlighter {
     
-    static func attributedString(from sourceCode: String, ofType type: Content.FileType, withFont font: NSFont) -> NSAttributedString? {
-        guard let scriptPath = Bundle.main.path(forResource: "syntax-hl", ofType: "rb") else {
-            return nil
-        }
-        do {
-            var output = try Shell.call(command: "/usr/local/bin/ruby", arguments: [
-                scriptPath,
-                sourceCode,
-                type.rawValue,
-            ])
-            output.removeLast() // remove '\n'
-            return attributedString(from: output, font: font)
-        } catch {
-            return nil
+    private static let syntaxHighlightingQueue = DispatchQueue(label: "com.codezerker.truffaut.syntaxHighlighting",
+                                                               attributes: .concurrent)
+    
+    static func highlight(sourceCode: String,
+                          ofType type: Content.FileType,
+                          withFont font: NSFont,
+                          completion: @escaping (NSAttributedString?) -> Void) {
+        syntaxHighlightingQueue.async {
+            guard let scriptPath = Bundle.main.path(forResource: "syntax-hl", ofType: "rb") else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                return
+            }
+            do {
+                var output = try Shell.call(command: "/usr/local/bin/ruby", arguments: [
+                    scriptPath,
+                    sourceCode,
+                    type.rawValue,
+                    ])
+                output.removeLast() // remove '\n'
+                let result = self.attributedString(from: output, font: font)
+                DispatchQueue.main.async {
+                    completion(result)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
         }
     }
     
