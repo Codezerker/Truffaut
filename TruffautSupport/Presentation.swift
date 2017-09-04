@@ -14,7 +14,7 @@ public struct Presentation: Codable {
     public let authors: [String]
     public let pages: [Page]
     
-    public init(title: String, authors: [String], pages: [Page]) {
+    public init(title: String = "", authors: [String] = [], pages: [Page]) {
         self.title = title
         self.authors = authors
         self.pages = pages
