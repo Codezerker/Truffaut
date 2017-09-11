@@ -8,8 +8,10 @@ sourceFileType = ARGV.shift
 case sourceFileType
 when 'shell'
   lexer = Rouge::Lexers::Shell.new
-else
+when 'swift'
   lexer = Rouge::Lexers::Swift.new
+when 'javaScript'
+  lexer = Rouge::Lexers::Javascript.new
 end
 
 formatter = Rouge::Formatters::HTMLInline.new Rouge::Themes::MonokaiSublime.new

@@ -11,9 +11,10 @@ import Foundation
 public enum Content {
     
     public enum FileType: String, Codable {
-        case plainText
+        case plainText	
         case swift
         case shell
+        case javaScript
     }
     
     case title(String)

@@ -32,6 +32,7 @@ class TruffautSupportTests: XCTestCase {
                             .image("./image/url.png"),
                             .text("hello"),
                             .sourceCode(.swift, sourceCode),
+                            .sourceCode(.javaScript, sourceCode),
                         ]),
                      ]),
             ])
@@ -54,7 +55,7 @@ class TruffautSupportTests: XCTestCase {
             XCTAssert(false)
             return
         }
-        XCTAssertEqual(contents.count, 3)
+        XCTAssertEqual(contents.count, 4)
         
         guard case let .image(path) = contents[0] else {
             XCTAssert(false)
@@ -74,5 +75,11 @@ class TruffautSupportTests: XCTestCase {
         }
         XCTAssertEqual(fileType.rawValue, "swift")
         XCTAssertEqual(source, sourceCode)
+        
+        guard case let .sourceCode(jsFileType, _) = contents[3] else {
+            XCTAssert(false)
+            return
+        }
+        XCTAssertEqual(jsFileType.rawValue, "javaScript")
     }
 }

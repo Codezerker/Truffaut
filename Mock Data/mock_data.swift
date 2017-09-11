@@ -15,6 +15,18 @@ class PageViewController: NSViewController {
 }
 """
 
+let javaScriptSample =
+"""
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;  // 0! = 1! = 1
+    }
+    return n * factorial(n - 1);
+}
+
+factorial(3); // returns 6
+"""
+
 let presentation = Presentation(
    title: "Presentation Title",
    authors: ["Yan Li"],
@@ -52,14 +64,18 @@ let presentation = Presentation(
 
        // Source Code
        Page(title: "Source Code", contents: [
-           .sourceCode(codeSample),
+           .sourceCode(.swift, codeSample),
+       ]),
+
+       Page(title: "JavaScript Sample", contents: [
+           .sourceCode(.javaScript, javaScriptSample),
        ]),
 
        // Nested Source Code
        Page(title: "Source Code", contents: [
            .text("A simple example:"),
            .indent([
-               .sourceCode(codeSample),
+               .sourceCode(.swift, codeSample),
            ]),
        ]),
 
