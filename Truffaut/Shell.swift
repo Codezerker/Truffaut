@@ -9,11 +9,16 @@
 import Foundation
 
 public enum ShellRuntimeError: Error {
-    
     case brokenPipe
 }
 
 class Shell: NSObject {
+    
+    // FIXME: make these hard coded ENVs configurable in preference
+    struct Environment {
+        static let swiftc = "/usr/bin/swiftc"
+        static let ruby = "/usr/local/bin/ruby"
+    }
     
     public static func call(command: String, arguments: [String] = [], currentDirectoryPath: String? = nil) throws -> String {
         let process = Process()

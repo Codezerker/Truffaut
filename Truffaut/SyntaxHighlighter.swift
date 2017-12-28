@@ -26,13 +26,15 @@ struct SyntaxHighlighter {
                 return
             }
             do {
-                var output = try Shell.call(command: "/usr/local/bin/ruby", arguments: [
+                var output = try Shell.call(command: Shell.Environment.ruby, arguments: [
                     scriptPath,
                     sourceCode,
                     type.rawValue,
                     ])
                 output.removeLast() // remove '\n'
+                
                 let result = self.attributedString(from: output, font: font)
+                
                 DispatchQueue.main.async {
                     completion(result)
                 }

@@ -18,7 +18,7 @@ struct ReadController {
     static func read(from url: URL, completion: @escaping (Presentation?, Error?) -> Void) {
         ManifestReading.queue.async {
             do {
-                let cmd = ManifestReading.command
+                let cmd = Shell.Environment.swiftc
                 let args = try ManifestReading.commandArguments(with: url)
                 let output = try Shell.call(command: cmd, arguments: args)
                 guard let outputData = output.data(using: .utf8) else {
@@ -47,7 +47,6 @@ fileprivate extension ReadController {
     fileprivate struct ManifestReading {
         
         static let queue = DispatchQueue(label: "com.codezerker.truffaut.manifestReading")
-        static let command = "/usr/bin/swiftc"
         
         private static let supportModuleName = "TruffautSupport"
         private static var searchPath: String? {
