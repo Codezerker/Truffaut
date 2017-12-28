@@ -39,35 +39,17 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>auto</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>8d50cafab59f7d99afb7785689fa60bd10a903e2</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict/>
-				<key>KitName</key>
-				<string>Crashlytics</string>
-			</dict>
-		</array>
-	</dict>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.developer-tools</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016 Codezerker. All rights reserved.</string>
+	<string>Copyright © 2017 Codezerker. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
-	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/Codezerker/Truffaut-Releases/master/Truffaut-Appcast.xml</string>
-	<key>SUScheduledCheckInterval</key>
-	<integer>86400</integer>
 </dict>
 </plist>

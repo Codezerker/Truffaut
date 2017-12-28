@@ -18,8 +18,6 @@
 		0B14BD041E92499300EB0C6A /* TruffautSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */; };
 		0B14BD061E92499300EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
 		0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BD121E9398FE00EB0C6A /* Shell.swift */; };
-		0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; };
-		0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B62141A1F45978A00B66C9B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6214181F45978A00B66C9B /* PageViewController.swift */; };
 		0B62141B1F45978A00B66C9B /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6214191F45978A00B66C9B /* PageViewController.xib */; };
 		0B62141D1F45A39000B66C9B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62141C1F45A39000B66C9B /* Font.swift */; };
@@ -33,8 +31,6 @@
 		0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */; };
 		0B7C8C021CC1422B000FE312 /* StoryboardLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C011CC1422B000FE312 /* StoryboardLoading.swift */; };
 		0B7FADEB1D43472300000884 /* ExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADEA1D43472300000884 /* ExportController.swift */; };
-		0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD841D0D525200565E8A /* Crashlytics.framework */; };
-		0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA6FD851D0D525200565E8A /* Fabric.framework */; };
 		0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB64AE1EA08D7C001CE96A /* ReadController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +58,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B60B2CE1D0BE6AC006EFF8F /* Sparkle.framework in Embed Frameworks */,
 				0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -83,7 +78,6 @@
 		0B14BD031E92499300EB0C6A /* TruffautSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruffautSupportTests.swift; sourceTree = "<group>"; };
 		0B14BD051E92499300EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B14BD121E9398FE00EB0C6A /* Shell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
-		0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		0B6214181F45978A00B66C9B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		0B6214191F45978A00B66C9B /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
 		0B62141C1F45A39000B66C9B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -100,8 +94,6 @@
 		0B7C8C011CC1422B000FE312 /* StoryboardLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardLoading.swift; sourceTree = "<group>"; };
 		0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Truffaut-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B7FADEA1D43472300000884 /* ExportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportController.swift; sourceTree = "<group>"; };
-		0BA6FD841D0D525200565E8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		0BA6FD851D0D525200565E8A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		0BAB64AE1EA08D7C001CE96A /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,9 +118,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B14BCE11E92360700EB0C6A /* TruffautSupport.framework in Frameworks */,
-				0BA6FD861D0D525200565E8A /* Crashlytics.framework in Frameworks */,
-				0B60B2CD1D0BE694006EFF8F /* Sparkle.framework in Frameworks */,
-				0BA6FD871D0D525200565E8A /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,19 +186,8 @@
 				0B7C8BFA1CC13F4A000FE312 /* Main Window */,
 				0B7C8BFC1CC13F91000FE312 /* Slides Window */,
 				0B6EED841CC26C83001BC00B /* Supporting Files */,
-				0BA6FD831D0D525200565E8A /* Fabric */,
-				0B7C8BEE1CBFEA2B000FE312 /* Carthage */,
 			);
 			path = Truffaut;
-			sourceTree = "<group>";
-		};
-		0B7C8BEE1CBFEA2B000FE312 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				0B60B2CC1D0BE694006EFF8F /* Sparkle.framework */,
-			);
-			name = Carthage;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		0B7C8BFA1CC13F4A000FE312 /* Main Window */ = {
@@ -239,15 +217,6 @@
 			);
 			name = "Slides Window";
 			sourceTree = "<group>";
-		};
-		0BA6FD831D0D525200565E8A /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				0BA6FD841D0D525200565E8A /* Crashlytics.framework */,
-				0BA6FD851D0D525200565E8A /* Fabric.framework */,
-			);
-			path = Fabric;
-			sourceTree = SOURCE_ROOT;
 		};
 		0BAB64B11EA0C1F0001CE96A /* Utilities */ = {
 			isa = PBXGroup;
@@ -330,7 +299,6 @@
 				0B7C8BD71CBFD166000FE312 /* Frameworks */,
 				0B7C8BD81CBFD166000FE312 /* Resources */,
 				0B7C8BF71CC139FD000FE312 /* Embed Frameworks */,
-				0BA6FD881D0D56D200565E8A /* Fabrics */,
 				0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */,
 			);
 			buildRules = (
@@ -461,20 +429,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=\"auto\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
-		};
-		0BA6FD881D0D56D200565E8A /* Fabrics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Fabrics;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/Fabric/Fabric.framework/run 8d50cafab59f7d99afb7785689fa60bd10a903e2 7674f7841c1bd1cf1adb18a0995b7ac42bc273e4330b3cad1a099cfa65f71646";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -747,11 +701,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Fabric",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Truffaut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -772,11 +722,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Fabric",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Truffaut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;

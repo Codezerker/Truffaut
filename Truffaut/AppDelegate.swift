@@ -14,7 +14,6 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        setupFabric()
         openDocumentIfNeeded()
     }
     
@@ -34,18 +33,5 @@ fileprivate extension AppDelegate {
     
     fileprivate func openDocumentIfNeeded() {
         NSDocumentController.shared.openDocument(nil)
-    }
-}
-
-// MARK: - Fabric
-
-import Fabric
-import Crashlytics
-
-fileprivate extension AppDelegate {
-    
-    fileprivate func setupFabric() {
-        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions" : true])
-        Fabric.with([Crashlytics.self])
     }
 }
