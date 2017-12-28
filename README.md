@@ -38,4 +38,4 @@ For a real-life example of a Truffaut slides, please check [this repo](https://g
 
 ## Known Issues
 
-- Currently the syntax highlighter is assuming ruby is installed at path `/usr/local/bin/ruby` which is usually true if the ruby is intalled with [homebrew](https://brew.sh/). If this is not true for you, you can modify the ruby path [here](Truffaut/Shell.swift). In the future there will be preference settings to make it easier to set paths like this.
+- Currently the syntax highlighter is assuming ruby is installed at path `/usr/local/bin/ruby` which is usually true if the ruby is intalled with [homebrew](https://brew.sh/). If this is not true for you, you can modify the ruby path [here](Truffaut/Shell.swift#L20). In the future there will be preference settings to make it easier to set paths like this.
