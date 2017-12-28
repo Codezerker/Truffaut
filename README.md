@@ -2,6 +2,8 @@
 
 A humble tool to help you presenting ideas by writing Swift
 
+![](Screenshots/sample.png)
+
 ## Requirements
 
 - **macOS 10.13**, could also work on earlier versions as long as Xcode 9 works
