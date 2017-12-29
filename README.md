@@ -12,6 +12,8 @@ A humble tool to help you presenting ideas by writing Swift
 
 ## Usage
 
+Clone this repo or download the pre-built app [here](https://github.com/Codezerker/Truffaut/releases/download/0.6.1/Truffaut.app.zip).
+
 Create a Swift file:
 
 ```sh
@@ -36,7 +38,7 @@ For a full reference of the `TruffautSupport` supporting module, please check [h
 
 For a real-life example of a Truffaut slides, please check [this repo](https://github.com/CocoaHeads-Auckland/wellington-mobile-refresh-2017).
 
-## Known Issues
+## Caveats and Known Issues
 
 - Currently the syntax highlighter is assuming ruby is installed at path `/usr/local/bin/ruby` which is usually true if the ruby is intalled with [homebrew](https://brew.sh/).
   - If this is not true for you, you can modify the ruby path in the preference (`⌘ +,`).
