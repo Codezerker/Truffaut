@@ -22,7 +22,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <action selector="showPreferenceWindow:" target="Ady-hI-5gd" id="sTM-MF-zuN"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -381,7 +385,192 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Truffaut" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-554" y="-142"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="cJb-Br-eDR">
+            <objects>
+                <windowController storyboardIdentifier="PreferenceWindowController" id="A6z-D9-eON" customClass="PreferenceWindowController" customModule="Truffaut" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Truffaut Preference" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="7Pf-Uc-fsv">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="480" height="194"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <value key="minSize" type="size" width="480" height="194"/>
+                        <value key="maxSize" type="size" width="480" height="194"/>
+                        <connections>
+                            <outlet property="delegate" destination="A6z-D9-eON" id="a6v-KE-6KF"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="tyo-mP-ZjZ" kind="relationship" relationship="window.shadowedContentViewController" id="Hcm-SE-V1V"/>
+                    </connections>
+                </windowController>
+                <customObject id="fad-ww-HTA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-498" y="325"/>
+        </scene>
+        <!--Preference View Controller-->
+        <scene sceneID="oeB-Hx-QW6">
+            <objects>
+                <customObject id="YKg-Hb-N3H" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="tyo-mP-ZjZ" customClass="PreferenceViewController" customModule="Truffaut" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="8dI-eH-5j3">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="194"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xnW-8x-MKM">
+                                <rect key="frame" x="18" y="157" width="44" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="swiftc:" id="AeO-hG-cpm">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="446-uz-axY">
+                                <rect key="frame" x="18" y="70" width="44" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="ruby:" id="WuE-kN-Upj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RKg-lP-0Mb">
+                                <rect key="frame" x="68" y="154" width="309" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="RFG-T3-ViF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xeg-K5-vyh">
+                                <rect key="frame" x="379" y="147" width="87" height="32"/>
+                                <buttonCell key="cell" type="push" title="Change" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X7E-1e-bxY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveCustomSwiftcPath:" target="tyo-mP-ZjZ" id="lHV-gO-zJ2"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lU6-EO-NNC">
+                                <rect key="frame" x="68" y="68" width="309" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="364-Fm-0Fg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kdw-ed-C7o">
+                                <rect key="frame" x="379" y="61" width="87" height="32"/>
+                                <buttonCell key="cell" type="push" title="Change" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o4f-7a-7yb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveCustomRubyPath:" target="tyo-mP-ZjZ" id="icq-0d-R8d"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oZ5-Md-JCt">
+                                <rect key="frame" x="66" y="106" width="284" height="14"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="swiftc will be used to interpret the slides manifest file" id="w48-Ul-vDy">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AjS-Tq-VAb">
+                                <rect key="frame" x="66" y="128" width="81" height="14"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" title="/path/to/swiftc" id="nbo-uA-lwe">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZjD-8U-aSD">
+                                <rect key="frame" x="149" y="124" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="47U-k9-jBc"/>
+                                    <constraint firstAttribute="height" constant="22" id="mS0-1J-Qp7"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSFollowLinkFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="fj8-51-zts">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ecz-V3-BXT">
+                                <rect key="frame" x="66" y="20" width="374" height="14"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ruby will be used to provide syntax highlighting for source code blocks" id="FU3-Fc-rcI">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GlC-xF-6jG">
+                                <rect key="frame" x="66" y="42" width="73" height="14"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" title="/path/to/ruby" id="UBI-hx-dwc">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rYq-KS-jJd">
+                                <rect key="frame" x="141" y="38" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="HId-i3-kfe"/>
+                                    <constraint firstAttribute="width" constant="22" id="WPc-gj-4m7"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSFollowLinkFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="gye-Ga-n9K">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xnW-8x-MKM" firstAttribute="top" secondItem="8dI-eH-5j3" secondAttribute="top" constant="20" id="1F3-tK-83S"/>
+                            <constraint firstItem="AjS-Tq-VAb" firstAttribute="leading" secondItem="RKg-lP-0Mb" secondAttribute="leading" id="1M6-KR-GVM"/>
+                            <constraint firstItem="rYq-KS-jJd" firstAttribute="centerY" secondItem="GlC-xF-6jG" secondAttribute="centerY" id="2Uw-62-ect"/>
+                            <constraint firstItem="RKg-lP-0Mb" firstAttribute="leading" secondItem="xnW-8x-MKM" secondAttribute="trailing" constant="8" id="7zl-9J-9at"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oZ5-Md-JCt" secondAttribute="trailing" constant="20" id="8nV-86-ggm"/>
+                            <constraint firstItem="ecz-V3-BXT" firstAttribute="leading" secondItem="GlC-xF-6jG" secondAttribute="leading" id="Age-8Z-TWH"/>
+                            <constraint firstItem="xeg-K5-vyh" firstAttribute="centerY" secondItem="RKg-lP-0Mb" secondAttribute="centerY" id="Aou-TA-rMy"/>
+                            <constraint firstItem="Kdw-ed-C7o" firstAttribute="centerY" secondItem="lU6-EO-NNC" secondAttribute="centerY" id="Cj5-tL-vKW"/>
+                            <constraint firstItem="xeg-K5-vyh" firstAttribute="leading" secondItem="RKg-lP-0Mb" secondAttribute="trailing" constant="8" id="INv-Pe-NO4"/>
+                            <constraint firstItem="oZ5-Md-JCt" firstAttribute="leading" secondItem="AjS-Tq-VAb" secondAttribute="leading" id="K3U-yv-mcu"/>
+                            <constraint firstItem="446-uz-axY" firstAttribute="trailing" secondItem="xnW-8x-MKM" secondAttribute="trailing" id="NPK-k0-cjU"/>
+                            <constraint firstItem="rYq-KS-jJd" firstAttribute="leading" secondItem="GlC-xF-6jG" secondAttribute="trailing" constant="4" id="Nue-qg-xuz"/>
+                            <constraint firstItem="xnW-8x-MKM" firstAttribute="leading" secondItem="8dI-eH-5j3" secondAttribute="leading" constant="20" id="Otj-uP-zJD"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZjD-8U-aSD" secondAttribute="trailing" constant="20" id="P4S-vw-KQj"/>
+                            <constraint firstItem="ZjD-8U-aSD" firstAttribute="leading" secondItem="AjS-Tq-VAb" secondAttribute="trailing" constant="4" id="RZa-2k-6iR"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ecz-V3-BXT" secondAttribute="trailing" constant="20" id="Udb-Hn-lI9"/>
+                            <constraint firstItem="Kdw-ed-C7o" firstAttribute="leading" secondItem="xeg-K5-vyh" secondAttribute="leading" id="YHj-Tk-77w"/>
+                            <constraint firstItem="Kdw-ed-C7o" firstAttribute="trailing" secondItem="xeg-K5-vyh" secondAttribute="trailing" id="b5U-A0-BBP"/>
+                            <constraint firstItem="ecz-V3-BXT" firstAttribute="top" secondItem="GlC-xF-6jG" secondAttribute="bottom" constant="8" id="cZ0-fD-56M"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rYq-KS-jJd" secondAttribute="trailing" constant="20" id="ch8-cu-DGv"/>
+                            <constraint firstItem="lU6-EO-NNC" firstAttribute="top" secondItem="oZ5-Md-JCt" secondAttribute="bottom" constant="16" id="dH9-ZT-mQl"/>
+                            <constraint firstItem="446-uz-axY" firstAttribute="leading" secondItem="xnW-8x-MKM" secondAttribute="leading" id="due-P4-OgS"/>
+                            <constraint firstItem="Kdw-ed-C7o" firstAttribute="leading" secondItem="lU6-EO-NNC" secondAttribute="trailing" constant="8" id="e8g-fa-eMD"/>
+                            <constraint firstItem="lU6-EO-NNC" firstAttribute="centerY" secondItem="446-uz-axY" secondAttribute="centerY" id="eIh-2b-TU3"/>
+                            <constraint firstAttribute="trailing" secondItem="xeg-K5-vyh" secondAttribute="trailing" constant="20" id="f5Y-UA-Yz1"/>
+                            <constraint firstItem="GlC-xF-6jG" firstAttribute="leading" secondItem="lU6-EO-NNC" secondAttribute="leading" id="lfU-WF-1J8"/>
+                            <constraint firstItem="oZ5-Md-JCt" firstAttribute="top" secondItem="AjS-Tq-VAb" secondAttribute="bottom" constant="8" id="m5u-RG-EwV"/>
+                            <constraint firstItem="ZjD-8U-aSD" firstAttribute="centerY" secondItem="AjS-Tq-VAb" secondAttribute="centerY" id="nCu-Am-oG5"/>
+                            <constraint firstItem="RKg-lP-0Mb" firstAttribute="centerY" secondItem="xnW-8x-MKM" secondAttribute="centerY" id="u25-dg-3hQ"/>
+                            <constraint firstItem="rYq-KS-jJd" firstAttribute="top" secondItem="lU6-EO-NNC" secondAttribute="bottom" constant="8" id="vzN-Wh-yhd"/>
+                            <constraint firstItem="ZjD-8U-aSD" firstAttribute="top" secondItem="RKg-lP-0Mb" secondAttribute="bottom" constant="8" id="xOk-zX-xz4"/>
+                            <constraint firstItem="lU6-EO-NNC" firstAttribute="leading" secondItem="446-uz-axY" secondAttribute="trailing" constant="8" id="ynd-9e-iDu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activeRubyPathLabel" destination="GlC-xF-6jG" id="MJB-Gm-YJe"/>
+                        <outlet property="activeSwiftcPathLabel" destination="AjS-Tq-VAb" id="Ry0-Cq-0m8"/>
+                        <outlet property="rubyPathTextField" destination="lU6-EO-NNC" id="Dx0-ZM-Zo7"/>
+                        <outlet property="saveRubyPathButton" destination="Kdw-ed-C7o" id="qHo-Lz-gDj"/>
+                        <outlet property="saveSwiftcPathButton" destination="xeg-K5-vyh" id="zMJ-qn-xFO"/>
+                        <outlet property="swiftcPathTextField" destination="RKg-lP-0Mb" id="Gcs-BS-c3H"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-498" y="667"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -485,4 +674,7 @@
             <point key="canvasLocation" x="75" y="547"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSFollowLinkFreestandingTemplate" width="14" height="14"/>
+    </resources>
 </document>

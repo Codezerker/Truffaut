@@ -31,10 +31,16 @@ struct SyntaxHighlighter {
                     sourceCode,
                     type.rawValue,
                     ])
+                
+                guard !output.isEmpty else {
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                    return
+                }
                 output.removeLast() // remove '\n'
                 
                 let result = self.attributedString(from: output, font: font)
-                
                 DispatchQueue.main.async {
                     completion(result)
                 }

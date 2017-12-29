@@ -13,6 +13,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    private var preferenceWindowController: PreferenceWindowController?
+    
     func applicationDidFinishLaunching(_ notification: Notification) {
         openDocumentIfNeeded()
     }
@@ -27,11 +29,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-// MARK: - Defaut Actions
-
 fileprivate extension AppDelegate {
     
     fileprivate func openDocumentIfNeeded() {
         NSDocumentController.shared.openDocument(nil)
+    }
+}
+
+fileprivate extension AppDelegate {
+    
+    @IBAction func showPreferenceWindow(_ sender: Any?) {
+        preferenceWindowController = PreferenceWindowController.loadFromStoryboard()
+        preferenceWindowController?.window?.makeKeyAndOrderFront(sender)
     }
 }

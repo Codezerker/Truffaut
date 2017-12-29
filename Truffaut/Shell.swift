@@ -14,10 +14,15 @@ public enum ShellRuntimeError: Error {
 
 class Shell: NSObject {
     
-    // FIXME: make these hard coded ENVs configurable in preference
     struct Environment {
-        static let swiftc = "/usr/bin/swiftc"
-        static let ruby = "/usr/local/bin/ruby"
+        
+        static var swiftc: String {
+            return UserPreference.customSwiftcPath ?? "/usr/bin/swiftc"
+        }
+        
+        static var ruby: String {
+            return UserPreference.customRubyPath ?? "/usr/local/bin/ruby"
+        }
     }
     
     public static func call(command: String, arguments: [String] = [], currentDirectoryPath: String? = nil) throws -> String {

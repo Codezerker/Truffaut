@@ -31,6 +31,10 @@
 		0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8BFF1CC14016000FE312 /* SlidesViewController.swift */; };
 		0B7C8C021CC1422B000FE312 /* StoryboardLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C8C011CC1422B000FE312 /* StoryboardLoading.swift */; };
 		0B7FADEB1D43472300000884 /* ExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FADEA1D43472300000884 /* ExportController.swift */; };
+		0BAAD2341FF5DF270099C191 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAAD2321FF5DF270099C191 /* PreferenceWindowController.swift */; };
+		0BAAD2371FF5E49F0099C191 /* NSWindow+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAAD2361FF5E49F0099C191 /* NSWindow+Style.swift */; };
+		0BAAD2391FF5E62E0099C191 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAAD2381FF5E62E0099C191 /* PreferenceViewController.swift */; };
+		0BAAD23B1FF5F34B0099C191 /* UserPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAAD23A1FF5F34B0099C191 /* UserPreference.swift */; };
 		0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB64AE1EA08D7C001CE96A /* ReadController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +98,10 @@
 		0B7C8C011CC1422B000FE312 /* StoryboardLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardLoading.swift; sourceTree = "<group>"; };
 		0B7C8C0B1CC20865000FE312 /* Truffaut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Truffaut-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B7FADEA1D43472300000884 /* ExportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportController.swift; sourceTree = "<group>"; };
+		0BAAD2321FF5DF270099C191 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
+		0BAAD2361FF5E49F0099C191 /* NSWindow+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+Style.swift"; sourceTree = "<group>"; };
+		0BAAD2381FF5E62E0099C191 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		0BAAD23A1FF5F34B0099C191 /* UserPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreference.swift; sourceTree = "<group>"; };
 		0BAB64AE1EA08D7C001CE96A /* ReadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +193,7 @@
 				0B7C8BFB1CC13F5D000FE312 /* Document */,
 				0B7C8BFA1CC13F4A000FE312 /* Main Window */,
 				0B7C8BFC1CC13F91000FE312 /* Slides Window */,
+				0BAAD2311FF5DE440099C191 /* Preference Window */,
 				0B6EED841CC26C83001BC00B /* Supporting Files */,
 			);
 			path = Truffaut;
@@ -218,6 +227,15 @@
 			name = "Slides Window";
 			sourceTree = "<group>";
 		};
+		0BAAD2311FF5DE440099C191 /* Preference Window */ = {
+			isa = PBXGroup;
+			children = (
+				0BAAD2321FF5DF270099C191 /* PreferenceWindowController.swift */,
+				0BAAD2381FF5E62E0099C191 /* PreferenceViewController.swift */,
+			);
+			name = "Preference Window";
+			sourceTree = "<group>";
+		};
 		0BAB64B11EA0C1F0001CE96A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +245,8 @@
 				0B0712881F557C290074EC7A /* SyntaxHighlighter.swift */,
 				0B14BD121E9398FE00EB0C6A /* Shell.swift */,
 				0B7FADEA1D43472300000884 /* ExportController.swift */,
+				0BAAD2361FF5E49F0099C191 /* NSWindow+Style.swift */,
+				0BAAD23A1FF5F34B0099C191 /* UserPreference.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -462,10 +482,14 @@
 				0B62141A1F45978A00B66C9B /* PageViewController.swift in Sources */,
 				0BAB64AF1EA08D7C001CE96A /* ReadController.swift in Sources */,
 				0B14BD131E9398FE00EB0C6A /* Shell.swift in Sources */,
+				0BAAD2391FF5E62E0099C191 /* PreferenceViewController.swift in Sources */,
 				0B7FADEB1D43472300000884 /* ExportController.swift in Sources */,
+				0BAAD2341FF5DF270099C191 /* PreferenceWindowController.swift in Sources */,
+				0BAAD23B1FF5F34B0099C191 /* UserPreference.swift in Sources */,
 				0B7C8C001CC14016000FE312 /* SlidesViewController.swift in Sources */,
 				0B62141D1F45A39000B66C9B /* Font.swift in Sources */,
 				0B7C8BDE1CBFD166000FE312 /* AppDelegate.swift in Sources */,
+				0BAAD2371FF5E49F0099C191 /* NSWindow+Style.swift in Sources */,
 				0B7C8BF91CC13E14000FE312 /* MainWindowController.swift in Sources */,
 				0B7C8BE21CBFD166000FE312 /* PresentationDocument.swift in Sources */,
 			);
