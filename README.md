@@ -41,5 +41,5 @@ For a real-life example of a Truffaut slides, please check [this repo](https://g
 ## Caveats and Known Issues
 
 - Currently the syntax highlighter is assuming ruby is installed at path `/usr/local/bin/ruby` which is usually true if the ruby is intalled with [homebrew](https://brew.sh/).
-  - If this is not true for you, you can modify the ruby path in the preference (`⌘ +,`).
+  - If this is not true for you, you can modify the ruby path in the preference (`⌘ + ,`).
 - Export to PDF is not implemented.
