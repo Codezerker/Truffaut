@@ -14,7 +14,7 @@ A humble tool to help you presenting ideas by writing Swift
 
 ### Get Truffaut.app
 
-Clone this repo or download the pre-built app [here](https://github.com/Codezerker/Truffaut/releases/download/0.6.1/Truffaut.app.zip).
+Clone this repo or download the pre-built app [here](https://github.com/Codezerker/Truffaut/releases).
 
 ### Create slides manifest
 
