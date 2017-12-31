@@ -81,7 +81,7 @@ The detection of page types is implicit: **if `contents` is `nil`** the page wil
 
 A `Content` describes an entry in the slide.
 
-It can be a text (`.text`), a monospace text with optional syntax highlighting (`.sourceCode`), or an image (`.image`).
+It can be a text (`.text`), a monospaced text with optional syntax highlighting (`.sourceCode`), or an image (`.image`).
 
 To make it more flexible to layout the entries, it is also possible to wrap contents with indentations (`.indent`). All contents can be wrapped in a `.indent`, including the `.indent` itself.
 
@@ -97,11 +97,11 @@ To make it more flexible to layout the entries, it is also possible to wrap cont
 #### `.image(String)`
 
 - A image entry.
-- The associated `String` will be used as the image's file relative path based on the manifest file's path.
+- The associated `String` will be used as the image's relative file path based on the manifest file's path.
 
 #### `.sourceCode(FileType, String)`
 
-- A text entry rendered with monospace font.
+- A text entry rendered with monospaced font.
 - The first associated `FileType` value will be used to determine the syntax highlighting type.
 - The second associated `String` will be used to render the text entry.
 
