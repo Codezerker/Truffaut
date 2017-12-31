@@ -12,7 +12,11 @@ A humble tool to help you presenting ideas by writing Swift
 
 ## Usage
 
+### Get Truffaut.app
+
 Clone this repo or download the pre-built app [here](https://github.com/Codezerker/Truffaut/releases/download/0.6.1/Truffaut.app.zip).
+
+### Create slides manifest
 
 Create a Swift file:
 
@@ -34,9 +38,13 @@ let presentation = Presentation(pages: [
 ])
 ```
 
-For a full reference of the `TruffautSupport` supporting module, please check [here](Documentations/TruffaultSupport-Full-Refenrece.md).
+### `TruffautSupport` API Reference
 
-For a real-life example of a Truffaut slides, please check [this repo](https://github.com/CocoaHeads-Auckland/wellington-mobile-refresh-2017).
+For a full reference of the `TruffautSupport` supporting module, please check [here](Documentations/TruffautSupport-API-Reference.md).
+
+### Examples
+
+For real-life examples of Truffaut slides, please check [this repo](https://github.com/CocoaHeads-Auckland/wellington-mobile-refresh-2017) or [this repo](https://github.com/CocoaHeads-Auckland/talk-unicode).
 
 ## Caveats and Known Issues
 
