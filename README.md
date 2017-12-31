@@ -38,11 +38,11 @@ let presentation = Presentation(pages: [
 ])
 ```
 
-### `TruffautSupport` API Reference
+## Manifest file reference
 
 For a full reference of the `TruffautSupport` supporting module, please check [here](Documentations/TruffautSupport-API-Reference.md).
 
-### Examples
+## Examples
 
 For real-life examples of Truffaut slides, please check [this repo](https://github.com/CocoaHeads-Auckland/wellington-mobile-refresh-2017) or [this repo](https://github.com/CocoaHeads-Auckland/talk-unicode).
 
