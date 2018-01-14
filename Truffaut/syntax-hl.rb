@@ -12,6 +12,8 @@ when 'swift'
   lexer = Rouge::Lexers::Swift.new
 when 'javaScript'
   lexer = Rouge::Lexers::Javascript.new
+when 'c'
+  lexer = Rouge::Lexers::C.new
 end
 
 formatter = Rouge::Formatters::HTMLInline.new Rouge::Themes::MonokaiSublime.new

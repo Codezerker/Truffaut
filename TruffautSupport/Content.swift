@@ -15,6 +15,7 @@ public enum Content {
         case swift
         case shell
         case javaScript
+        case c
     }
     
     case title(String)
