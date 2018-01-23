@@ -56,7 +56,7 @@ struct SyntaxHighlighter {
         let renderableString = htmlString.replacingOccurrences(of: "\n", with: "<br>")
                                          .replacingOccurrences(of: "  ", with: "&nbsp;&nbsp;")
         guard let htmlData = renderableString.data(using: .utf8),
-              let attrString = NSMutableAttributedString(html: htmlData, baseURL: URL(string: "/")!, documentAttributes: nil) else {
+              let attrString = NSMutableAttributedString(html: htmlData, options: [.characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil) else {
             return nil
         }
         let fullStringRange = NSRange(location: 0, length: attrString.length)
