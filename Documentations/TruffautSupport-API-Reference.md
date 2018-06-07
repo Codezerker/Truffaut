@@ -37,8 +37,6 @@ It is also a crucial part of the manifest file interpreting process, as its desi
 - `authors`: optional, reserved for future use, default value is an empty array of strings.
 - `pages`: required, an array of `Page`s that needs to be presented in the slides.
 
----
-
 ### Page
 
 [View source](../TruffautSupport/Page.swift)
@@ -72,8 +70,6 @@ The detection of page types is implicit: **if `contents` is `nil`** the page wil
 - `title`: optional, the title of the page, default value is `nil`.
 - `subtitle`: optional, the subtitle of the page, default value is `nil`.
 - `contents`: optional, an array of `Content`, default value is `nil`.
-
----
 
 ### Content
 
