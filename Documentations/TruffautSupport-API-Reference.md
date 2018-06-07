@@ -10,7 +10,7 @@ It provides the vocabulary for the manifest file.
 
 ## Data Types
 
-### `Presentation`
+### Presentation
 
 [View source](../TruffautSupport/Presentation.swift)
 
@@ -18,19 +18,19 @@ The top-level data type that holds all necessary information about the slides.
 
 It is also a crucial part of the manifest file interpreting process, as its designated initializer is responsible for printing out its JSON representation so that the manifest can be passed from the `swiftc` interpreter to `Truffaut.app`.
 
-#### `title`
+#### title
 
 - Reserved for future use.
 
-#### `authors`
+#### authors
 
 - Reserved for future use.
 
-#### `pages`
+#### pages
 
 - An array of `Page`s that needs to be presented in the slides.
 
-#### `init(title: String = "", authors: [String] = [], pages: [Page])`
+#### init(title: String = "", authors: [String] = [], pages: [Page])
 
 - Designated initializer for `Presentation`.
 - `title`: optional, reserved for future use, default value is an empty string.
@@ -39,7 +39,7 @@ It is also a crucial part of the manifest file interpreting process, as its desi
 
 ---
 
-### `Page`
+### Page
 
 [View source](../TruffautSupport/Page.swift)
 
@@ -52,21 +52,21 @@ Currently there are two types of pages: **cover** and **normal**.
 
 The detection of page types is implicit: **if `contents` is `nil`** the page will be recognized as a **cover**, otherwise it will be recognized as a `normal` page.
 
-#### `title`
+#### title
 
 - The title of the page.
 
-#### `subtitle`
+#### subtitle
 
 - Subtitle of the page.
 - This value is ignored if the page is a **normal** page.
 
-#### `contents`
+#### contents
 
 - An array of `Content` to be displayed in the page.
 - If this value is `nil`, the page will be recognized as a **cover**, otherwise it will be recognized as a **normal** page.
 
-#### `init(title: String? = nil, subtitle: String? = nil, contents: [Content]? = nil)`
+#### init(title: String? = nil, subtitle: String? = nil, contents: [Content]? = nil)
 
 - Designated initializer for `Page`.
 - `title`: optional, the title of the page, default value is `nil`.
@@ -75,7 +75,7 @@ The detection of page types is implicit: **if `contents` is `nil`** the page wil
 
 ---
 
-### `Content`
+### Content
 
 [View source](../TruffautSupport/Content.swift)
 
@@ -85,47 +85,55 @@ It can be a text (`.text`), a monospaced text with optional syntax highlighting 
 
 To make it more flexible to layout the entries, it is also possible to wrap contents with indentations (`.indent`). All contents can be wrapped in a `.indent`, including the `.indent` itself.
 
-#### `.title(String)`
+#### Content.title(String)
 
 - Reserved for future use.
 
-#### `.text(String)`
+#### Content.text(String)
 
 - A text entry rendered with system font.
 - The associated `String` will be used to render the text entry.
 
-#### `.image(String)`
+#### Content.image(String)
 
 - A image entry.
 - The associated `String` will be used as the image's relative file path based on the manifest file's path.
 
-#### `.sourceCode(FileType, String)`
+#### Content.sourceCode(FileType, String)
 
 - A text entry rendered with monospaced font.
 - The first associated `FileType` value will be used to determine the syntax highlighting type.
 - The second associated `String` will be used to render the text entry.
 
-#### `indent([Content])`
+#### Content.indent([Content])
 
 - An indent entry to make its content visually indented by one level.
 - The associated `Content` array will be indented.
 
-#### `Content.FileType`
+#### Content.FileType
 
 A `Content.FileType` will be mapped to [**rouge**](https://github.com/jneen/rouge)'s syntax highlighting lexers.
 
-##### `.plainText`
+##### FileType.plainText
 
 - The content is plain text, no lexer will be applied (no syntax highlighting).
 
-##### `.swift`
+##### FileType.c
 
-- The content is Swift source code, `Rouge::Lexers::Swift` will be applied.
+- The content is C source code, `Rouge::Lexers::C` will be applied.
 
-##### `.shell`
+##### FileType.javaScript
+
+- The content is JavaScript source code, `Rouge::Lexers::Javascript` will be applied.
+
+##### FileType.rust
+
+- The content is Rust source code, `Rouge::Lexers::Rust` will be applied.
+
+##### FileType.shell
 
 - The content is shell script, `Rouge::Lexers::Shell` will be applied.
 
-##### `.javaScript`
+##### FileType.swift
 
-- The content is JavaScript source code, `Rouge::Lexers::Javascript` will be applied.
+- The content is Swift source code, `Rouge::Lexers::Swift` will be applied.
