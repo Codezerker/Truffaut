@@ -11,7 +11,7 @@
 		0B07128B1F557D730074EC7A /* syntax-hl.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0B07128A1F557D730074EC7A /* syntax-hl.rb */; };
 		0B14BCDE1E92360700EB0C6A /* TruffautSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B14BCE11E92360700EB0C6A /* TruffautSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; };
-		0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B14BCE81E923A1200EB0C6A /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCE71E923A1200EB0C6A /* Presentation.swift */; };
 		0B14BCEA1E923A2100EB0C6A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCE91E923A2100EB0C6A /* Page.swift */; };
 		0B14BCEC1E923A6F00EB0C6A /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14BCEB1E923A6F00EB0C6A /* Content.swift */; };
@@ -56,15 +56,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0B7C8BF71CC139FD000FE312 /* Embed Frameworks */ = {
+		0B7C8BF71CC139FD000FE312 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Embed Frameworks */,
+				0B14BCE21E92360700EB0C6A /* TruffautSupport.framework in Copy Frameworks */,
 			);
-			name = "Embed Frameworks";
+			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -318,7 +318,7 @@
 				0B7C8BD61CBFD166000FE312 /* Sources */,
 				0B7C8BD71CBFD166000FE312 /* Frameworks */,
 				0B7C8BD81CBFD166000FE312 /* Resources */,
-				0B7C8BF71CC139FD000FE312 /* Embed Frameworks */,
+				0B7C8BF71CC139FD000FE312 /* Copy Frameworks */,
 				0B2FB9E11CC87502005A3FEA /* Recover CFBundleVersion */,
 			);
 			buildRules = (
@@ -353,7 +353,7 @@
 					};
 					0B7C8BD91CBFD166000FE312 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 37G4TUHERL;
+						DevelopmentTeam = 55724LR9PN;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -725,6 +725,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 55724LR9PN;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Truffaut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -746,6 +747,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 55724LR9PN;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Truffaut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

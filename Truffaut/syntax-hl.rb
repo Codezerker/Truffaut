@@ -6,14 +6,16 @@ source = ARGV.shift
 sourceFileType = ARGV.shift
 
 case sourceFileType
+when 'c'
+  lexer = Rouge::Lexers::C.new
+when 'javaScript'
+  lexer = Rouge::Lexers::Javascript.new
+when 'rust'
+  lexer = Rouge::Lexers::Rust.new
 when 'shell'
   lexer = Rouge::Lexers::Shell.new
 when 'swift'
   lexer = Rouge::Lexers::Swift.new
-when 'javaScript'
-  lexer = Rouge::Lexers::Javascript.new
-when 'c'
-  lexer = Rouge::Lexers::C.new
 end
 
 formatter = Rouge::Formatters::HTMLInline.new Rouge::Themes::MonokaiSublime.new
