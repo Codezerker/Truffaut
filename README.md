@@ -44,7 +44,7 @@ For a full reference of the `TruffautSupport` supporting module, please check [h
 
 ## Examples
 
-For real-life examples of Truffaut slides, please check [this repo](https://github.com/CocoaHeads-Auckland/wellington-mobile-refresh-2017) or [this repo](https://github.com/CocoaHeads-Auckland/talk-unicode).
+For real-life Truffaut slides, please check the [Examples](Examples/)).
 
 ## Caveats and Known Issues
 
