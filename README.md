@@ -44,7 +44,7 @@ For a full reference of the `TruffautSupport` supporting module, please check [h
 
 ## Examples
 
-For real-life Truffaut slides, please check the [Examples](Examples/)).
+For real-life Truffaut slides, please check the [Examples](Examples/).
 
 ## Caveats and Known Issues
 
