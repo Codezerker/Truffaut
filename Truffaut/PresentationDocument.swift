@@ -11,10 +11,6 @@ import TruffautSupport
 
 class PresentationDocument: NSDocument {
     
-    struct Notifications {
-        static let update = NSNotification.Name(rawValue: "update")
-    }
-    
     enum ParsingError: Error {
         case InvalidData
     }
@@ -39,6 +35,15 @@ class PresentationDocument: NSDocument {
     }
     
     override func read(from url: URL, ofType typeName: String) throws {
+        reload {}
+    }
+    
+    func reload(completion: @escaping () -> Void) {
+        guard let url = fileURL else {
+            completion()
+            return
+        }
+        
         ReadController.read(from: url) { presentation, error in
             guard let presentation = presentation, error == nil else {
                 let alert = NSAlert(error: error!)
@@ -46,7 +51,8 @@ class PresentationDocument: NSDocument {
                 return
             }
             self.presentation = presentation
-            NotificationCenter.default.post(name: Notifications.update, object: self, userInfo: nil)
+            
+            completion()
         }
     }
 }

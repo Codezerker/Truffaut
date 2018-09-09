@@ -35,7 +35,7 @@ class SlidesViewController: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        show(pageAtIndex: currentPage)
+        reload(nil)
     }
 }
 
@@ -47,6 +47,15 @@ extension SlidesViewController {
     
     @IBAction func showNextPage(_ sender: Any?) {
         show(pageAtIndex: currentPage + 1)
+    }
+    
+    @IBAction func reload(_ sender: Any?) {
+        (windowController?.document as? PresentationDocument)?.reload { [weak self] in
+            guard let validSelf = self else {
+                return
+            }
+            validSelf.show(pageAtIndex: validSelf.currentPage)
+        }
     }
     
     // FIXME:
