@@ -420,7 +420,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "EXTERN_LIB=$TARGET_BUILD_DIR/$PRODUCT_NAME.framework/Library\nmkdir -p $EXTERN_LIB\n\nLIB_PATH=$TARGET_BUILD_DIR/$EXECUTABLE_PATH\nMODULE_PATH=$TARGET_BUILD_DIR/$EXECUTABLE_FOLDER_PATH/Modules/$PRODUCT_NAME.swiftmodule/$CURRENT_ARCH.swiftmodule\n\ncp $LIB_PATH $EXTERN_LIB/lib$PRODUCT_NAME.dylib\ncp $MODULE_PATH $EXTERN_LIB/$PRODUCT_NAME.swiftmodule";
+			shellScript = "EXTERN_LIB=$TARGET_BUILD_DIR/$PRODUCT_NAME.framework/Library\nmkdir -p $EXTERN_LIB\n\nLIB_PATH=$TARGET_BUILD_DIR/$EXECUTABLE_PATH\nMODULE_PATH=$TARGET_BUILD_DIR/$EXECUTABLE_FOLDER_PATH/Modules/$PRODUCT_NAME.swiftmodule/x86_64.swiftmodule\n\ncp $LIB_PATH $EXTERN_LIB/lib$PRODUCT_NAME.dylib\ncp $MODULE_PATH $EXTERN_LIB/$PRODUCT_NAME.swiftmodule\n";
 		};
 		0B2FB9E01CC874DC005A3FEA /* Update CFBundleVersion */ = {
 			isa = PBXShellScriptBuildPhase;
