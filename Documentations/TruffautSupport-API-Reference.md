@@ -118,9 +118,17 @@ A `Content.FileType` will be mapped to [**rouge**](https://github.com/jneen/roug
 
 - The content is C source code, `Rouge::Lexers::C` will be applied.
 
+##### FileType.cpp
+
+- The content is C++ source code, `Rouge::Lexers::Cpp` will be applied.
+
 ##### FileType.javaScript
 
 - The content is JavaScript source code, `Rouge::Lexers::Javascript` will be applied.
+
+##### FileType.objc
+
+- The content is Objective-C source code, `Rouge::Lexers::ObjectiveC` will be applied.
 
 ##### FileType.rust
 
