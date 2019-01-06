@@ -14,7 +14,9 @@ public enum Content {
         case plainText
 
         case c
+        case cpp
         case javaScript
+        case objc
         case rust
         case shell
         case swift

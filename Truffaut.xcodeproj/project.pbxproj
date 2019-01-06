@@ -71,7 +71,7 @@
 
 /* Begin PBXFileReference section */
 		0B0712881F557C290074EC7A /* SyntaxHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighter.swift; sourceTree = "<group>"; };
-		0B07128A1F557D730074EC7A /* syntax-hl.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = "syntax-hl.rb"; sourceTree = "<group>"; };
+		0B07128A1F557D730074EC7A /* syntax-hl.rb */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text.script.ruby; path = "syntax-hl.rb"; sourceTree = "<group>"; tabWidth = 2; };
 		0B14BCDA1E92360700EB0C6A /* TruffautSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TruffautSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B14BCDC1E92360700EB0C6A /* TruffautSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TruffautSupport.h; sourceTree = "<group>"; };
 		0B14BCDD1E92360700EB0C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
