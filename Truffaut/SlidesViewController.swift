@@ -120,7 +120,7 @@ extension SlidesViewController {
         let pageViewController = PageViewController(page: pages[index], imageBaseURL: documentFolderURL)
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pageViewController.view)
-        addChildViewController(pageViewController)
+        addChild(pageViewController)
         
         NSLayoutConstraint.activate([
             pageViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
@@ -129,7 +129,7 @@ extension SlidesViewController {
             pageViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
             ])
         
-        self.currentPageViewController?.removeFromParentViewController()
+        self.currentPageViewController?.removeFromParent()
         self.currentPageViewController?.view.removeFromSuperview()
         
         self.currentPage = index

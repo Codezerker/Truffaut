@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 fileprivate extension AppDelegate {
     
-    fileprivate func openDocumentIfNeeded() {
+    func openDocumentIfNeeded() {
         NSDocumentController.shared.openDocument(nil)
     }
 }

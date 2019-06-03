@@ -44,7 +44,7 @@ import Foundation
 
 fileprivate extension ReadController {
     
-    fileprivate struct ManifestReading {
+    struct ManifestReading {
         
         static let queue = DispatchQueue(label: "com.codezerker.truffaut.manifestReading")
         

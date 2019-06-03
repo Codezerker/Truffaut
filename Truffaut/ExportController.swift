@@ -44,12 +44,12 @@ struct ExportController {
 
 fileprivate extension ExportController {
     
-    fileprivate struct Layout {
+    struct Layout {
 
         static let defaultExportContentSize = CGSize(width: 960, height: 720)
     }
     
-    fileprivate func exportViewToPDF(view: NSView) -> PDFPage? {
+    func exportViewToPDF(view: NSView) -> PDFPage? {
         view.frame = NSRect(origin: .zero, size: Layout.defaultExportContentSize)
         
         // FIXME: in some cases the layout is incorrect,
