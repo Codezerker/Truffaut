@@ -10,6 +10,7 @@ import Foundation
 
 public enum ShellRuntimeError: Error {
     case brokenPipe
+    case processError(stderr: String?)
 }
 
 class Shell: NSObject {
@@ -33,14 +34,21 @@ class Shell: NSObject {
             process.currentDirectoryPath = currentDirectoryPath
         }
         
-        let pipe = Pipe()
-        process.standardOutput = pipe
+        let stdout = Pipe()
+        let stderr = Pipe()
+        process.standardOutput = stdout
+        process.standardError = stderr
         
         try process.run()
         process.waitUntilExit()
         
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        guard let output = String(data: data, encoding: .utf8) else {
+        let stderrData = stderr.fileHandleForReading.readDataToEndOfFile()
+        guard stderrData.count == 0 else {
+            throw ShellRuntimeError.processError(stderr: String(data: stderrData, encoding: .utf8))
+        }
+        
+        let stdoutData = stdout.fileHandleForReading.readDataToEndOfFile()
+        guard let output = String(data: stdoutData, encoding: .utf8) else {
             throw ShellRuntimeError.brokenPipe
         }
         

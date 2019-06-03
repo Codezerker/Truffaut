@@ -45,14 +45,52 @@ class PresentationDocument: NSDocument {
         }
         
         ReadController.read(from: url) { presentation, error in
-            guard let presentation = presentation, error == nil else {
-                let alert = NSAlert(error: error!)
-                alert.runModal()
+            guard let presentation = presentation else {
+                let alert: NSAlert
+
+                if let error = error as? ShellRuntimeError {
+                    alert = NSAlert()
+                    alert.messageText = "Failed to load presentation."
+                    switch error {
+                    case .brokenPipe:
+                        alert.informativeText = "Broken pipe."
+                    case .processError(let stderr):
+                        alert.informativeText = stderr ?? "Unkown shell error happened when parsing the manifest file."
+                    }
+                } else if let error = error {
+                    alert = NSAlert(error: error)
+                } else {
+                    alert = NSAlert()
+                    alert.messageText = "Failed to load presentation (unexpected error)."
+                }
+                
+                alert.alertStyle = .critical
+                alert.showsHelp = true
+                alert.delegate = self
+                
+                if let lastWindow = self.windowControllers.last?.window {
+                    alert.beginSheetModal(for: lastWindow, completionHandler: nil)
+                } else {
+                    alert.runModal()
+                }
+                
                 return
             }
-            self.presentation = presentation
             
+            self.presentation = presentation
             completion()
         }
+    }
+}
+
+extension PresentationDocument: NSAlertDelegate {
+    
+    static let documentationURLString = "https://github.com/Codezerker/Truffaut/blob/master/Documentations/TruffautSupport-API-Reference.md"
+    
+    public func alertShowHelp(_ alert: NSAlert) -> Bool {
+        if let helpURL = URL(string: PresentationDocument.documentationURLString) {
+            NSWorkspace.shared.open(helpURL)
+        }
+        return true
     }
 }
