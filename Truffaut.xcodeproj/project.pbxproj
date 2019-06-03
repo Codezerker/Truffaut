@@ -348,7 +348,7 @@
 					};
 					0B14BD001E92499300EB0C6A = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 37G4TUHERL;
+						DevelopmentTeam = 55724LR9PN;
 						ProvisioningStyle = Automatic;
 					};
 					0B7C8BD91CBFD166000FE312 = {
@@ -587,7 +587,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 37G4TUHERL;
+				DEVELOPMENT_TEAM = 55724LR9PN;
 				INFOPLIST_FILE = TruffautSupportTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -604,7 +604,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 37G4TUHERL;
+				DEVELOPMENT_TEAM = 55724LR9PN;
 				INFOPLIST_FILE = TruffautSupportTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
