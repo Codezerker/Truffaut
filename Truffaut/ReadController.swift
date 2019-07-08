@@ -60,7 +60,7 @@ fileprivate extension ReadController {
             return [
                 /* swiftc settings */
                 "--driver-mode=swift",
-                "-target", "x86_64-apple-macosx10.13",
+                "-target", "x86_64-apple-macosx10.14.4",
                 
                 /* link options */
                 "-I", searchPath,
