@@ -14,7 +14,7 @@ A humble tool to help you presenting ideas by writing Swift
 
 ### Get Truffaut.app
 
-Clone this repo or download the pre-built app [here](https://github.com/Codezerker/Truffaut/releases).
+Clone this repo and build the target `Truffaut`.
 
 ### Create slides manifest
 
@@ -48,6 +48,9 @@ For real-life Truffaut slides, please check the [Examples](Examples/).
 
 ## Caveats and Known Issues
 
+- The Xcode version selected by `xcode-select` must be the same as the one used to build the application.
+  - Otherwise opening slides may fail with errors like this: `slides.swift:1:8: error: cannot load underlying module for 'TruffautSupport'`
+  - In Swift 5.1, this issue is likely to be fixed by [Library Evolution](https://github.com/apple/swift-evolution/blob/master/proposals/0260-library-evolution.md).
 - Currently the syntax highlighter is assuming ruby is installed at path `/usr/local/bin/ruby` which is usually true if the ruby is intalled with [homebrew](https://brew.sh/).
   - If this is not true for you, you can modify the ruby path in the preference (`⌘ + ,`).
 - Export to PDF is not implemented.
