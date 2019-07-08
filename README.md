@@ -6,8 +6,7 @@ A humble tool to help you presenting ideas by writing Swift
 
 ## Requirements
 
-- **macOS 10.13**, could also work on earlier versions as long as Xcode 9 works
-- **Xcode 9**, the embedded `swiftc` will be used to interpret the slides manifest file
+- **Xcode 10.2.1**, the embedded `swiftc` will be used to interpret the slides manifest file
 - Ruby gem [**rouge**](https://github.com/jneen/rouge), this gem will be used to provide syntax highlighting for source code blocks
 
 ## Usage
